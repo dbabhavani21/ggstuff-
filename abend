@@ -351,6 +351,9 @@ create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE)
 ERROR at line 1:
 ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
 
++++
 
+2026-01-05T06:49:10.028-0800  INFO    OGG-02232  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Switching to next trail file /goldengate/dirdat/polupsi/rt000023102 at 2026-01-05 06:49:10.028635 due to EOF. with current RBA 499,999,855.
+2
 
 
