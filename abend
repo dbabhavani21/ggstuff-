@@ -233,3 +233,124 @@ new  10:  AND a.table_name='BMC_ERROR_PROV_CELLS'
 no rows selected
 
 
+++++++++++++++++
+
+
+GGSCI (dbupol02) 2> kill UPSIREP
+
+Sending KILL request to MANAGER ...
+Killed process (23245) for REPLICAT UPSIREP
+
+
+GGSCI (dbupol02) 3> info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+EXTRACT     RUNNING     DCEXTP      00:00:05      00:00:00
+EXTRACT     RUNNING     DCPMPP      00:00:00      00:00:03
+EXTRACT     ABENDED     UPSIEXTP    unknown       837:39:12
+EXTRACT     ABENDED     UPSIPMPP    00:00:00      00:44:42
+REPLICAT    RUNNING     DCREPT      00:00:00      00:00:00
+REPLICAT    ABENDED     UPSIREP     08:00:03      63:23:13
+REPLICAT    RUNNING     UPSIREPT    00:00:00      00:00:07
+
+
+GGSCI (dbupol02) 4> exit
+(PRODUCTION) svc_prd_dboxsdedba@dbupol02:polupsi2:/dba/bhavani> s
+
+SQL*Plus: Release 12.1.0.2.0 Production on Mon Jan 5 06:39:23 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+
+(PRODUCTION) SYS@polupsi2 sql> create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE);
+create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE)
+                                 *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
+
+
+(PRODUCTION) SYS@polupsi2 sql> create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE);
+create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE)
+                                 *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
+
+
+(PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2  1211      47753 POWERBI         9rs4zvusbpjtv INACTIVE                 with data as ( select distinct site_id from cell_d
+         2  1366      30484 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         1  1449      11894 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   174      31493 POWERBI         2jc2s1s3bwdt7 INACTIVE                 with data as( select case          when regexp_lik
+         1  1449      11894 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   174      31493 POWERBI         2jc2s1s3bwdt7 INACTIVE                 with data as( select case          when regexp_lik
+         2     5      56690 POWERBI         25p2wzga4r3cx INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1211      47753 POWERBI         9rs4zvusbpjtv INACTIVE                 with data as ( select distinct site_id from cell_d
+         2  1366      30484 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2     5      56690 POWERBI         25p2wzga4r3cx INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1218      27203 GGADMIN         5avxsppup36ah ACTIVE                    DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."
+         2   808      14540 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+12 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> alter system kill session '1218,27203' immediate;
+alter system kill session '1218,27203' immediate
+*
+ERROR at line 1:
+ORA-00031: session marked for kill
+
+
+(PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2  1211      47753 POWERBI         9rs4zvusbpjtv INACTIVE                 with data as ( select distinct site_id from cell_d
+         1  1449      11894 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   174      31493 POWERBI         2jc2s1s3bwdt7 INACTIVE                 with data as( select case          when regexp_lik
+         1  1449      11894 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   174      31493 POWERBI         2jc2s1s3bwdt7 INACTIVE                 with data as( select case          when regexp_lik
+         2     5      56690 POWERBI         25p2wzga4r3cx INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1211      47753 POWERBI         9rs4zvusbpjtv INACTIVE                 with data as ( select distinct site_id from cell_d
+         2  1366      30484 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2     5      56690 POWERBI         25p2wzga4r3cx INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1366      30484 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2   808      14540 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+11 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE);
+create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE)
+                                 *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
+
+
+(PRODUCTION) SYS@polupsi2 sql> create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE);
+create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE)
+                                 *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
+
+
+(PRODUCTION) SYS@polupsi2 sql> alter session set ddl_lock_timeout=30;
+
+Session altered.
+
+(PRODUCTION) SYS@polupsi2 sql> create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE);
+create index CMAS.gg_fix on CMAS.BMC_ERROR_PROV_CELLS(CGI,PROV_ERROR,ERROR_DATE)
+                                 *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
+
+
+
+
