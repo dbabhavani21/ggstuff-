@@ -370,3 +370,11 @@ Action Taken: We have applied the necessary index fix. The Replicat is now proce
 
 
 PURGE OLDEXTRACTS /goldengate/dirdat/polupsi/rt, USECHECKPOINTS
+
+
+GGSCI (dbupol02) 1> PURGE OLDEXTRACTS /goldengate/dirdat/polupsi/rt, USECHECKPOINTS
+ERROR: Invalid command.
+
+GGSCI (dbupol02) 2> deleteoldextracts /goldengate/dirdat/polupsi/rt*, USECHECKPOINTS
+ERROR: Invalid command.
+
