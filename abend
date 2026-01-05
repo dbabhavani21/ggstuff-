@@ -1,0 +1,95 @@
+PRODUCTION) svc_prd_dboxsdedba@dbupol01:polupsi1:/home/svc_prd_dboxsdedba> df -kh
+
+/dev/asm/ggsacfs-430                   1.4T  1.4T   11M 100% /goldengate
+ 
+ GGSCI (dbupol02) 1> info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+
+REPLICAT    RUNNING     UPSIREP     08:00:03      62:58:44
+
+
+GGSCI (dbupol02) 2> info UPSIREP
+
+REPLICAT   UPSIREP   Last Started 2025-12-17 22:14   Status RUNNING
+INTEGRATED
+Checkpoint Lag       08:00:03 (updated 62:58:50 ago)
+Process ID           23245
+Log Read Checkpoint  File /goldengate/dirdat/polupsi/rt000023100
+                     2026-01-02 07:16:04.529272  RBA 417437545
+
+
+
+
+(PRODUCTION) SYS@polupsi1 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2    81      21080 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1773      20903 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2    81      21080 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1773      20903 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2  1218      27203 GGADMIN         5avxsppup36ah ACTIVE                    DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."
+         2   808      14540 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+6 rows selected.
+
+(PRODUCTION) SYS@polupsi1 sql> @ashtop sql_id username='GGADMIN' SYSDATE-1 SYSDATE
+old   7:       , ROUND(COUNT(*) / ((CAST(&4 AS DATE) - CAST(&3 AS DATE)) * 86400), 1) AAS
+new   7:       , ROUND(COUNT(*) / ((CAST(SYSDATE AS DATE) - CAST(SYSDATE-1 AS DATE)) * 86400), 1) AAS
+old   9:       , &1
+new   9:       , sql_id
+old  73:     AND &2
+new  73:     AND username='GGADMIN'
+old  74:     AND sample_time BETWEEN &3 AND &4
+new  74:     AND sample_time BETWEEN SYSDATE-1 AND SYSDATE
+old  76:         &1
+new  76:         sql_id
+old  79:        , &1
+new  79:        , sql_id
+
+    Total                                                                         Distinct Distinct
+  Seconds     AAS %This   SQL_ID        FIRST_SEEN          LAST_SEEN           Execs Seen  Tstamps
+--------- ------- ------- ------------- ------------------- ------------------- ---------- --------
+      280      .0   80% |               2026-01-04 06:44:34 2026-01-05 02:53:37          1      280
+       43      .0   12% | 83kk57hczdp9j 2026-01-04 11:10:46 2026-01-04 22:19:26         43       43
+        6      .0    2% | f7hjs0z4ttht4 2026-01-04 06:36:32 2026-01-05 02:45:35          6        6
+        3      .0    1% | 6k8ugdddzt3up 2026-01-04 15:09:59 2026-01-04 15:10:01          3        3
+        3      .0    1% | crc91v0g6hu6a 2026-01-04 08:22:33 2026-01-04 11:09:33          3        3
+        2      .0    1% | c6upfd481dywa 2026-01-04 08:17:33 2026-01-04 21:16:33          1        2
+        1      .0    0% | 02p8sj1a0uf8y 2026-01-04 21:16:34 2026-01-04 21:16:34          1        1
+        1      .0    0% | 21df90kjwps79 2026-01-04 22:27:33 2026-01-04 22:27:33          1        1
+        1      .0    0% | 2vqnk6wpn98q7 2026-01-04 22:27:34 2026-01-04 22:27:34          1        1
+        1      .0    0% | 3yqa0rvyxm0vr 2026-01-04 22:19:08 2026-01-04 22:19:08          1        1
+        1      .0    0% | 61bv03d6dg85s 2026-01-05 02:45:34 2026-01-05 02:45:34          1        1
+        1      .0    0% | 6wpmv5b2n7t2r 2026-01-04 16:33:33 2026-01-04 16:33:33          1        1
+        1      .0    0% | 7p0y72w1njknf 2026-01-04 08:17:34 2026-01-04 08:17:34          1        1
+        1      .0    0% | 8drrv18m9aqxd 2026-01-04 09:28:33 2026-01-04 09:28:33          1        1
+        1      .0    0% | 8v2uxc821a9v9 2026-01-04 22:19:09 2026-01-04 22:19:09          1        1
+
+15 rows selected.
+
+(PRODUCTION) SYS@polupsi1 sql> @ashtop SQL_OPNAME username='GGADMIN' SYSDATE-1 SYSDATE
+old   7:       , ROUND(COUNT(*) / ((CAST(&4 AS DATE) - CAST(&3 AS DATE)) * 86400), 1) AAS
+new   7:       , ROUND(COUNT(*) / ((CAST(SYSDATE AS DATE) - CAST(SYSDATE-1 AS DATE)) * 86400), 1) AAS
+old   9:       , &1
+new   9:       , SQL_OPNAME
+old  73:     AND &2
+new  73:     AND username='GGADMIN'
+old  74:     AND sample_time BETWEEN &3 AND &4
+new  74:     AND sample_time BETWEEN SYSDATE-1 AND SYSDATE
+old  76:         &1
+new  76:         SQL_OPNAME
+old  79:        , &1
+new  79:        , SQL_OPNAME
+
+    Total                                                                                Distinct Distinct
+  Seconds     AAS %This   SQL_OPNAME           FIRST_SEEN          LAST_SEEN           Execs Seen  Tstamps
+--------- ------- ------- -------------------- ------------------- ------------------- ---------- --------
+      274      .0   78% |                      2026-01-04 06:44:34 2026-01-05 02:53:37          1      274
+       69      .0   20% | SELECT               2026-01-04 06:36:32 2026-01-05 02:45:35         52       69
+        3      .0    1% | PL/SQL EXECUTE       2026-01-04 15:09:59 2026-01-04 15:10:01          3        3
+        3      .0    1% | TRUNCATE TABLE       2026-01-04 08:22:33 2026-01-04 11:09:33          3        3
+        2      .0    1% | UPDATE               2026-01-04 13:56:33 2026-01-04 22:19:09          1        2
