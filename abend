@@ -356,4 +356,11 @@ ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
 2026-01-05T06:49:10.028-0800  INFO    OGG-02232  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Switching to next trail file /goldengate/dirdat/polupsi/rt000023102 at 2026-01-05 06:49:10.028635 due to EOF. with current RBA 499,999,855.
 2
 
+++++++++++++++
 
+
+"Team, quick update on the GoldenGate replication status for the upcoming migration.
+
+We identified a performance bottleneck on the BMC_ERROR_PROV_CELLS table caused by a missing index on the target. This resulted in lag accumulation over the weekend during high-volume delete operations.
+
+Action Taken: We have applied the necessary index fix. The Replicat is now processing at full speed and catching up rapidly.
