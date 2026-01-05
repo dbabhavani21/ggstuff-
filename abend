@@ -93,3 +93,143 @@ new  79:        , SQL_OPNAME
         3      .0    1% | PL/SQL EXECUTE       2026-01-04 15:09:59 2026-01-04 15:10:01          3        3
         3      .0    1% | TRUNCATE TABLE       2026-01-04 08:22:33 2026-01-04 11:09:33          3        3
         2      .0    1% | UPDATE               2026-01-04 13:56:33 2026-01-04 22:19:09          1        2
+
+
++++++++++++++++
+
+
+PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2    81      21080 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1773      20903 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2   809      19751 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   809      19751 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1773      20903 POWERBI         22nqr5m5nqq6j INACTIVE                 with data as ( SELECT       CASE           when te
+         2    81      21080 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1218      27203 GGADMIN         5avxsppup36ah ACTIVE                    DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."
+         2   808      14540 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+8 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql>
+(PRODUCTION) SYS@polupsi2 sql> @np2
+Enter value for sqlid: 5avxsppup36ah
+old   1: select * from table(dbms_xplan.display_cursor('&sqlId', null, null))
+new   1: select * from table(dbms_xplan.display_cursor('5avxsppup36ah', null, null))
+
+PLAN_TABLE_OUTPUT
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  5avxsppup36ah, child number 0
+-------------------------------------
+ DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."BMC_ERROR_PROV_CELLS"
+WHERE "CGI"=:1    AND "PROV_ERROR"=:2    AND "ERROR_DATE"=:3    and
+rownum < 2
+
+Plan hash value: 3344362307
+
+--------------------------------------------------------------------------------------------
+| Id  | Operation           | Name                 | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT    |                      |       |       | 22471 (100)|          |
+|   1 |  DELETE             | BMC_ERROR_PROV_CELLS |       |       |            |          |
+|*  2 |   COUNT STOPKEY     |                      |       |       |            |          |
+|*  3 |    TABLE ACCESS FULL| BMC_ERROR_PROV_CELLS |     1 |    78 | 22471   (1)| 00:00:01 |
+--------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter(ROWNUM<2)
+   3 - filter(("CGI"=:1 AND "ERROR_DATE"=:3 AND "PROV_ERROR"=:2))
+
+SQL_ID  5avxsppup36ah, child number 1
+-------------------------------------
+ DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."BMC_ERROR_PROV_CELLS"
+WHERE "CGI"=:1    AND "PROV_ERROR"=:2    AND "ERROR_DATE"=:3    and
+rownum < 2
+
+Plan hash value: 3344362307
+
+--------------------------------------------------------------------------------------------
+| Id  | Operation           | Name                 | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT    |                      |       |       | 22471 (100)|          |
+|   1 |  DELETE             | BMC_ERROR_PROV_CELLS |       |       |            |          |
+|*  2 |   COUNT STOPKEY     |                      |       |       |            |          |
+|*  3 |    TABLE ACCESS FULL| BMC_ERROR_PROV_CELLS |     1 |    78 | 22471   (1)| 00:00:01 |
+--------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter(ROWNUM<2)
+   3 - filter(("CGI"=:1 AND "ERROR_DATE"=:3 AND "PROV_ERROR"=:2))
+
+SQL_ID  5avxsppup36ah, child number 2
+-------------------------------------
+ DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."BMC_ERROR_PROV_CELLS"
+WHERE "CGI"=:1    AND "PROV_ERROR"=:2    AND "ERROR_DATE"=:3    and
+rownum < 2
+
+Plan hash value: 3344362307
+
+--------------------------------------------------------------------------------------------
+| Id  | Operation           | Name                 | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT    |                      |       |       | 22471 (100)|          |
+|   1 |  DELETE             | BMC_ERROR_PROV_CELLS |       |       |            |          |
+|*  2 |   COUNT STOPKEY     |                      |       |       |            |          |
+|*  3 |    TABLE ACCESS FULL| BMC_ERROR_PROV_CELLS |     1 |    78 | 22471   (1)| 00:00:01 |
+--------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter(ROWNUM<2)
+   3 - filter(("CGI"=:1 AND "ERROR_DATE"=:3 AND "PROV_ERROR"=:2))
+
+SQL_ID  5avxsppup36ah, child number 3
+-------------------------------------
+ DELETE /*+ restrict_all_ref_cons */ FROM "CMAS"."BMC_ERROR_PROV_CELLS"
+WHERE "CGI"=:1    AND "PROV_ERROR"=:2    AND "ERROR_DATE"=:3    and
+rownum < 2
+
+Plan hash value: 3344362307
+
+--------------------------------------------------------------------------------------------
+| Id  | Operation           | Name                 | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT    |                      |       |       | 22471 (100)|          |
+|   1 |  DELETE             | BMC_ERROR_PROV_CELLS |       |       |            |          |
+|*  2 |   COUNT STOPKEY     |                      |       |       |            |          |
+|*  3 |    TABLE ACCESS FULL| BMC_ERROR_PROV_CELLS |     1 |    78 | 22471   (1)| 00:00:01 |
+--------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter(ROWNUM<2)
+   3 - filter(("CGI"=:1 AND "ERROR_DATE"=:3 AND "PROV_ERROR"=:2))
+
+
+92 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> SELECT a.table_name, c.column_name, b.table_name AS CHILD_TABLE,
+ d.column_name, b.R_CONSTRAINT_NAME FROM
+ DBA_constraints a, dba_constraints b, DBA_ind_columns c, DBA_cons_columns d
+ WHERE a.constraint_type = 'P'
+ AND a.CONSTRAINT_NAME = b.R_CONSTRAINT_NAME
+ AND b.CONSTRAINT_TYPE = 'R'
+ AND a.table_name = c.table_name
+ AND a.constraint_name = c.index_name
+ AND b.CONSTRAINT_NAME = d.constraint_name
+ AND a.table_name='&TABLE_NAME';
+  2    3    4    5    6    7    8    9   10  Enter value for table_name: BMC_ERROR_PROV_CELLS
+old  10:  AND a.table_name='&TABLE_NAME'
+new  10:  AND a.table_name='BMC_ERROR_PROV_CELLS'
+
+no rows selected
+
+
