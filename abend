@@ -364,3 +364,9 @@ ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired
 We identified a performance bottleneck on the BMC_ERROR_PROV_CELLS table caused by a missing index on the target. This resulted in lag accumulation over the weekend during high-volume delete operations.
 
 Action Taken: We have applied the necessary index fix. The Replicat is now processing at full speed and catching up rapidly.
+
+
++++++
+
+
+PURGE OLDEXTRACTS /goldengate/dirdat/polupsi/rt, USECHECKPOINTS
