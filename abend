@@ -375,6 +375,36 @@ PURGE OLDEXTRACTS /goldengate/dirdat/polupsi/rt, USECHECKPOINTS
 GGSCI (dbupol02) 1> PURGE OLDEXTRACTS /goldengate/dirdat/polupsi/rt, USECHECKPOINTS
 ERROR: Invalid command.
 
++++++
+
 GGSCI (dbupol02) 2> deleteoldextracts /goldengate/dirdat/polupsi/rt*, USECHECKPOINTS
 ERROR: Invalid command.
+
+++++++++++++++++
+
+
+
+2026-01-06T06:52:45.413-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83244311 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.494-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83278967 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.571-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83301177 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.647-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83331946 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.731-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83403148 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.812-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83407289 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.886-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83410300 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:45.967-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83412233 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.056-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83495570 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.138-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83607533 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.219-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83672116 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.295-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83703256 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.380-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83727727 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.452-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83751161 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.525-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83769929 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.600-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83775444 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.675-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83798850 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.753-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83850065 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.829-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83868081 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.907-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83889976 in Integrated mode. REPLICAT will retry in Direct mode.
+2026-01-06T06:52:46.992-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83913458 in Integrated mode. REPLICAT will retry in Direct mode.
+
+
 
