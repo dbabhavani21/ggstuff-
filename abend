@@ -407,4 +407,32 @@ ERROR: Invalid command.
 2026-01-06T06:52:46.992-0800  WARNING OGG-02544  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Unhandled error (ORA-26688: missing key in LCR) while processing the record at SEQNO 26703, RBA 83913458 in Integrated mode. REPLICAT will retry in Direct mode.
 
 
+++++++
+
+
+-- Stop Processes
+STOP CDB1EXTT
+STOP CDB1PMPT
+
+-- Remove Data Pump
+DELETE CDB1PMPT
+
+-- Remove Extract (Critical: Unregisters from DB)
+UNREGISTER EXTRACT CDB1EXTT DATABASE
+DELETE CDB1EXTT
+
+-- Clean up Trail Files (OS Command)
+sh rm ./dirdat/*
+
+Target : 
+
+-- Stop Replicat
+STOP USPIREP
+
+-- Remove Replicat
+DELETE USPIREP
+
+-- Clean up Trail Files (OS Command)
+sh rm ./dirdat/*
+
 
