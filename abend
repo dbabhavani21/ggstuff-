@@ -435,4 +435,47 @@ DELETE USPIREP
 -- Clean up Trail Files (OS Command)
 sh rm ./dirdat/*
 
+++++
+
+Supplementa
+
+-- Login to the PDB 
+DBLOGIN USERIDALIAS <source_pdb_alias>
+
+-- Enable Logging for ALL 10 Schemas (Repeat for each)
+-- DO NOT use ALLCOLS
+ADD SCHEMATRANDATA <SCHEMA_1>
+ADD SCHEMATRANDATA <SCHEMA_2>
+...
+ADD SCHEMATRANDATA <SCHEMA_10>
+
+++++
+
+
+Source capture:
+
+-- 1. Register Extract with the PDB
+-- Note: Ensure you are logged into the Container/Root or PDB depending on your user privs, 
+-- but usually you register against the Container for the specific PDB.
+REGISTER EXTRACT CDB1EXTT DATABASE CONTAINER (<YOUR_PDB_NAME>)
+
+-- 2. Add Extract (Integrated Capture)
+ADD EXTRACT CDB1EXTT, INTEGRATED TRANLOG, BEGIN NOW
+
+-- 3. Add Local Trail
+ADD EXTTRAIL ./dirdat/ea, EXTRACT CDB1EXTT
+
+-- 4. Add Data Pump
+ADD EXTRACT CDB1PMPT, EXTTRAILSOURCE ./dirdat/ea
+
+-- 5. Add Remote Trail (Pointing to Target)
+ADD RMTTRAIL ./dirdat/ra, EXTRACT CDB1PMPT
+
+-- 6. START BOTH
+START CDB1EXTT
+START CDB1PMPT
+
+
+
+
 
