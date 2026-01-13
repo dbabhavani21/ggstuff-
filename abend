@@ -705,6 +705,12 @@ MAP nbiot_ddip.*, TARGET nbiot_ddip.*;
 MAP vaspgogo_own.*, TARGET vaspgogo_own.*;
 
 
++++++
+
+DBOPTIONS SETTAG 101   -- REPLICAT
+
+TRANLOGOPTIONS EXCLUDETAG 101   --extract. 
+
 
 
 
