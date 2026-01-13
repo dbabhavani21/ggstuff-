@@ -638,6 +638,36 @@ Ncat: Version 7.50 ( https://nmap.org/ncat )
 ^Z
 [6]+  Stopped                 nc -vz 10.253.32.10 9910
 
+++++++++++++++++++
+
+Repicat work: 
+
+DBLOGIN USERIDALIAS <alias_name>
+ADD CHECKPOINTTABLE <schema>.GG_CHECKPOINT
+
+Replicat file with TAG.
+
+Step 3: Verify/Update the Existing Extract (Loop Prevention)
+Before you start the new Replicat, you must check the existing Extract on this same server (the one currently sending data to the Target). It needs to know to ignore the data tagged in Step 2.
+VIEW PARAMS <existing_extract_name>
+Look for TRANLOGOPTIONS EXCLUDETAG 00.
+If it is missing:
+EDIT PARAMS <existing_extract_name>
+Add: TRANLOGOPTIONS EXCLUDETAG 00
+Stop and Restart the existing Extract:
+Bash
+STOP EXTRACT <existing_extract_name>
+START EXTRACT <existing_extract_name>
+If you skip this, the data written by your new Replicat will be captured by the Extract and sent back to the target, causing data corruption or constraints violations.
+
+
+ADD REPLICAT <new_replicat_name>, EXTTRAIL ./dirdat/<remote_trail_name>, CHECKPOINTTABLE <schema>.GG_CHECKPOINT
+
+START REPLICAT <new_replicat_name>
+
+
+
+
 
 
 
