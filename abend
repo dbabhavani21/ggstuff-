@@ -667,6 +667,43 @@ START REPLICAT <new_replicat_name>
 
 
 
++++++++++++++++
+
+REPLICAT NBIXREPT
+
+USERIDALIAS ggs_owner@polnbix
+
+--reporting--
+REPORTCOUNT EVERY 2 MINUTES, RATE
+
+--discard--
+DISCARDFILE /goldengate/discard/nbixrept.dsc, APPEND, megabytes 1000
+DiscardRollover at 02:00 ON SUNDAY
+
+--options
+ASSUMETARGETDEFS
+DDL EXCLUDE ALL
+DDLERROR DEFAULT IGNORE RETRYOP
+APPLYNOOPUPDATES
+HANDLECOLLISIONS
+DBOPTIONS INTEGRATEDPARAMS(parallelism 2)
+
+--Cache Size
+CACHEMGR CACHESIZE 2G
+
+--error handling--
+DDLERROR DEFAULT, DISCARD
+REPERROR (DEFAULT, DISCARD)
+REPERROR (DEFAULT2, DISCARD)
+REPERROR (2291, TRANSDISCARD)
+REPERROR (1403, DISCARD)
+REPERROR (-1, DISCARD)
+
+--details
+MAP nbiot_own.*, TARGET nbiot_own.*;
+MAP nbiot_ddip.*, TARGET nbiot_ddip.*;
+MAP vaspgogo_own.*, TARGET vaspgogo_own.*;
+
 
 
 
