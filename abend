@@ -1026,6 +1026,33 @@ END;
 /.   After this do I need to restart the replicat 
 
 
+++++
+
+These are the correct numbers:
+
+Update the Plan:
+
+info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+EXTRACT     RUNNING     CDB1EXT     unknown       00:00:00
+EXTRACT     RUNNING     CDB1PMT     00:00:00      00:00:00
+EXTRACT     RUNNING     DCEXTP      00:00:04      00:00:00
+EXTRACT     RUNNING     DCPMPP      00:00:00      00:00:08
+REPLICAT    RUNNING     DCREPT      00:00:00      00:00:06
+REPLICAT    ABENDED     UPSIREP     21:14:52      01:39:53
+REPLICAT    STOPPED     UPSIREPT    00:00:00      144:46:53
+
+
+GGSCI (dbupol02) 2> info UPSIREP
+
+REPLICAT   UPSIREP   Last Started 2026-01-14 08:37   Status ABENDED
+INTEGRATED
+Checkpoint Lag       21:14:52 (updated 01:39:56 ago)
+Log Read Checkpoint  File /goldengate/dirdat/polupsi/rt000007483
+                     2026-01-13 10:15:19.432634  RBA 247207333
 
 
 
