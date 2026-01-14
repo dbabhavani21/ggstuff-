@@ -1013,6 +1013,18 @@ Log Read Checkpoint  File /goldengate/dirdat/polupsi/rt000007483
                      2026-01-13 10:15:19.432634  RBA 247207333
 
 
+-- 1. Find the transaction ID (You likely saw this in your previous checks)
+SELECT local_transaction_id, error_message 
+FROM dba_apply_error 
+WHERE apply_name = 'OGG$UPSIREP'; 
+
+-- 2. Delete it (This is safe because it's a MV you want to ignore anyway)
+BEGIN
+  -- Replace '1.2.345' with the actual LOCAL_TRANSACTION_ID from above
+  DBMS_APPLY_ADM.DELETE_ERROR(local_transaction_id => '1.2.345'); 
+END;
+/.   After this do I need to restart the replicat 
+
 
 
 
