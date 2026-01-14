@@ -961,6 +961,59 @@ WHERE local_transaction_id = '<txn_id>'
 ORDER BY statement_order;
 
 
++++++++++++++
+
+
+MAPEXCLUDE WEASEL.PSAP_NORS_CGI_PSAP_MV
+
+ 
+ 
+ 2026-01-14T08:24:41.748-0800  INFO    OGG-06604  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Database POLUPSI CPU info: CPU Count 24, CPU Core Count 12, CPU Socket Count 2.
+2026-01-14T08:24:41.782-0800  INFO    OGG-02545  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Parameter GROUPTRANSOPS is ignored by Integrated Replicat when parallelism is greater than 1.
+2026-01-14T08:24:41.782-0800  INFO    OGG-02527  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Integrated Replicat does not populate a trace table.
+2026-01-14T08:24:43.102-0800  INFO    OGG-00987  Oracle GoldenGate Command Interpreter for Oracle:  GGSCI command (svc_prd_dboxsdedba): send manager restartstatus.
+2026-01-14T08:24:43.103-0800  INFO    OGG-00963  Oracle GoldenGate Manager for Oracle, mgr.prm:  Command received from GGSCI on host [10.175.122.5]:34239 (RESTARTSTATUS).
+2026-01-14T08:24:48.433-0800  INFO    OGG-00996  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  REPLICAT UPSIREP started.
+2026-01-14T08:24:56.373-0800  INFO    OGG-02530  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Integrated replicat successfully attached to inbound server OGG$UPSIREP.
+2026-01-14T08:24:58.463-0800  INFO    OGG-02243  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Opened trail file /goldengate/dirdat/polupsi/rt000007483 at 2026-01-14 08:24:58.463702.
+2026-01-14T08:24:58.463-0800  WARNING OGG-02760  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  ASSUMETARGETDEFS is ignored because trail file /goldengate/dirdat/polupsi/rt000007483 contains table definitions.
+2026-01-14T08:24:58.464-0800  INFO    OGG-03522  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Setting session time zone to source database time zone '-07:00'.
+2026-01-14T08:24:58.464-0800  INFO    OGG-03506  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  The source database character set, as determined from the trail file, is UTF-8.
+2026-01-14T08:24:58.708-0800  INFO    OGG-06506  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Wildcard MAP resolved (entry upsilon.weasel.*): MAP "UPSILON"."WEASEL"."PSAP_NORS_CGI_PSAP_MV", TARGET weasel."PSAP_NORS_CGI_PSAP_MV".
+2026-01-14T08:25:05.502-0800  INFO    OGG-02756  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  The definition for table UPSILON.WEASEL.PSAP_NORS_CGI_PSAP_MV is obtained from the trail file.
+2026-01-14T08:25:05.502-0800  INFO    OGG-06511  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Using following columns in default map by name: CGI, SITE_ID, SECTOR_ID, PSAP_ID.
+2026-01-14T08:25:05.503-0800  INFO    OGG-06510  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Using the following key columns for target table WEASEL.PSAP_NORS_CGI_PSAP_MV: CGI.
+2026-01-14T08:25:13.143-0800  INFO    OGG-00987  Oracle GoldenGate Command Interpreter for Oracle:  GGSCI command (svc_prd_dboxsdedba): send manager restartstatus.
+2026-01-14T08:25:13.146-0800  INFO    OGG-00963  Oracle GoldenGate Manager for Oracle, mgr.prm:  Command received from GGSCI on host [10.175.122.5]:34287 (RESTARTSTATUS).
+2026-01-14T08:25:43.132-0800  INFO    OGG-00987  Oracle GoldenGate Command Interpreter for Oracle:  GGSCI command (svc_prd_dboxsdedba): send manager restartstatus.
+2026-01-14T08:25:43.133-0800  INFO    OGG-00963  Oracle GoldenGate Manager for Oracle, mgr.prm:  Command received from GGSCI on host [10.175.122.5]:34319 (RESTARTSTATUS).
+
+ 
+info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+EXTRACT     RUNNING     CDB1EXT     unknown       00:00:00
+EXTRACT     RUNNING     CDB1PMT     00:00:00      00:00:06
+EXTRACT     RUNNING     DCEXTP      00:00:07      00:00:00
+EXTRACT     RUNNING     DCPMPP      00:00:00      00:00:06
+REPLICAT    RUNNING     DCREPT      00:00:00      00:00:03
+REPLICAT    RUNNING     UPSIREP     21:14:52      00:56:08
+REPLICAT    STOPPED     UPSIREPT    00:00:00      144:03:08
+
+
+info UPSIREP
+
+REPLICAT   UPSIREP   Last Started 2026-01-14 08:24   Status RUNNING
+INTEGRATED
+Checkpoint Lag       21:14:52 (updated 00:56:12 ago)
+Process ID           26787
+Log Read Checkpoint  File /goldengate/dirdat/polupsi/rt000007483
+                     2026-01-13 10:15:19.432634  RBA 247207333
+
+
+
 
 
 
