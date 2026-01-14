@@ -749,3 +749,794 @@ Successfully created checkpoint table UPSILON.c##ggadmin.GG_CHECKPOINT1.
 
 2026-01-14T03:36:45.827+0000  ERROR   OGG-02649  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Source wildcard specification upsilon.APPCONFIG.* includes a catalog name, but the source table name GG_REPL_STATUS.GG_PROBE does not include a catalog name.
 
+
++++++++
+
+
+GGSCI (dbupol02) 1> info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+EXTRACT     RUNNING     CDB1EXT     unknown       00:00:00
+EXTRACT     RUNNING     CDB1PMT     00:00:00      00:00:09
+EXTRACT     RUNNING     DCEXTP      00:00:05      00:00:01
+EXTRACT     RUNNING     DCPMPP      00:00:00      00:00:09
+REPLICAT    RUNNING     DCREPT      00:00:00      00:00:05
+REPLICAT    RUNNING     UPSIREP     15:42:47      05:25:24
+REPLICAT    STOPPED     UPSIREPT    00:00:00      143:00:19
+
+
+GGSCI (dbupol02) 2> stats UPSIREP
+
+Sending STATS request to REPLICAT UPSIREP ...
+
+2026-01-14 07:24:35  ERROR   OGG-15163  There was a problem sending a message to REPLICAT UPSIREP (Timeout waiting for message).
+
+
+GGSCI (dbupol02) 3>
+
+GGSCI (dbupol02) 3> info all
+
+Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+
+MANAGER     RUNNING
+EXTRACT     RUNNING     CDB1EXT     unknown       00:00:00
+EXTRACT     RUNNING     CDB1PMT     00:00:00      00:00:06
+EXTRACT     RUNNING     DCEXTP      00:00:05      00:00:00
+EXTRACT     RUNNING     DCPMPP      00:00:00      00:00:09
+REPLICAT    RUNNING     DCREPT      00:00:00      00:00:03
+REPLICAT    RUNNING     UPSIREP     24:22:28      00:09:27
+REPLICAT    STOPPED     UPSIREPT    00:00:00      143:16:27
+
+
+GGSCI (dbupol02) 4> info UPSIREP
+
+REPLICAT   UPSIREP   Last Started 2026-01-13 18:42   Status RUNNING
+INTEGRATED
+Checkpoint Lag       24:22:28 (updated 00:09:41 ago)
+Process ID           12736
+Log Read Checkpoint  File /goldengate/dirdat/polupsi/rt000007483
+                     2026-01-13 07:07:44.248430  RBA 247207333
+
+
+GGSCI (dbupol02) 5> exit
+(PRODUCTION) svc_prd_dboxsdedba@dbupol02:polupsi2:/dba/bhavani> s
+
+SQL*Plus: Release 12.1.0.2.0 Production on Wed Jan 14 07:39:59 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+
+(PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1374      63175 GGADMIN         1b2hxwxxv4b08 INACTIVE                 select error_number, error_message, position,
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2  1844      28931 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+6 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1374      63175 GGADMIN         1b2hxwxxv4b08 INACTIVE                 select error_number, error_message, position,
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2  1844      28931 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+6 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1374      63175 GGADMIN         1b2hxwxxv4b08 ACTIVE                   select error_number, error_message, position,
+         2  1844      28931 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+6 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2  1523      41668 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2    95       5592 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1374      63175 GGADMIN         1b2hxwxxv4b08 ACTIVE                   select error_number, error_message, position,
+         2  1844      28931 SYS             f5vqjtg3ss7za ACTIVE                   select nvl(decode(bitand(ap.flags, 20480), 20480,
+
+6 rows selected.
+
+(PRODUCTION) SYS@polupsi2 sql> @np2
+Enter value for sqlid: 1b2hxwxxv4b08
+old   1: select * from table(dbms_xplan.display_cursor('&sqlId', null, null))
+new   1: select * from table(dbms_xplan.display_cursor('1b2hxwxxv4b08', null, null))
+
+PLAN_TABLE_OUTPUT
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  1b2hxwxxv4b08, child number 0
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 1
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             | 13428 |    27M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 2
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 3
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             | 25540 |    51M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 4
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 5
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   116K|   237M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 6
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   125K|   255M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 7
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 8
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 9
+-------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   116K|   237M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 10
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   119K|   242M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 11
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 12
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 13
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   116K|   236M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 14
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   128K|   261M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 15
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 16
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   115K|   233M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 17
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 18
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   124K|   252M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 19
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 20
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   119K|   242M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 21
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 22
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   124K|   252M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 23
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |  6087 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |  6091 |  1112K|  6087   (1)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |   121K|       |   811   (1)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 24
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |  6087 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |   152K|    27M|  6087   (1)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |   121K|       |   811   (1)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+SQL_ID  1b2hxwxxv4b08, child number 25
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |     1 |  2127 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+SQL_ID  1b2hxwxxv4b08, child number 26
+--------------------------------------
+select error_number, error_message, position,       seq#, rba, index#
+from sys."_DBA_APPLY_ERROR_TXN"  where local_transaction_id = :1 and
+bitand(NVL(flags, 0), 1) != 1     order by txn_message_number
+
+Plan hash value: 2972029735
+
+------------------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name                         | Rows  | Bytes | Cost (%CPU)| Time     |
+------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |                              |       |       |     2 (100)|          |
+|*  1 |  TABLE ACCESS BY INDEX ROWID| APPLY$_ERROR_TXN             |  8737 |    17M|     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN          | STREAMS$_APPLY_ERROR_TXN_UNQ |     1 |       |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(BITAND(NVL("FLAGS",0),1)<>1)
+   2 - access("LOCAL_TRANSACTION_ID"=:1)
+
+Note
+-----
+   - dynamic statistics used: dynamic sampling (level=2)
+   - 2 Sql Plan Directives used for this statement
+
+
+664 rows selected.
+
+
