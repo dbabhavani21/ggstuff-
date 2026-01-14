@@ -1054,5 +1054,101 @@ Checkpoint Lag       21:14:52 (updated 01:39:56 ago)
 Log Read Checkpoint  File /goldengate/dirdat/polupsi/rt000007483
                      2026-01-13 10:15:19.432634  RBA 247207333
 
+++++++
+
+
+      1  1052      57888 GGADMIN         gstg9y90wb6hr ACTIVE          3,489.30 BEGIN dbms_apply_adm.delete_all_errors(apply_name
+         1  1052      57888 GGADMIN         gstg9y90wb6hr ACTIVE                   BEGIN dbms_apply_adm.delete_all_errors(apply_name
+
+12 rows selected.
+
+(PRODUCTION) SYS@polupsi1 sql> /
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2   805       3889 GGADMIN         a7rrynhnhw8j0 INACTIVE                 SELECT limit  FROM user_resource_limits  WHERE res
+         1   806       3370 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   805       3889 GGADMIN         a7rrynhnhw8j0 INACTIVE                 SELECT limit  FROM user_resource_limits  WHERE res
+         2  1531      55259 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         1   806       3370 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1212      23051 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2  1842      48270 POWERBI         25p2wzga4r3cx INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1531      55259 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1842      48270 POWERBI         25p2wzga4r3cx INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1212      23051 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         1  1052      57888 GGADMIN         gstg9y90wb6hr ACTIVE          3,493.31 BEGIN dbms_apply_adm.delete_all_errors(apply_name
+         1  1052      57888 GGADMIN         gstg9y90wb6hr ACTIVE                   BEGIN dbms_apply_adm.delete_all_errors(apply_name
+
+12 rows selected.
+
+(PRODUCTION) SYS@polupsi1 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2   805       3889 GGADMIN         a7rrynhnhw8j0 INACTIVE                 SELECT limit  FROM user_resource_limits  WHERE res
+         1   806       3370 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   805       3889 GGADMIN         a7rrynhnhw8j0 INACTIVE                 SELECT limit  FROM user_resource_limits  WHERE res
+         1   337         19 UPSILON         csvrjvy628c1p INACTIVE                 SELECT "PSAP_ID","PSAP_NAME","PSAP_PHASE" FROM "PS
+         1   806       3370 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1212      23051 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         2  1531      55259 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1531      55259 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1212      23051 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         1  1052      57888 GGADMIN         62q5992v4b4xx ACTIVE                   delete /*+ CACHE_CB("QT$_OGG$UPSIREP_76") */ from
+         1  1052      57888 GGADMIN         62q5992v4b4xx ACTIVE                   delete /*+ CACHE_CB("QT$_OGG$UPSIREP_76") */ from
+
+11 rows selected.
+
+(PRODUCTION) SYS@polupsi1 sql> @np2
+Enter value for sqlid: 62q5992v4b4xx
+old   1: select * from table(dbms_xplan.display_cursor('&sqlId', null, null))
+new   1: select * from table(dbms_xplan.display_cursor('62q5992v4b4xx', null, null))
+
+PLAN_TABLE_OUTPUT
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  62q5992v4b4xx, child number 0
+-------------------------------------
+delete /*+ CACHE_CB("QT$_OGG$UPSIREP_76") */ from
+"GGADMIN"."QT$_OGG$UPSIREP_76" where rowid = :1
+
+Plan hash value: 3831224094
+
+--------------------------------------------------------------------------------------------------
+| Id  | Operation                   | Name               | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------------------------
+|   0 | DELETE STATEMENT            |                    |       |       |     1 (100)|          |
+|   1 |  DELETE                     | QT$_OGG$UPSIREP_76 |       |       |            |          |
+|   2 |   TABLE ACCESS BY USER ROWID| QT$_OGG$UPSIREP_76 |     1 |    22 |     1   (0)| 00:00:01 |
+--------------------------------------------------------------------------------------------------
+
+
+15 rows selected.
+
+(PRODUCTION) SYS@polupsi1 sql> @asa
+
+   INST_ID   SID    SERIAL# USERNAME        SQL_ID        STATUS           ELAPSED SQL_TEXT
+---------- ----- ---------- --------------- ------------- -------- --------------- --------------------------------------------------
+         2   805       3889 GGADMIN         a7rrynhnhw8j0 INACTIVE                 SELECT limit  FROM user_resource_limits  WHERE res
+         1   806       3370 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2   805       3889 GGADMIN         a7rrynhnhw8j0 INACTIVE                 SELECT limit  FROM user_resource_limits  WHERE res
+         1   566      12403 UPSILON         csvrjvy628c1p INACTIVE                 SELECT "PSAP_ID","PSAP_NAME","PSAP_PHASE" FROM "PS
+         1   337         19 UPSILON         csvrjvy628c1p INACTIVE                 SELECT "PSAP_ID","PSAP_NAME","PSAP_PHASE" FROM "PS
+         2  1212      23051 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         1   806       3370 POWERBI         846fcf7zkhdfd INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1531      55259 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1531      55259 POWERBI         41y0hzfsx0rpf INACTIVE                 (select (to_char((SYSDATE-1/24), 'yyyy-mm-dd hh24:
+         2  1212      23051 GGADMIN         4zm9cw2bnvc3c INACTIVE                 SELECT md_tab_userid, md_tab_colcount,        md_t
+         1  1052      57888 GGADMIN         62q5992v4b4xx ACTIVE                   delete /*+ CACHE_CB("QT$_OGG$UPSIREP_76") */ from
+         1  1052      57888 GGADMIN         62q5992v4b4xx ACTIVE                   delete /*+ CACHE_CB("QT$_OGG$UPSIREP_76") */ from
+
+GGSCI (dbupol02) 3> dblogin useridalias ggadminpolupsi
+Successfully logged into database.
+
+GGSCI (dbupol02 as ggadmin@polupsi1) 4> delete UPSIREP
+
+
+
+
+
 
 
