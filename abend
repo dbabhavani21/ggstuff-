@@ -745,3 +745,7 @@ GGSCI (lsdpol01 as c##ggadmin@cdb1/UPSILON) 6> ADD CHECKPOINTTABLE c##ggadmin.GG
 Logon catalog name UPSILON will be used for table specification UPSILON.c##ggadmin.GG_CHECKPOINT1.
 
 Successfully created checkpoint table UPSILON.c##ggadmin.GG_CHECKPOINT1.
+
+
+2026-01-14T03:36:45.827+0000  ERROR   OGG-02649  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Source wildcard specification upsilon.APPCONFIG.* includes a catalog name, but the source table name GG_REPL_STATUS.GG_PROBE does not include a catalog name.
+
