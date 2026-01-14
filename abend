@@ -726,3 +726,22 @@ TABLEEXCLUDE <schema>.RUPD$_*;
 -- 3. Include your User tables
 TABLE <schema>.*;
 
+++++++++++++
+
+2026-01-14T03:02:36.687+0000  INFO    OGG-06604  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Database UPSILON CPU info: CPU Count 48, CPU Core Count 24, CPU Socket Count 2.
+2026-01-14T03:02:37.654+0000  ERROR   OGG-00446  Oracle GoldenGate Delivery for Oracle, upsirep.prm:  Checkpoint table ggadmin.GG_CHECKPOINT does not exist. Create this table with the ADD CHECKPOINTTABLE command.
+
+GGSCI (lsdpol01 as c##ggadmin@cdb1/UPSILON) 4> DELETE CHECKPOINTTABLE
+ERROR: Missing checkpoint table specification.
+
+GGSCI (lsdpol01 as c##ggadmin@cdb1/UPSILON) 5> ADD CHECKPOINTTABLE c##ggadmin.GG_CHECKPOINT
+Logon catalog name UPSILON will be used for table specification UPSILON.c##ggadmin.GG_CHECKPOINT.
+ERROR: Failed creating checkpoint table c##ggadmin.GG_CHECKPOINT.
+
+OCI Error ORA (status = 955-ORA-00955: name is already used by an existing object
+).
+
+GGSCI (lsdpol01 as c##ggadmin@cdb1/UPSILON) 6> ADD CHECKPOINTTABLE c##ggadmin.GG_CHECKPOINT1
+Logon catalog name UPSILON will be used for table specification UPSILON.c##ggadmin.GG_CHECKPOINT1.
+
+Successfully created checkpoint table UPSILON.c##ggadmin.GG_CHECKPOINT1.
