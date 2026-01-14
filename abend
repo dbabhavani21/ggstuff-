@@ -926,6 +926,40 @@ STATE                PROCESS_COUNT
 -------------------- -------------
 IDLE                             5
 
+++++++++++++++
+
+SET LONG 1000000
+SET LINESIZE 200
+COLUMN message_text FORMAT A150
+
+SELECT message_number,
+       message_count,
+       error_message,
+       TO_CHAR(error_creation_time, 'YYYY-MM-DD HH24:MI:SS') AS err_time,
+       message_text
+FROM dba_apply_error
+WHERE apply_name = 'OGG$UPSIREP'
+ORDER BY error_creation_time DESC;
+
+SELECT local_transaction_id,
+       source_database,
+       source_commit_scn,
+       message_number
+FROM dba_apply_error
+WHERE apply_name = 'OGG$UPSIREP';
+
+
+-- Replace <txn_id> with actual value like '99.45.123456'
+SELECT message_text
+FROM gv$apply_error_txn
+WHERE local_transaction_id = '<txn_id>';
+
+
+SELECT sql_text
+FROM dba_apply_error_statements
+WHERE local_transaction_id = '<txn_id>'
+ORDER BY statement_order;
+
 
 
 
