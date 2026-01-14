@@ -714,5 +714,15 @@ TRANLOGOPTIONS EXCLUDETAG 101   --extract.
 ALTER EXTRACT <extract_name>, BEGIN NOW  
 
 
++++++++++++++++++
 
+-- 1. Exclude the MVs explicitly (Required)
+TABLEEXCLUDE <schema>.NAME_OF_YOUR_MV;
+
+-- 2. Exclude internal MV structures (Insurance Policy - Keep this!)
+TABLEEXCLUDE <schema>.MLOG$_*;
+TABLEEXCLUDE <schema>.RUPD$_*; 
+
+-- 3. Include your User tables
+TABLE <schema>.*;
 
