@@ -890,9 +890,41 @@ SELECT component_name,
        count(*) as process_count, 
        event 
 FROM   v$gg_apply_server 
-WHERE  apply_name = 'UPSIREP' -- Ensure this matches your Replicat name in DB (usually UPPERCASE)
+WHERE  apply_name = 'UPSIREP' 
 GROUP BY component_name, state, event
 ORDER BY 1;
+
+SET LINESIZE 200 PAGESIZE 100
+COL apply_name FORMAT a20
+COL error_message FORMAT a60
+COL source_commit_scn FORMAT 999999999999999
+
+SELECT apply_name, 
+       source_commit_scn, 
+       message_number, 
+       error_creation_time, 
+       error_message 
+FROM   dba_apply_error 
+ORDER BY error_creation_time DESC;
+
+
+
+APPLY_NAME           SOURCE_COMMIT_SCN MESSAGE_NUMBER ERROR_CRE ERROR_MESSAGE
+-------------------- ----------------- -------------- --------- --------------------------------------------------------------------------------
+OGG$UPSIREP                          0              1 14-JAN-26 ORA-01732: data manipulation operation not legal on this view
+                                                                ORA-01732: data manipulation operation not legal on this view
+
+ SELECT
+       state,
+       count(*) as process_count
+FROM   v$gg_apply_server
+WHERE  apply_name = 'OGG$UPSIREP'
+GROUP BY  state
+ORDER BY 2;  2    3    4    5    6    7
+
+STATE                PROCESS_COUNT
+-------------------- -------------
+IDLE                             5
 
 
 
