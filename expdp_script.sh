@@ -394,3 +394,11 @@ drwxrwxrwx 5 oradba  adba           20480 Sep 22 12:57 appdba
 drwxr-xr-x 4 oracle  oinstall       20480 Nov 14 15:17 patches_oneoff
 drwxrwxrwx 3 ggadmin dba            20480 Jan 13 17:02 DPUMP
 
+
+
+
+oracle@o54oma2vc11:WIORDA11> ls -lrt
+total 76
+drwxr-xr-x  4 ggadmin dba      33 Mar 20  2025 goldengate
+-rw-r-----  1 ggadmin ggdba 43277 Apr 15  2025 golde
+drwxr-xr-x 15 root    root  32768 Aug 13 10:15 dba_work
