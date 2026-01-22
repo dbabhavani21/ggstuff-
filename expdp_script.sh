@@ -1,6 +1,9 @@
 GRR00DBO.GRK_BRKR_ERROR_F
 
-select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_ERROR_F;
+select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_ERROR_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);
+
+
 
 SQL> conn comdba_id/RedSox2017
 Connected.
