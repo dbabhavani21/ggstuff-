@@ -1,3 +1,51 @@
+vi 1st10.sh 
+
+#!/bin/bash
+
+# --- CONFIG ---
+SCHEMA="comdba_id"
+PASSWORD="RedSox2017"
+DIRECTORY="sim_dump"
+DUMPFILE="sim_1st10_%U.dmp" 
+LOGFILE="sim_1st10.log"
+PARFILE="export_cmd_1st10.par"
+
+cat > ${PARFILE} <<EOF
+USERID="${SCHEMA}/${PASSWORD}"
+DIRECTORY=${DIRECTORY}
+DUMPFILE=${DUMPFILE}
+LOGFILE=${LOGFILE}
+TABLES=GRR00DBO.GRK_BRKR_ERROR_F,GRR00DBO.GRK_BRKR_MOBILITY_F,GRR00DBO.GRK_BRKR_MSG_TRKR_D,GRR00DBO.GRK_GRANT_ACTIVITY_F,GRR00DBO.GRK_GRANT_ACTIVITY_HIST_F,
+GRR00DBO.GRK_MBLT_AWD_DST_TRCK_F,GRR00DBO.GRK_PRODUCT_CONTROL_FS,GRR00DBO.GRK_PRTC_BRKR_INFO_D,GRR00DBO.GRK_TAX_METH_F,SPR00DBO.BRKR_ERROR_F
+QUERY="WHERE insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24)"
+CONTENT=ALL
+PARALLEL=16
+EOF
+
+# Run Data Pump using the parfile
+expdp parfile=${PARFILE}
+
+# Check status
+if [ $? -eq 0 ]; then
+    echo "Export Success."
+else
+    echo "Export Failed. Check ${LOGFILE}"
+fi
+
+chmod +x 1st10.sh 
+
++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
 SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_ERROR_F
 where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
 
