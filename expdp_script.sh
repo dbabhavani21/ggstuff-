@@ -34,6 +34,10 @@ fi
 
 chmod +x 1st10.sh 
 
+nohup sh 1st10.sh & 
+
+tail -50f nohup.out 
+
 +++++++++++++++++++
 
 
