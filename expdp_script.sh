@@ -371,3 +371,26 @@ SR3_26672559861
 
 
 70 rows selected.
+
+
+oracle@o54oma2vc11:WIORDA11> ls -lrt
+total 38721204
+drwxr-xr-x 2 ggadmin dba            65536 Mar 20  2025 lost+found
+-rw-r--r-- 1 ggadmin dba      28235939840 Mar 21  2025 DBRU1923_240416_TST.tar
+-rw-r--r-- 1 ggadmin dba          2078720 Mar 26  2025 oracle_tools_sql.tar
+-rw-r--r-- 1 ggadmin dba         11929600 Mar 26  2025 oracle_tools_bin.tar
+drwxr-xr-x 3 oracle  oinstall       20480 Mar 29  2025 dsdb
+drwxr-xr-x 2 root    root           20480 Apr  8  2025 AHF
+drwxr-xr-x 2 oracle  oinstall       20480 Apr 11  2025 dba_onboarding
+drwxr-xr-x 2 root    root           20480 Apr 21  2025 stage
+drwxr-xr-x 3 oracle  oinstall       20480 May 18  2025 WIORDI1
+drwxr-xr-x 3 grid    oinstall       20480 May 20  2025 xag
+-rw-r----- 1 root    root        80239258 Jul 24 15:43 sundiag_o54oma2celadm01_2450XLJ07N_2025_07_24_15_28.tar.bz2
+-rw-r----- 1 root    root        84595750 Jul 24 17:00 sundiag_o54oma2celadm02_2450XLJ085_2025_07_24_15_44.tar.bz2
+drwxr-xr-x 2 root    root           20480 Jul 25 09:39 new
+-rw-r--r-- 1 root    root     11223095808 Aug 13 10:13 Oracle_Home_DBRU1925_241015.cpio
+drwxr-xr-x 2 oracle  oinstall       20480 Aug 17 01:19 oracle
+drwxrwxrwx 5 oradba  adba           20480 Sep 22 12:57 appdba
+drwxr-xr-x 4 oracle  oinstall       20480 Nov 14 15:17 patches_oneoff
+drwxrwxrwx 3 ggadmin dba            20480 Jan 13 17:02 DPUMP
+
