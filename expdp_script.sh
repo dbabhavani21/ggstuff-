@@ -1,24 +1,18 @@
 SQL> conn comdba_id/RedSox2017
 Connected.
 
-DB user – comdba_id
-Password - W0lver!ne
 
 
 create or replace directory sim_dump as '/u02/wide/acfs/dba_work/dsdb/sim_dump';
 grant read,write on directory sim_dump to public;
 
 
-conn comdba_id/"W0lver!ne"
-
-
 #!/bin/bash
 
 # --- CONFIG ---
-SCHEMA="system"
-PASSWORD="oracle"
-DB_SVC="pdb1"       
-DIRECTORY="dpdump"
+SCHEMA="comdba_id"
+PASSWORD="RedSox2017"
+DIRECTORY="sim_dump"
 DUMPFILE="filtered_export_%U.dmp" 
 LOGFILE="filtered_export.log"
 PARFILE="export_cmd.par"
