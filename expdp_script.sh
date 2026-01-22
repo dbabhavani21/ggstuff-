@@ -1,3 +1,110 @@
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_ERROR_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+     23610
+
+SQL>
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_MOBILITY_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+      2080
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_MSG_TRKR_D
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+    239422
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_GRANT_ACTIVITY_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);
+  2
+  COUNT(*)
+----------
+   6698487
+
+SQL>
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_GRANT_ACTIVITY_HIST_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+  17906129
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_MBLT_AWD_DST_TRCK_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);
+  2
+  COUNT(*)
+----------
+   1070878
+
+SQL>
+SQL>
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_PRODUCT_CONTROL_FS
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+  19020937
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_PRTC_BRKR_INFO_D
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+    279883
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_TAX_METH_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+   1044015
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.BRKR_ERROR_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+select /*+ parallel(20) */ count(*) from GRR00DBO.BRKR_ERROR_F
+                                                  *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_TAX_METH_F
+where insert_d >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24);  2
+
+  COUNT(*)
+----------
+   1044015
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GRR00DBO.GRK_BRKR_ERROR_F
 
 select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_ERROR_F
