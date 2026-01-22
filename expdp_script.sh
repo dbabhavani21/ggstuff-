@@ -1,5 +1,6 @@
 GRR00DBO.GRK_BRKR_ERROR_F
 
+select /*+ parallel(20) */ count(*) from GRR00DBO.GRK_BRKR_ERROR_F;
 
 SQL> conn comdba_id/RedSox2017
 Connected.
