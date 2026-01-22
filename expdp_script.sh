@@ -402,3 +402,6 @@ total 76
 drwxr-xr-x  4 ggadmin dba      33 Mar 20  2025 goldengate
 -rw-r-----  1 ggadmin ggdba 43277 Apr 15  2025 golde
 drwxr-xr-x 15 root    root  32768 Aug 13 10:15 dba_work
+
+
+/u02/wide/acfs/dba_work/dsdb/sim.dmp
