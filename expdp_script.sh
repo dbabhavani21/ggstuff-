@@ -1,3 +1,10 @@
+create or replace sim_dump as '/u02/wide/acfs/dba_work/dsdb/sim_dump';
+grant read,write on directory sim_dump to public;
+
+
+
+
+
 #!/bin/bash
 
 # --- CONFIG ---
