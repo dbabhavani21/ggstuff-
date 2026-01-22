@@ -1,3 +1,6 @@
+SQL> conn comdba_id/RedSox2017
+Connected.
+
 DB user – comdba_id
 Password - W0lver!ne
 
