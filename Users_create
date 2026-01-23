@@ -1,3 +1,16 @@
+Hi.
+
+Update on 194 Tables Migration:
+
+Blockers: None.
+Status: 40 tables exported.
+Next Steps: Proceeding with Import on the target server.
+Note: Due to storage constraints on the source (1.9TB), I am executing this in batches (Export/Import/Purge) rather than a single bulk operation.
+I will let the team know if I need any support, otherwise, I am churning through the list."
+
+
+
+
 > /prdcroq1/oracle/diag/rdbms/prdcroq1_c/prdcroq1/trace/alert_prdcroq1.log
 
 find /prdcroq1/oracle/diag/rdbms/prdcroq1_c/prdcroq1/trace -name "*.trc" -mtime +7 -delete
