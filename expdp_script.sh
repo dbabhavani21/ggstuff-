@@ -1,3 +1,43 @@
+SELECT DISTINCT OWNER, TABLE_NAME, TABLESPACE_NAME
+FROM (
+    SELECT OWNER, TABLE_NAME, TABLESPACE_NAME 
+    FROM DBA_TABLES 
+    WHERE TABLESPACE_NAME IS NOT NULL
+      AND (OWNER, TABLE_NAME) IN (
+          ('GRR00DBO', 'GRK_BRKR_ERROR_F'),
+          ('GRR00DBO', 'GRK_BRKR_MOBILITY_F'),
+          ('GRR00DBO', 'GRK_BRKR_MSG_TRKR_D'),
+          ('GRR00DBO', 'GRK_GRANT_ACTIVITY_F'),
+          ('GRR00DBO', 'GRK_GRANT_ACTIVITY_HIST_F'),
+          ('GRR00DBO', 'GRK_MBLT_AWD_DST_TRCK_F'),
+          ('GRR00DBO', 'GRK_PRODUCT_CONTROL_FS'),
+          ('GRR00DBO', 'GRK_PRTC_BRKR_INFO_D'),
+          ('GRR00DBO', 'GRK_TAX_METH_F'),
+          ('GRR00DBO', 'GRK_DIST_PAID_TRX_D'),
+          ('GRR00DBO', 'GRK_DIST_TAX_D')
+      )
+
+    UNION ALL
+
+    SELECT TABLE_OWNER AS OWNER, TABLE_NAME, TABLESPACE_NAME 
+    FROM DBA_TAB_PARTITIONS 
+    WHERE (TABLE_OWNER, TABLE_NAME) IN (
+          ('GRR00DBO', 'GRK_BRKR_ERROR_F'),
+          ('GRR00DBO', 'GRK_BRKR_MOBILITY_F'),
+          ('GRR00DBO', 'GRK_BRKR_MSG_TRKR_D'),
+          ('GRR00DBO', 'GRK_GRANT_ACTIVITY_F'),
+          ('GRR00DBO', 'GRK_GRANT_ACTIVITY_HIST_F'),
+          ('GRR00DBO', 'GRK_MBLT_AWD_DST_TRCK_F'),
+          ('GRR00DBO', 'GRK_PRODUCT_CONTROL_FS'),
+          ('GRR00DBO', 'GRK_PRTC_BRKR_INFO_D'),
+          ('GRR00DBO', 'GRK_TAX_METH_F'),
+          ('GRR00DBO', 'GRK_DIST_PAID_TRX_D'),
+          ('GRR00DBO', 'GRK_DIST_TAX_D')
+      )
+)
+ORDER BY OWNER, TABLE_NAME, TABLESPACE_NAME;
+
+
 
 Filesystem                                                         Size  Used Avail Use% Mounted on
 devtmpfs                                                            63G     0   63G   0% /dev
