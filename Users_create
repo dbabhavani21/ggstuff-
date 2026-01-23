@@ -1,3 +1,71 @@
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.27.0.0.0
+
+SQL> @asm.sql
+
+NAME                           TOTAL_MB/1024 FREE_MB/1024 FREE_MB/2/1024
+------------------------------ ------------- ------------ --------------
+USABLE_FILE_MB/1024
+-------------------
+OCRVOTE                                    4    3.8984375     1.94921875
+          3.8984375
+
+PRDCROQ1_DATA                           8192   6636.48047     3318.24023
+         6636.48047
+
+PRDCROQ1_FRA                            3072   2389.96875     1194.98438
+         2389.96875
+=========================================================
+
+
+
+SQL> @ts90
+
+TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
+------------------------------ ---------- ---------- ---------- ------------ ----------
+BOOK_DBO_TBS                       170177     162073       8104     33554432          0
+PRDC_METRICS_DBO_TBS                10240         69      10171        32768          0
+ACCT_DBO_IDX                        51200       5767      45433     33554432          0
+PRDC_METRICS_DBO_IDX                 5120         68       5052        32768          0
+PRDCSTG_DBO_TBS                    102400        269     102131     33554432          0
+LOAN_DBO_IDX                        51200        135      51065     33554432          0
+MDM_CLIENT_PERSON_IDX               10240         68      10172       102400          0
+PRDCREF_DBO_IDX                     51200       6596      44604     33554432          0
+COMMON_UTIL_DBO_TBS                 10240         68      10172     33554432          0
+COMMON_UTIL_DBO_IDX                 10240         68      10172     33554432          0
+UNDOTBS1                           197068        417     196651       225280          0
+
+TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
+------------------------------ ---------- ---------- ---------- ------------ ----------
+PRDCREF_DBO_TBS                    102400      56756      45644     33554432          0
+MDM_DCPLAN_TBS                      10240         68      10172       102400          0
+MDM_CLIENT_PERSON_TBS               10240         68      10172       102400          0
+AUDIT_DATA                            500          2        498        32768          0
+GGADMIN_TBS                          5120        131       4989        30720          0
+ACCT_DBO_TBS                       102400      34153      68247     33554432          0
+MDM_DCPLAN_IDX                      10240         68      10172       102400          0
+BOOK_DBO_IDX                       185145     176329       8816     33554432          1
+LOAN_DBO_TBS                       361560     344285      17275     33554432          1
+USERS                                1512        705        807        32768          2
+RID_DBO_TBS                          5120        405       4715         5120          8
+
+TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
+------------------------------ ---------- ---------- ---------- ------------ ----------
+SYSTEM                               2748       2663         85        32768          8
+RID_DBO_IDX                          1024        337        687         1024         33
+SYSAUX                              30640      28265       2375        32768         86
+
+
+
+
+
+
+
+
+
+
+
 asm.sql :
 
 select name,total_mb/1024,free_mb/1024,free_mb/2/1024,usable_file_mb/1024 from v$asm_diskgroup;
