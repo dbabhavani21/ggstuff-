@@ -1,1 +1,38 @@
+vi grr_5_15.sh 
+
+#!/bin/bash
+
+# --- CONFIG ---
+SCHEMA="comdba_id"
+PASSWORD="RedSox2017"
+DIRECTORY="sim_dump"
+DUMPFILE="grr_5_15tab_%U.dmp"
+LOGFILE="grr_5_15tab.log"
+PARFILE="grr_5_15tab.par"
+
+# Generate the Parameter File
+cat > ${PARFILE} <<EOF
+USERID="${SCHEMA}/${PASSWORD}"
+DIRECTORY=${DIRECTORY}
+DUMPFILE=${DUMPFILE}
+LOGFILE=${LOGFILE}
+TABLES=GRR00DBO.GRK_BRKR_ERROR_F,GRR00DBO.GRK_BRKR_MOBILITY_F,GRR00DBO.GRK_BRKR_MSG_TRKR_D,GRR00DBO.GRK_GRANT_ACTIVITY_F,GRR00DBO.GRK_GRANT_ACTIVITY_HIST_F,GRR00DBO.GRK_MBLT_AWD_DST_TRCK_F,GRR00DBO.GRK_PRODUCT_CONTROL_FS,GRR00DBO.GRK_PRTC_BRKR_INFO_D,GRR00DBO.GRK_TAX_METH_F,GRR00DBO.GRK_DIST_PAID_TRX_D,GRR00DBO.GRK_DIST_TAX_D
+QUERY="WHERE INSERT_D >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24)"
+compression=all;
+PARALLEL=16
+EOF
+
+# Run Data Pump using the parfile
+expdp parfile=${PARFILE}
+
+# Check status
+if [ $? -eq 0 ]; then
+  echo "Export Success."
+else
+  echo "Export Failed. Check ${LOGFILE}"
+fi
+
+chmod +x grr_5_15.sh
+
+nohup sh grr_5_15.sh & 
 
