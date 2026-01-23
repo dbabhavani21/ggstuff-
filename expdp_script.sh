@@ -1,3 +1,57 @@
+
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+   SIZE_GB
+----------
+PRTC_GRANT_CSTM_ERROR
+    38.302
+
+BRKR_MSG_TRKR_D
+      .013
+
+DIVISION_D
+      .006
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+   SIZE_GB
+----------
+SPS_CYCLE_ERRORS
+      .004
+
+BRKR_ERROR_F
+      .002
+
+SHARE_POOL_D
+         0
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+   SIZE_GB
+----------
+PLAN_SPONSOR_ID_LOOKUP
+         0
+
+PRTC_TRANSACTIONS_F
+         0
+
+
+8 rows selected.
+
+
+
+
+
+
+
+
+
+
+
 SELECT
 s.segment_name AS table_name,
     ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS size_gb
