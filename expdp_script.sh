@@ -1,3 +1,6 @@
+CREATE OR REPLACE DIRECTORY sim_dump AS '/vldcdsta20rtp2/backup/SPSSG1/sim_dump';
+
+
 SQL> create or replace dirtectory sim_dump as '/vldcdsta20rtp2/backup/SPSSG1/sim_dump' ;
 create or replace dirtectory sim_dump as '/vldcdsta20rtp2/backup/SPSSG1/sim_dump'
                   *
