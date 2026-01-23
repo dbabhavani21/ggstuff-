@@ -1,3 +1,17 @@
+[/prdcroq1/oracle]
+oracle@azprodbae101:prdcroq1> du -h --max-depth=1 /prdcroq1/oracle | sort -rh | head -15
+47G     /prdcroq1/oracle
+25G     /prdcroq1/oracle/diag
+23G     /prdcroq1/oracle/product
+98M     /prdcroq1/oracle/cfgtoollogs
+7.3M    /prdcroq1/oracle/admin
+0       /prdcroq1/oracle/etc
+0       /prdcroq1/oracle/checkpoints
+0       /prdcroq1/oracle/audit
+
+
+
+
 du -h --max-depth=1 /prdcroq1/oracle | sort -rh | head -15
 
 find /prdcroq1/oracle -type f -printf '%s %p\n' | sort -nr | head -20 | awk '{print $1/1024/1024 " MB", $2}'
