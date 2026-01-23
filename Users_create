@@ -24,3 +24,5 @@ RMAN-04005: error from target database:
 ORA-09925: Unable to create audit trail file
 Linux-x86_64 Error: 28: No space left on device
 Additional information: 9925
+
+/dev/mapper/fidrdsfs-prdcroq1_base      25G   25G   20K 100% /prdcroq1/oracle
