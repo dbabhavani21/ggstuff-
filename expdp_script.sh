@@ -3,6 +3,7 @@ select 'alter system kill session '''||sid||','||serial#||',@'||inst_id||'''imme
 
 COMDBA_ID
 
+rm -rf spr_19_35tab*.dmp
 
 
 /u02/wide/acfs/dba_work/dsdb/sim_dump]
