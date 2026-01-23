@@ -1,3 +1,10 @@
+tail -50000 /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log > /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log.keep
+
+> /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log
+
+
+
+
 oracle@azprodbae101:prdcroq1> df -kh
 Filesystem                             Size  Used Avail Use% Mounted on
 devtmpfs                               252G  4.0K  252G   1% /dev
