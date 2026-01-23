@@ -1,32 +1,35 @@
-undefine username
-select 'alter system kill session '''||sid||','||serial#||',@'||inst_id||'''immediate; 'from gv$session where username='&USERNAME';
+SELECT
+s.segment_name AS table_name,
+    ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS size_gb,
+FROM dba_segments s
+WHERE s.segment_type = 'TABLE'
+  AND s.owner = 'SPR00DBO'
+  AND s.segment_name IN (
+    'BRKR_ERROR_F',
+    'BRKR_MSG_TRKR_D',
+    'DIVISION_D',
+    'GRANT_ACTIVITY_F',
+    'GRANT_ACTIVITY_HIST_F',
+    'PLAN_SPONSOR_ID_LOOKUP',
+    'PRODUCT_CONTROL_FS',
+    'PRTC_GRANT_CSTM_ERROR',
+    'PRTC_TRANSACTIONS_F',
+    'RPT_MBLT_TRCK_CTA_F',
+    'RPT_TAX_RECON_F',
+    'SHARE_POOL_D',
+    'SPS_CYCLE_ERRORS',
+    'TABBED_DIST_F',
+    'TABBED_VEST_F',
+    'T_FASE_FAS_ERROR',
+    'T_FSERR_ERROR'
+  )
+GROUP BY  s.segment_name
+ORDER BY SUM(s.bytes) DESC;
 
-COMDBA_ID
-
-rm -rf spr_19_35tab*.dmp
-
-
-/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default> ps -ef |grep spr
-oracle   220580 126055  0 07:44 pts/1    00:00:00 grep --color=auto spr
-
-[/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default>
-
-[/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default> jobs
-
-[/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default> ps -ef |grep expdp
-oracle   162189 162187  0 07:36 pts/0    00:00:00 expdp
-oracle   204187 126055  0 07:42 pts/1    00:00:00 grep --color=auto expdp
-
-[/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default>
 
 
 
-
++++++++++++++++++++++++++++++++++++++++++++
 vi grr_5_15.sh 
 
 #!/bin/bash
