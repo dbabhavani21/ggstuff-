@@ -1,3 +1,37 @@
+oracle@azprodbae101:prdcroq1> df -kh
+Filesystem                             Size  Used Avail Use% Mounted on
+devtmpfs                               252G  4.0K  252G   1% /dev
+tmpfs                                  252G  1.5G  251G   1% /dev/shm
+tmpfs                                  252G  4.0G  248G   2% /run
+tmpfs                                  252G     0  252G   0% /sys/fs/cgroup
+/dev/mapper/rootvg-rootlv              466G   88G  379G  19% /
+/dev/mapper/rootvg-usrlv                10G  5.5G  4.6G  55% /usr
+/dev/sda1                              496M  211M  285M  43% /boot
+/dev/sda15                             495M  5.9M  489M   2% /boot/efi
+/dev/mapper/rootvg-tmplv               2.0G   47M  2.0G   3% /tmp
+/dev/mapper/rootvg-varlv                33G  4.5G   28G  14% /var
+/dev/mapper/rootvg-homelv             1014M  116M  899M  12% /home
+/dev/mapper/fidrdsfs-oracle             10G  771M  9.3G   8% /fidrds/oracle
+/dev/mapper/fidrdsbackupfs-backup     1000G  164G  837G  17% /fidrds/backup
+/dev/mapper/fidrdsfs-stage              25G  355M   25G   2% /fidrds/stage
+/dev/mapper/fidrdsfs-oemagent           10G  4.3G  5.8G  43% /fidrds/oemagent
+/dev/mapper/fidrdsfs-prdcroq1_base      25G   25G   20K 100% /prdcroq1/oracle
+/dev/mapper/fidrdsfs-prdcroq1_product   60G   23G   38G  38% /prdcroq1/oracle/product
+/dev/mapper/fidrdsfs-grid_base          25G   15G   11G  59% /grid/base
+/dev/mapper/fidrdsfs-grid_product       50G   18G   33G  36% /grid/oracle/product
+/dev/mapper/fidrdsfs-datprd            6.0G   77M  6.0G   2% /fidrds/datprd
+/dev/mapper/fidrdsfs-delphix            20G  176M   20G   1% /fidrds/delphix
+/dev/mapper/fidrdsfs-home              2.0G   47M  2.0G   3% /fidrds/home
+/dev/mapper/fidrdsfs-ahf                10G  2.7G  7.4G  27% /fidrds/ahf
+tmpfs                                   51G     0   51G   0% /run/user/103
+/dev/mapper/fidrdsfs-ggadmin           4.0G   61M  4.0G   2% /fidrds/ggadmin
+tmpfs                                   51G     0   51G   0% /run/user/104
+tmpfs                                   51G     0   51G   0% /run/user/2001
+tmpfs                                   51G     0   51G   0% /run/user/13911
+
+
+
+
 [/prdcroq1/oracle]
 oracle@azprodbae101:prdcroq1> find /prdcroq1/oracle -type f -printf '%s %p\n' | sort -nr | head -20 | awk '{print $1/1024/1024 " MB", $2}'
 12859.2 MB /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log
