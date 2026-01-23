@@ -1,3 +1,10 @@
+target ip : 10.195.104.68
+
+source ip : 10.235.162.60
+
+
+
+
 [/u02/wide/acfs/dba_work/dsdb/sim_dump]
 oracle@o54oma2vc11:default> ls -lrt *.dmp
 -rw-r----- 1 oracle asmdba    11476992 Jan 23 07:28 grr_5_15tab_16.dmp
