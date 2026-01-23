@@ -26,3 +26,6 @@ Linux-x86_64 Error: 28: No space left on device
 Additional information: 9925
 
 /dev/mapper/fidrdsfs-prdcroq1_base      25G   25G   20K 100% /prdcroq1/oracle
+
+
+find /prdcroq1/oracle -name "*.aud" -mtime +10 -delete
