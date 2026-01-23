@@ -1,3 +1,9 @@
+/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:default> ps -ef |grep spr
+oracle   220580 126055  0 07:44 pts/1    00:00:00 grep --color=auto spr
+
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:default>
 
 [/u02/wide/acfs/dba_work/dsdb/sim_dump]
 oracle@o54oma2vc11:default> jobs
