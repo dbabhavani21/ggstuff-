@@ -1,3 +1,10 @@
+undefine username
+select 'alter system kill session '''||sid||','||serial#||',@'||inst_id||'''immediate; 'from gv$session where username='&USERNAME';
+
+COMDBA_ID
+
+
+
 /u02/wide/acfs/dba_work/dsdb/sim_dump]
 oracle@o54oma2vc11:default> ps -ef |grep spr
 oracle   220580 126055  0 07:44 pts/1    00:00:00 grep --color=auto spr
