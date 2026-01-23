@@ -1,3 +1,9 @@
+> /prdcroq1/oracle/diag/rdbms/prdcroq1_c/prdcroq1/trace/alert_prdcroq1.log
+
+find /prdcroq1/oracle/diag/rdbms/prdcroq1_c/prdcroq1/trace -name "*.trc" -mtime +7 -delete
+find /prdcroq1/oracle/diag/rdbms/prdcroq1_c/prdcroq1/trace -name "*.trm" -mtime +7 -delete
+
+
 [/fidrds/oracle]
 oracle@azprodbac101:prdcroq1> find /prdcroq1/oracle -type f -printf '%s %p\n' | sort -nr | head -20 | awk '{print $1/1024/1024 " MB", $2}'
 2778.16 MB /prdcroq1/oracle/diag/rdbms/prdcroq1_c/prdcroq1/trace/alert_prdcroq1.log
