@@ -33,6 +33,7 @@ target ip : 10.195.104.68
 
 source ip : 10.235.162.60
 
+cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
 
 
 
