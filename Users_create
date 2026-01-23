@@ -1,4 +1,33 @@
 [/prdcroq1/oracle]
+oracle@azprodbae101:prdcroq1> find /prdcroq1/oracle -type f -printf '%s %p\n' | sort -nr | head -20 | awk '{print $1/1024/1024 " MB", $2}'
+12859.2 MB /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log
+486.46 MB /prdcroq1/oracle/product/19_RU250415/lib/libserver19.a
+479.184 MB /prdcroq1/oracle/product/dbhome_1/lib/libserver19.a
+441.822 MB /prdcroq1/oracle/product/19_RU250415/bin/oracle
+439.356 MB /prdcroq1/oracle/product/dbhome_1/bin/oracle
+308.052 MB /prdcroq1/oracle/product/19_RU250415/crs/install/ahf_setup
+261.836 MB /prdcroq1/oracle/product/dbhome_1/assistants/dbca/templates/Seed_Database.dfb
+261.836 MB /prdcroq1/oracle/product/19_RU250415/assistants/dbca/templates/Seed_Database.dfb
+202.468 MB /prdcroq1/oracle/product/dbhome_1/.patch_storage/36233263_Apr_8_2024_17_16_56/files/md/property_graph+
+202.468 MB /prdcroq1/oracle/product/19_RU250415/.patch_storage/37642901_Apr_15_2025_08_17_25/files/md/property_graph+
+200.409 MB /prdcroq1/oracle/product/19_RU250415/javavm/jdk/jdk8/admin/classes.bin
+200.302 MB /prdcroq1/oracle/product/dbhome_1/javavm/jdk/jdk8/admin/classes.bin
+196.91 MB /prdcroq1/oracle/product/dbhome_1/.patch_storage/36199232_Mar_12_2024_17_07_05/files/javavm/jdk/jdk8/admin/636c61737365732e62696e_O_
+196.91 MB /prdcroq1/oracle/product/19_RU250415/.patch_storage/37499406_Apr_8_2025_08_50_50/files/javavm/jdk/jdk8/admin/636c61737365732e62696e_O_
+196.167 MB /prdcroq1/oracle/product/19_RU250415/javavm/jdk/jdk8/admin/lfclasses.bin
+196.062 MB /prdcroq1/oracle/product/dbhome_1/javavm/jdk/jdk8/admin/lfclasses.bin
+193.766 MB /prdcroq1/oracle/product/19_RU250415/sqlpatch/37642901/27123174/37642901.zip
+192.849 MB /prdcroq1/oracle/product/dbhome_1/.patch_storage/36199232_Mar_12_2024_17_07_05/files/javavm/jdk/jdk8/admin/6c66636c61737365732e62696e_O_
+192.849 MB /prdcroq1/oracle/product/19_RU250415/.patch_storage/37499406_Apr_8_2025_08_50_50/files/javavm/jdk/jdk8/admin/6c66636c61737365732e62696e_O_
+164.152 MB /prdcroq1/oracle/product/dbhome_1/.patch_storage/36233263_Apr_8_2024_17_16_56/files/jdk+
+
+[/prdcroq1/oracle]
+
+
+
+
+
+[/prdcroq1/oracle]
 oracle@azprodbae101:prdcroq1> du -h --max-depth=1 /prdcroq1/oracle | sort -rh | head -15
 47G     /prdcroq1/oracle
 25G     /prdcroq1/oracle/diag
