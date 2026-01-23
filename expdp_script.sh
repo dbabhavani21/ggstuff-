@@ -1,3 +1,111 @@
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+  TABLE_GB
+----------
+T_FASE_FAS_ERROR
+  1131.875
+
+RPT_TAX_RECON_F
+    605.87
+
+T_FSERR_ERROR
+    43.355
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+  TABLE_GB
+----------
+PRTC_GRANT_CSTM_ERROR
+    38.302
+
+PRODUCT_CONTROL_FS
+    33.241
+
+GRANT_ACTIVITY_HIST_F
+    23.271
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+  TABLE_GB
+----------
+GRANT_ACTIVITY_F
+    11.723
+
+TABBED_VEST_F
+     7.601
+
+RPT_MBLT_TRCK_CTA_F
+     4.845
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+  TABLE_GB
+----------
+TABBED_DIST_F
+     2.305
+
+BRKR_MSG_TRKR_D
+      .013
+
+DIVISION_D
+      .006
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+  TABLE_GB
+----------
+SPS_CYCLE_ERRORS
+      .004
+
+BRKR_ERROR_F
+      .002
+
+SHARE_POOL_D
+         0
+
+
+TABLE_NAME
+--------------------------------------------------------------------------------
+  TABLE_GB
+----------
+PLAN_SPONSOR_ID_LOOKUP
+         0
+
+PRTC_TRANSACTIONS_F
+         0
+
+
+17 rows selected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SELECT   s.segment_name AS table_name,
     ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS table_gb
     FROM dba_segments s
