@@ -1,4 +1,8 @@
-
+SQL> create or replace dirtectory sim_dump as '/vldcdsta20rtp2/backup/SPSSG1/sim_dump' ;
+create or replace dirtectory sim_dump as '/vldcdsta20rtp2/backup/SPSSG1/sim_dump'
+                  *
+ERROR at line 1:
+ORA-00922: missing or invalid option
 TABLE_NAME
 --------------------------------------------------------------------------------
   TABLE_GB
