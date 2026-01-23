@@ -1,0 +1,5 @@
+ps -ef | grep pmon
+
+rman target /
+
+DELETE NOPROMPT ARCHIVELOG ALL COMPLETED BEFORE 'SYSDATE-3';
