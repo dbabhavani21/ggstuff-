@@ -1,3 +1,18 @@
+
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:default> jobs
+
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:default> ps -ef |grep expdp
+oracle   162189 162187  0 07:36 pts/0    00:00:00 expdp
+oracle   204187 126055  0 07:42 pts/1    00:00:00 grep --color=auto expdp
+
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:default>
+
+
+
+
 vi grr_5_15.sh 
 
 #!/bin/bash
