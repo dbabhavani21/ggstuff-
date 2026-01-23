@@ -185,9 +185,9 @@ vi spr_19_35.sh
 SCHEMA="comdba_id"
 PASSWORD="RedSox2017"
 DIRECTORY="sim_dump"
-DUMPFILE="spr_19_35tab_%U.dmp"
-LOGFILE="spr_19_35tab.log"
-PARFILE="spr_19_35tab.par"
+DUMPFILE="spr_19_35tab1_%U.dmp"
+LOGFILE="spr_19_35tab1.log"
+PARFILE="spr_19_35tab1.par"
 
 # Generate the Parameter File
 cat > ${PARFILE} <<EOF
