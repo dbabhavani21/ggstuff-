@@ -1,3 +1,15 @@
+Action Type:	Create New User
+Corp ID:	INVM_DBO
+Account Domain:	DMN1
+PRDCRODEV:	CONNECT # APP_PROFILE # USERS # TEMP,RESOURCE # APP_PROFILE # USERS # TEMP,SELECT_CATALOG_ROLE # APP_PROFILE # USERS # TEMP
+PRDCROQAE1:	CONNECT # APP_PROFILE # USERS # TEMP,RESOURCE # APP_PROFILE # USERS # TEMP,SELECT_CATALOG_ROLE # APP_PROFILE # USERS # TEMP
+PRDCROQAE3:	CONNECT # APP_PROFILE # USERS # TEMP,RESOURCE # APP_PROFILE # USERS # TEMP,SELECT_CATALOG_ROLE # APP_PROFILE # USERS # TEMP
+PRDCROQAC1:	CONNECT # APP_PROFILE # USERS # TEMP,RESOURCE # APP_PROFILE # USERS # TEMP,SELECT_CATALOG_ROLE # APP_PROFILE # USERS # TEMP
+PRDCROQAC3:	CONNECT # APP_PROFILE # USERS # TEMP,RESOURCE # APP_PROFILE # USERS # TEMP,SELECT_CATALOG_ROLE # APP_PROFILE # USERS # TEMP
+Justification for the access including desired duration:	1) Create this Schema user account as local 2) Assign default TBS as INVM_DBO_TBS 3) Provide unlimited TBS for both Index and Table TBS
+
+
+
 tail -50000 /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log > /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log.keep
 
 > /prdcroq1/oracle/diag/rdbms/prdcroq1_a/prdcroq1/trace/alert_prdcroq1.log
