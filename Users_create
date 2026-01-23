@@ -3,3 +3,24 @@ ps -ef | grep pmon
 rman target /
 
 DELETE NOPROMPT ARCHIVELOG ALL COMPLETED BEFORE 'SYSDATE-3';
+[/prdcroq1/oracle/diag]
+oracle@azprodbae101:prdcroq1> . oraenv
+ORACLE_SID = [prdcroq1] ? prdcroq1
+The Oracle base remains unchanged with value /prdcroq1/oracle
+
+[/prdcroq1/oracle/diag]
+oracle@azprodbae101:prdcroq1> rman target /
+
+Recovery Manager: Release 19.0.0.0.0 - Production on Fri Jan 23 11:44:04 2026
+Version 19.27.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-00554: initialization of internal recovery manager package failed
+RMAN-04005: error from target database:
+ORA-09925: Unable to create audit trail file
+Linux-x86_64 Error: 28: No space left on device
+Additional information: 9925
