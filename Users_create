@@ -1,3 +1,11 @@
+du -h --max-depth=1 /prdcroq1/oracle | sort -rh | head -15
+
+find /prdcroq1/oracle -type f -printf '%s %p\n' | sort -nr | head -20 | awk '{print $1/1024/1024 " MB", $2}'
+
+
+
+
+
 ps -ef | grep pmon
 
 rman target /
