@@ -1,6 +1,6 @@
 SELECT
 s.segment_name AS table_name,
-    ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS size_gb,
+    ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS size_gb
 FROM dba_segments s
 WHERE s.segment_type = 'TABLE'
   AND s.owner = 'SPR00DBO'
