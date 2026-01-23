@@ -1,3 +1,27 @@
+SQL> CREATE OR REPLACE DIRECTORY sim_dump AS '/vldcdsta20rtp2/backup/SPSSG1/sim_dump';
+
+Directory created.
+
+SQL> grant read,write on DIRECTORY sim_dump to public;
+
+Grant succeeded.
+
+[/vldcdsta20rtp2/backup/SPSSG1]
+oracle@vl1118428rtp2:SPSSG11> mkdir sim_dump
+
+[/vldcdsta20rtp2/backup/SPSSG1]
+oracle@vl1118428rtp2:SPSSG11> cd sim_dump/
+
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11> pwd
+/vldcdsta20rtp2/backup/SPSSG1/sim_dump
+
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+
+
+
+
+
 CREATE OR REPLACE DIRECTORY sim_dump AS '/vldcdsta20rtp2/backup/SPSSG1/sim_dump';
 
 
