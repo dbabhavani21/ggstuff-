@@ -1,6 +1,11 @@
 SELECT session_id, status, start_time, suspend_time, error_msg
 FROM dba_resumable;
 
+SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') AS current_db_time 
+FROM dual;
+
+SELECT SYSTIMESTAMP FROM dual;
+
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
