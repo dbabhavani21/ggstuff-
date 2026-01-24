@@ -29,8 +29,7 @@ TABLESPACE_NAME
 ------------------------------
 SPS_GLOBAL_DATA
 
-create big file tablespace SPS_GLOBAL_DATA '+DATA01' size 31g autoextend on;
-
+CREATE BIGFILE TABLESPACE SPS_GLOBAL_DATA DATAFILE '+DATA01' SIZE 31G AUTOEXTEND ON;
 
 
 select name,total_mb/1024,free_mb/1024,free_mb/2/1024,usable_file_mb/1024 from v$asm_diskgroup;
