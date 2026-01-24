@@ -1,3 +1,48 @@
+SET LINESIZE 200
+COL TABLE_NAME FORMAT A40
+COL TABLE_GB FORMAT 999,990.999
+
+SELECT s.segment_name AS table_name,
+       ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS table_gb
+FROM dba_segments s
+WHERE s.owner = 'SPR00DBO'
+  AND s.segment_type IN ('TABLE','TABLE PARTITION','TABLE SUBPARTITION')
+  AND s.segment_name IN (
+      'T_FPDAC_DATE_CNTL',
+      'T_FSCTS_CLIENT_TRUST_SWEEP_D',
+      'T_FSFXD_FRN_EXCH_D',
+      'T_FSPAD_END_D_ACTIVE',
+      'T_FSPAD_PARTICIPANT_D',
+      'T_FSPDD_PRTC_DIST_D',
+      'T_FSPGD_END_D_ACTIVE',
+      'T_FSPGD_PRTC_GRANT_D',
+      'T_FSPGF_PERF_GRANT_F',
+      'T_FSPID_PRICE_D',
+      'T_FSPPD_END_DT_ACTIVE',
+      'T_FSPPD_END_DT_EQ_PREV_DT',
+      'T_FSPPD_END_D_GTE_PROC_D',
+      'T_FSPPD_PERF_PERIOD_D',
+      'T_FSPPD_PERF_PERIOD_TSRU_D',
+      'T_FSPPD_START_DT_EQ_PR_DATE',
+      'T_FSPPV_END_D_ACTIVE',
+      'T_FSPPV_END_D_EQ_PREV_D',
+      'T_FSPPV_END_D_GTE_PROC_D',
+      'T_FSPPV_PERF_PERIOD_VEST_D',
+      'T_FSPPV_START_D_EQ_PROC_D',
+      'T_FSPSF_PRODUCT_STATEMENT_F',
+      'T_FSPVD_PRTC_VEST_D',
+      'T_FSPVF_END_D_ACTIVE',
+      'T_FSPVF_PERF_VEST_F',
+      'T_FSRCF_RSTC_CANCEL_F',
+      'T_FSWID_WIRE_INSN_D'
+  )
+GROUP BY s.segment_name
+ORDER BY SUM(s.bytes) DESC;
+
+
+
+
+
 alter system set db_recovery_file_dest_size='500G' scope=both sid='*';
 
 
