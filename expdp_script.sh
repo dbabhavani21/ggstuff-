@@ -1,3 +1,6 @@
+SELECT session_id, status, start_time, suspend_time, error_msg
+FROM dba_resumable;
+
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
