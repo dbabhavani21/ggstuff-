@@ -1,3 +1,16 @@
+TABLESPACE_NAME                TABLESPACE_SIZE/1024/1024/1024 ALLOCATED_SPACE/1024/1024/1024 FREE_SPACE/1024/1024/1024
+------------------------------ ------------------------------ ------------------------------ -------------------------
+FLASH_TEMP_FOR_REP                                         30                     .000976563                29.9990234
+FLASH_TEMP_FOR_SPS                                         30                     .000976563                29.9990234
+FLASH_TEMP_FOR_WIDE                                        30                     .000976563                29.9990234
+TEMP                                               124.999023                     124.999023                         0
+TEMP6                                                      30                     .000976563                29.9990234
+
+
+
+
+
+
 oracle@vl1118428rtp2:SPSSG11> tail -20f nohup.out
 ORA-39171: Job is experiencing a resumable wait.
 Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
