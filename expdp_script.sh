@@ -1,3 +1,6 @@
+
+DELETE NOPROMPT ARCHIVELOG ALL;
+
 SQL> @fra
 
 NAME                                                            Size MB    Used MB
@@ -40,8 +43,7 @@ FLASH_IN_GB FLASH_USED_IN_GB FLASH_RECLAIMABLE_GB PERCENT_OF_SPACE_USED
 
 
 
-DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-6/24';
-
+ 
 oracle@vl1118428rtp2:SPSSG11> rman target /
 
 Recovery Manager: Release 19.0.0.0.0 - Production on Sat Jan 24 17:42:19 2026
