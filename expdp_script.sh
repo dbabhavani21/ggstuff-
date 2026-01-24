@@ -1,3 +1,62 @@
+ORA-39173: Encrypted data has been stored unencrypted in dump file set.
+Master table "COMDBA_ID"."SYS_EXPORT_TABLE_30" successfully loaded/unloaded
+******************************************************************************
+Dump file set for COMDBA_ID.SYS_EXPORT_TABLE_30 is:
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_01.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_02.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_03.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_04.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_05.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_06.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_07.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_08.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_09.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_10.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_11.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_12.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_13.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_14.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_15.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_16.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_17.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_18.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_19.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_20.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_21.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_22.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_23.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_24.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_25.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_26.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_27.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_28.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_29.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_30.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_31.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_32.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_33.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_34.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_35.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_36.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_37.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_38.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_39.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_40.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_41.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_42.dmp
+  /u02/wide/acfs/dba_work/dsdb/sim_dump/spr_grr_90tab_43.dmp
+Job "COMDBA_ID"."SYS_EXPORT_TABLE_30" successfully completed at Sat Jan 24 17:26:51 2026 elapsed 0 00:34:22
+
+
+
+
+
+
+
+
+
+
+
 ORA-39173: Encrypted data has been stored unencrypted in dump file set
 
 
