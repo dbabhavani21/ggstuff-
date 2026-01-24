@@ -22,6 +22,19 @@ GRR00DBO.GRK_DIST_TAX_D                      836999
 source
 ==========
 
+TABLE_NAME                                ROW_COUNT
+---------------------------------------- ----------
+GRR00DBO.GRK_BRKR_ERROR_F                    163768
+GRR00DBO.GRK_BRKR_MOBILITY_F                   2813
+GRR00DBO.GRK_BRKR_MSG_TRKR_D                 279285
+GRR00DBO.GRK_GRANT_ACTIVITY_F               7429696
+GRR00DBO.GRK_GRANT_ACTIVITY_HIST_F         40438136
+GRR00DBO.GRK_MBLT_AWD_DST_TRCK_F            1073146
+GRR00DBO.GRK_PRODUCT_CONTROL_FS            31832530
+GRR00DBO.GRK_PRTC_BRKR_INFO_D                427898
+GRR00DBO.GRK_TAX_METH_F                     1927435
+GRR00DBO.GRK_DIST_PAID_TRX_D                 531592
+GRR00DBO.GRK_DIST_TAX_D                      837821
 
 
 
