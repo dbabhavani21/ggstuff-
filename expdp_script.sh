@@ -1,3 +1,20 @@
+COL username FOR A15
+COL status   FOR A10
+COL error_msg FOR A60
+SELECT s.sid, s.serial#, s.username, s.status,
+       r.status AS resumable_status,
+       r.error_msg,
+       r.suspend_time
+FROM   gv$session s
+JOIN   dba_resumable r
+  ON   r.session_id = s.sid
+WHERE  r.status IN ('SUSPENDED','ACTIVE')
+ORDER  BY r.suspend_time DESC;
+/
+
+
+
+
 TABLESPACE_NAME                TABLESPACE_SIZE/1024/1024/1024 ALLOCATED_SPACE/1024/1024/1024 FREE_SPACE/1024/1024/1024
 ------------------------------ ------------------------------ ------------------------------ -------------------------
 FLASH_TEMP_FOR_REP                                         30                     .000976563                29.9990234
