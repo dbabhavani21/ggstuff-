@@ -1,3 +1,88 @@
+
+oracle@o54oma2vc11:default> ls -lrt
+total 143333924
+-rwxr-xr-x 1 oracle oinstall        918 Jan 23 07:26 grr_5_15.sh
+-rw-r--r-- 1 oracle oinstall        521 Jan 23 07:27 grr_5_15tab.par
+-rw-r--r-- 1 oracle asmdba       265308 Jan 23 07:31 grr_5_15tab.log
+-rw-r--r-- 1 oracle oinstall        639 Jan 23 07:36 spr_19_35tab.par
+-rw-r--r-- 1 oracle asmdba        12253 Jan 23 07:48 spr_19_35tab.log
+-rwxr-xr-x 1 oracle oinstall       1030 Jan 23 08:10 spr_19_35.sh
+-rw-r--r-- 1 oracle oinstall        631 Jan 23 08:10 spr_19_35tab1.par
+-rw-r--r-- 1 oracle asmdba       507880 Jan 23 08:37 spr_19_35tab1.log
+-rw-r--r-- 1 oracle oinstall          0 Jan 23 09:14 ssh
+-rw-r--r-- 1 oracle oinstall       1349 Jan 24 09:00 tb.sql
+-rw-r--r-- 1 oracle oinstall       1110 Jan 24 09:29 ts90.sql
+-rw-r--r-- 1 oracle oinstall       1061 Jan 24 10:17 spr_86_112_tab.par
+-rw-r--r-- 1 oracle asmdba       462391 Jan 24 10:20 spr_86_112_tab.log
+-rw-r--r-- 1 oracle oinstall       2727 Jan 24 16:52 90tab.par
+-rw-r----- 1 oracle asmdba   1859698688 Jan 24 16:57 spr_grr_90tab_24.dmp
+-rw-r----- 1 oracle asmdba   1717600256 Jan 24 16:57 spr_grr_90tab_26.dmp
+-rw-r----- 1 oracle asmdba   1882660864 Jan 24 16:57 spr_grr_90tab_25.dmp
+-rw-r----- 1 oracle asmdba   7250829312 Jan 24 17:01 spr_grr_90tab_31.dmp
+-rw-r----- 1 oracle asmdba   6475845632 Jan 24 17:01 spr_grr_90tab_33.dmp
+-rw-r----- 1 oracle asmdba   1847918592 Jan 24 17:04 spr_grr_90tab_23.dmp
+-rw-r----- 1 oracle asmdba   7458492416 Jan 24 17:05 spr_grr_90tab_19.dmp
+-rw-r----- 1 oracle asmdba   8553705472 Jan 24 17:05 spr_grr_90tab_15.dmp
+-rw-r----- 1 oracle asmdba   8529051648 Jan 24 17:05 spr_grr_90tab_14.dmp
+-rw-r----- 1 oracle asmdba   7513194496 Jan 24 17:05 spr_grr_90tab_18.dmp
+-rw-r----- 1 oracle asmdba   7132319744 Jan 24 17:05 spr_grr_90tab_16.dmp
+-rw-r----- 1 oracle asmdba   6849146880 Jan 24 17:05 spr_grr_90tab_13.dmp
+-rw-r----- 1 oracle asmdba   7768997888 Jan 24 17:05 spr_grr_90tab_17.dmp
+-rw-r----- 1 oracle asmdba   3368460288 Jan 24 17:26 spr_grr_90tab_12.dmp
+-rw-r----- 1 oracle asmdba   1646948352 Jan 24 17:26 spr_grr_90tab_01.dmp
+-rw-r----- 1 oracle asmdba   2014949376 Jan 24 17:26 spr_grr_90tab_32.dmp
+-rw-r----- 1 oracle asmdba    605458432 Jan 24 17:26 spr_grr_90tab_09.dmp
+-rw-r----- 1 oracle asmdba   1643851776 Jan 24 17:26 spr_grr_90tab_22.dmp
+-rw-r----- 1 oracle asmdba   2868817920 Jan 24 17:26 spr_grr_90tab_40.dmp
+-rw-r----- 1 oracle asmdba   1531711488 Jan 24 17:26 spr_grr_90tab_41.dmp
+-rw-r----- 1 oracle asmdba    569315328 Jan 24 17:26 spr_grr_90tab_37.dmp
+-rw-r----- 1 oracle asmdba   2307293184 Jan 24 17:26 spr_grr_90tab_28.dmp
+-rw-r----- 1 oracle asmdba   2332778496 Jan 24 17:26 spr_grr_90tab_05.dmp
+-rw-r----- 1 oracle asmdba    512401408 Jan 24 17:26 spr_grr_90tab_08.dmp
+-rw-r----- 1 oracle asmdba   3060477952 Jan 24 17:26 spr_grr_90tab_27.dmp
+-rw-r----- 1 oracle asmdba   2135044096 Jan 24 17:26 spr_grr_90tab_36.dmp
+-rw-r----- 1 oracle asmdba   1911214080 Jan 24 17:26 spr_grr_90tab_39.dmp
+-rw-r----- 1 oracle asmdba   1608687616 Jan 24 17:26 spr_grr_90tab_03.dmp
+-rw-r----- 1 oracle asmdba   1669783552 Jan 24 17:26 spr_grr_90tab_21.dmp
+-rw-r----- 1 oracle asmdba   8435224576 Jan 24 17:26 spr_grr_90tab_29.dmp
+-rw-r----- 1 oracle asmdba   3986173952 Jan 24 17:26 spr_grr_90tab_06.dmp
+-rw-r----- 1 oracle asmdba    882835456 Jan 24 17:26 spr_grr_90tab_43.dmp
+-rw-r----- 1 oracle asmdba   2554093568 Jan 24 17:26 spr_grr_90tab_38.dmp
+-rw-r----- 1 oracle asmdba   1663451136 Jan 24 17:26 spr_grr_90tab_07.dmp
+-rw-r----- 1 oracle asmdba    988790784 Jan 24 17:26 spr_grr_90tab_34.dmp
+-rw-r----- 1 oracle asmdba   1117483008 Jan 24 17:26 spr_grr_90tab_11.dmp
+-rw-r----- 1 oracle asmdba   1037856768 Jan 24 17:26 spr_grr_90tab_42.dmp
+-rw-r----- 1 oracle asmdba   8381767680 Jan 24 17:26 spr_grr_90tab_35.dmp
+-rw-r----- 1 oracle asmdba   2490294272 Jan 24 17:26 spr_grr_90tab_20.dmp
+-rw-r----- 1 oracle asmdba   3793723392 Jan 24 17:26 spr_grr_90tab_10.dmp
+-rw-r----- 1 oracle asmdba    956719104 Jan 24 17:26 spr_grr_90tab_02.dmp
+-rw-r----- 1 oracle asmdba   3497877504 Jan 24 17:26 spr_grr_90tab_30.dmp
+-rw-r----- 1 oracle asmdba   2187849728 Jan 24 17:26 spr_grr_90tab_04.dmp
+-rw-r--r-- 1 oracle asmdba      5830790 Jan 24 17:26 exp_spr_grr_90tab.log
+-rw------- 1 oracle oinstall    7062917 Jan 24 17:26 nohup.out
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ORA-39173: Encrypted data has been stored unencrypted in dump file set.
 Master table "COMDBA_ID"."SYS_EXPORT_TABLE_30" successfully loaded/unloaded
 ******************************************************************************
