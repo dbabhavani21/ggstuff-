@@ -1,29 +1,10 @@
-SQL> select name,total_mb/1024,free_mb/1024,free_mb/2/1024,usable_file_mb/1024 from v$asm_diskgroup;
-
-NAME                                                         TOTAL_MB/1024 FREE_MB/1024
------------------------------------------------------------- ------------- ------------
-FREE_MB/2/1024 USABLE_FILE_MB/1024
--------------- -------------------
-AOCRVOTE                                                                16    15.640625
-     7.8203125           15.640625
-
-DATA01                                                                8192   3198.97656
-    1599.48828          3198.97656
-
-FRA01                                                                 2048   1171.98047
-    585.990234          1171.98047
-
-
-NAME                                                         TOTAL_MB/1024 FREE_MB/1024
------------------------------------------------------------- ------------- ------------
-FREE_MB/2/1024 USABLE_FILE_MB/1024
--------------- -------------------
-CFS01                                                                 2048   47.8476563
-
-
-
-
-
+1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "
+Resumable stmt status: SUSPENDED
+Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 13:46:21
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
+Job "ORADBA"."SYS_IMPORT_TABLE_01" completed with 159 error(s) at Sat Jan 24 15:15:03 2026 elapsed 0 05:21:43
 
 
 
@@ -154,7 +135,7 @@ ORDER BY SUM(s.bytes) DESC;
 
 
 
-alter system set db_recovery_file_dest_size='500G' scope=both sid='*';
+alter system set db_recovery_file_dest_size='1500G' scope=both sid='*';
 
 
 FRA:
