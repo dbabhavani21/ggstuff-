@@ -1,3 +1,11 @@
+AND    SOFAR != TOTALWORK
+order by SQL> 1;SQL> SQL>   2    3    4    5    6    7
+
+       SID    SERIAL# OPNAME                                   MESSAGE                                                                                                   SOFAR  TOTALWORK   COMPLETE
+---------- ---------- ---------------------------------------- ---------------------------------------------------------------------------------------------------- ---------- ---------- ----------
+        70      28012 SYS_IMPORT_TABLE_01                      SYS_IMPORT_TABLE_01: IMPORT : 263342 out of 1740031 MB done                                              263342    1740031      15.13
+
+
 col opname format a40
 col message format a100
 SET LINES 10000
