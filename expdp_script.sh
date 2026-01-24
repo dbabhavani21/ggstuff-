@@ -1,3 +1,16 @@
+SQL> @tmp
+
+TABLESPACE_NAME                   SIZE_GB ALLOCATED_GB    FREE_GB
+------------------------------ ---------- ------------ ----------
+FLASH_TEMP_FOR_REP                     30   .000976563 29.9990234
+FLASH_TEMP_FOR_SPS                     30   .000976563 29.9990234
+FLASH_TEMP_FOR_WIDE                    30   .000976563 29.9990234
+TEMP                           310.999023   256.049805 310.989258
+TEMP6                                  30   .000976563 29.9990234
+
+
+
+
 SQL> select name,total_mb/1024,free_mb/1024,free_mb/2/1024,usable_file_mb/1024 from v$asm_diskgroup;
 
 NAME                                                         TOTAL_MB/1024 FREE_MB/1024 FREE_MB/2/1024 USABLE_FILE_MB/1024
