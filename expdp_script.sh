@@ -1,3 +1,63 @@
+       error_msg
+FROM   dba_resumable;  2    3    4    5    6    7
+
+SESSION_ID STATUS     START_TIME           SUSPEND_TIME         RESUME_TIME          ERROR_MSG
+---------- ---------- -------------------- -------------------- -------------------- ------------------------------------------------------------
+       680 NORMAL
+        14 NORMAL
+       176 NORMAL
+       575 NORMAL
+       627 NORMAL
+       125 NORMAL
+       453 NORMAL
+        70 NORMAL
+       740 NORMAL
+       406 NORMAL
+       293 NORMAL     01/24/26 11:05:11                         01/24/26 13:57:46
+
+SESSION_ID STATUS     START_TIME           SUSPEND_TIME         RESUME_TIME          ERROR_MSG
+---------- ---------- -------------------- -------------------- -------------------- ------------------------------------------------------------
+        69 NORMAL
+       520 NORMAL
+       349 NORMAL
+       179 NORMAL
+       681 NORMAL
+       230 NORMAL
+
+17 rows selected.
+==========================
+
+FROM   dba_temp_free_space;  2    3    4    5
+
+TABLESPACE_NAME                   SIZE_GB ALLOCATED_GB    FREE_GB
+------------------------------ ---------- ------------ ----------
+FLASH_TEMP_FOR_REP                     30   .000976563 29.9990234
+FLASH_TEMP_FOR_SPS                     30   .000976563 29.9990234
+FLASH_TEMP_FOR_WIDE                    30   .000976563 29.9990234
+TEMP                           310.999023   256.049805 54.9580078
+TEMP6                                  30   .000976563 29.9990234
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SELECT session_id,
        status,
        start_time,
