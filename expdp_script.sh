@@ -1,3 +1,35 @@
+TABLE_NAME                                   TABLE_GB
+---------------------------------------- ------------
+T_FSPAD_PARTICIPANT_D                         367.735
+T_FSPGD_PRTC_GRANT_D                           23.645
+T_FSPVF_PERF_VEST_F                             9.539
+T_FSPVD_PRTC_VEST_D                             8.392
+T_FSPDD_PRTC_DIST_D                             2.410
+T_FSPSF_PRODUCT_STATEMENT_F                     1.919
+T_FSPGF_PERF_GRANT_F                            1.143
+T_FSRCF_RSTC_CANCEL_F                           0.204
+T_FSPPD_PERF_PERIOD_D                           0.107
+T_FSPID_PRICE_D                                 0.102
+T_FSPPV_PERF_PERIOD_VEST_D                      0.062
+
+TABLE_NAME                                   TABLE_GB
+---------------------------------------- ------------
+T_FSPPD_PERF_PERIOD_TSRU_D                      0.052
+T_FSWID_WIRE_INSN_D                             0.000
+T_FSCTS_CLIENT_TRUST_SWEEP_D                    0.000
+T_FPDAC_DATE_CNTL                               0.000
+T_FSFXD_FRN_EXCH_D                              0.000
+SQL>
+
+
+
+
+
+
+
+
+
+
 SET LINESIZE 200
 COL TABLE_NAME FORMAT A40
 COL TABLE_GB FORMAT 999,990.999
