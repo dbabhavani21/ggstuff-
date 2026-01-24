@@ -1,3 +1,20 @@
+
+SQL> @nts
+Enter value for tablespace_name: SPS_GLOBAL_DATA
+old   4: AND FS.tablespace_name='&TABLESPACE_NAME'
+new   4: AND FS.tablespace_name='SPS_GLOBAL_DATA'
+
+TABLESPACE_NAME                FILE_NAME                                                              AUT       FREE      TOTAL
+------------------------------ ---------------------------------------------------------------------- --- ---------- ----------
+SPS_GLOBAL_DATA                +DATA01/SPSSG11/DATAFILE/sps_global_data.296.1222440127                NO  9.99902344         10
+                                                                                                          ---------- ----------
+sum                                                                                                       9.99902344         10
+
+
+
+
+
+
 target asm
 SQL> select name,total_mb/1024,free_mb/1024,free_mb/2/1024,usable_file_mb/1024 from v$asm_diskgroup;
 
