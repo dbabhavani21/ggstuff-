@@ -1,3 +1,8 @@
+rman target /
+
+delete noprompt archivelog all;
+
+
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
 alter tablespace temp add tempfile '+DATA01' SIZE 31G;
