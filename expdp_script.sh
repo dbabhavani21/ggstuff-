@@ -4,6 +4,7 @@ TABLESPACE_NAME
 ------------------------------
 SPS_GLOBAL_DATA
 
+select name,total_mb/1024,free_mb/1024,free_mb/2/1024,usable_file_mb/1024 from v$asm_diskgroup;
 
 
 SELECT DISTINCT TABLESPACE_NAME
@@ -43,31 +44,6 @@ FROM (
 )
 ORDER BY TABLESPACE_NAME;
 
-Filesystem                                                         Size  Used Avail Use% Mounted on
-devtmpfs                                                            63G     0   63G   0% /dev
-tmpfs                                                               63G  465M   63G   1% /dev/shm
-tmpfs                                                               63G  4.0G   59G   7% /run
-tmpfs                                                               63G     0   63G   0% /sys/fs/cgroup
-/dev/mapper/vglocal-root                                            20G  4.9G   16G  25% /
-tmpfs                                                               63G  440K   63G   1% /tmp
-/dev/sda3                                                           15G  140M   15G   1% /var/crash
-/dev/mapper/vglocal-opt                                             12G  1.5G   11G  13% /opt
-/dev/sda2                                                         1014M  214M  801M  22% /boot
-/dev/mapper/vglocal-log                                             15G  1.4G   14G   9% /var/log
-/dev/sda1                                                         1022M  5.9M 1017M   1% /boot/efi
-/dev/mapper/appsvg_vl1118428rtp2-lv_grid_base                       50G  3.6G   47G   8% /grid/base
-/dev/mapper/appsvg_vl1118428rtp2-lv_grid_oracle_product             50G   13G   38G  25% /grid/oracle/product
-/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2                1014M   40M  975M   4% /vldcdsta20rtp2
-/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2_oracle          6.0G  270M  5.8G   5% /vldcdsta20rtp2/oracle
-/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2_oracle_dba       25G  211M   25G   1% /vldcdsta20rtp2/oracle/dba
-/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2_oracle_product   60G   13G   48G  21% /vldcdsta20rtp2/oracle/product
-/dev/mapper/appsvg_vl1118428rtp2-lv_support_tools_oracle            25G  1.8G   24G   7% /support_tools/oracle
-/dev/mapper/appsvg_vl1118428rtp2-lv_home_oracle                    8.0G  175M  7.9G   3% /home/oracle
-tmpfs                                                               13G     0   13G   0% /run/user/103
-/dev/mapper/appsvg_vl1118428rtp2-lv_home_oemagent                  6.0G  1.8G  4.3G  29% /home/oemagent
-tmpfs                                                               13G     0   13G   0% /run/user/142264
-/dev/asm/volume1-478                                               2.0T  4.7G  2.0T   1% /vldcdsta20rtp2/backup
-tmpfs                                                               13G     0   13G   0% /run/user/143074
 
 
 
@@ -125,26 +101,6 @@ oracle@o54oma2vc11:default> ls -lrt *.dmp
 -rw-r----- 1 oracle asmdba  3197386752 Jan 23 08:37 spr_19_35tab1_01.dmp
 -rw-r----- 1 oracle asmdba 12098797568 Jan 23 08:37 spr_19_35tab1_18.dmp
 
-[/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default> du -sh
-260G    .
-
-[/u02/wide/acfs/dba_work/dsdb/sim_dump]
-oracle@o54oma2vc11:default>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 SQL> CREATE OR REPLACE DIRECTORY sim_dump AS '/vldcdsta20rtp2/backup/SPSSG1/sim_dump';
 
@@ -153,136 +109,6 @@ Directory created.
 SQL> grant read,write on DIRECTORY sim_dump to public;
 
 Grant succeeded.
-
-[/vldcdsta20rtp2/backup/SPSSG1]
-oracle@vl1118428rtp2:SPSSG11> mkdir sim_dump
-
-[/vldcdsta20rtp2/backup/SPSSG1]
-oracle@vl1118428rtp2:SPSSG11> cd sim_dump/
-
-[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
-oracle@vl1118428rtp2:SPSSG11> pwd
-/vldcdsta20rtp2/backup/SPSSG1/sim_dump
-
-[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
-
-
-
-
-
-CREATE OR REPLACE DIRECTORY sim_dump AS '/vldcdsta20rtp2/backup/SPSSG1/sim_dump';
-
-
-SQL> create or replace dirtectory sim_dump as '/vldcdsta20rtp2/backup/SPSSG1/sim_dump' ;
-create or replace dirtectory sim_dump as '/vldcdsta20rtp2/backup/SPSSG1/sim_dump'
-                  *
-ERROR at line 1:
-ORA-00922: missing or invalid option
-TABLE_NAME
---------------------------------------------------------------------------------
-  TABLE_GB
-----------
-T_FASE_FAS_ERROR
-  1131.875
-
-RPT_TAX_RECON_F
-    605.87
-
-T_FSERR_ERROR
-    43.355
-
-
-TABLE_NAME
---------------------------------------------------------------------------------
-  TABLE_GB
-----------
-PRTC_GRANT_CSTM_ERROR
-    38.302
-
-PRODUCT_CONTROL_FS
-    33.241
-
-GRANT_ACTIVITY_HIST_F
-    23.271
-
-
-TABLE_NAME
---------------------------------------------------------------------------------
-  TABLE_GB
-----------
-GRANT_ACTIVITY_F
-    11.723
-
-TABBED_VEST_F
-     7.601
-
-RPT_MBLT_TRCK_CTA_F
-     4.845
-
-
-TABLE_NAME
---------------------------------------------------------------------------------
-  TABLE_GB
-----------
-TABBED_DIST_F
-     2.305
-
-BRKR_MSG_TRKR_D
-      .013
-
-DIVISION_D
-      .006
-
-
-TABLE_NAME
---------------------------------------------------------------------------------
-  TABLE_GB
-----------
-SPS_CYCLE_ERRORS
-      .004
-
-BRKR_ERROR_F
-      .002
-
-SHARE_POOL_D
-         0
-
-
-TABLE_NAME
---------------------------------------------------------------------------------
-  TABLE_GB
-----------
-PLAN_SPONSOR_ID_LOOKUP
-         0
-
-PRTC_TRANSACTIONS_F
-         0
-
-
-17 rows selected.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 SELECT   s.segment_name AS table_name,
@@ -311,8 +137,6 @@ WHERE s.owner = 'SPR00DBO'
   )
 GROUP BY s.segment_name
 ORDER BY SUM(s.bytes) DESC;
-
-
 
 
 
