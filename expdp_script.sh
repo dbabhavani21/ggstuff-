@@ -1,3 +1,12 @@
+SELECT session_id,
+       status,
+       start_time,
+       suspend_time,
+       resume_time,
+       error_msg
+FROM   dba_resumable;
+
+
 COL username FOR A15
 COL status   FOR A10
 COL error_msg FOR A60
