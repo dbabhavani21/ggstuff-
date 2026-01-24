@@ -119,9 +119,32 @@ target ip : 10.195.104.68
 source ip : 10.235.162.60
 
 cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump
+
+vi grr_5_15tab.par
+
+USERID="oradba/Dcd$traca1rtp"
+DIRECTORY="sim_dump"
+DUMPFILE="grr_5_15tab_%U.dmp"
+LOGFILE="imp_grr_5_15tab.log"
+TABLES=GRR00DBO.GRK_BRKR_ERROR_F,GRR00DBO.GRK_BRKR_MOBILITY_F,GRR00DBO.GRK_BRKR_MSG_TRKR_D,GRR00DBO.GRK_GRANT_ACTIVITY_F,GRR00DBO.GRK_GRANT_ACTIVITY_HIST_F,GRR00DBO.GRK_MBLT_AWD_DST_TRCK_F,GRR00DBO.GRK_PRODUCT_CONTROL_FS,GRR00DBO.GRK_PRTC_BRKR_INFO_D,GRR00DBO.GRK_TAX_METH_F,GRR00DBO.GRK_DIST_PAID_TRX_D,GRR00DBO.GRK_DIST_TAX_D
+QUERY="WHERE INSERT_D >= ADD_MONTHS(TRUNC(SYSDATE, 'MM'), -24)"
+remap_tablespaces=SPS_GLOBAL_DATA:SPS_GLOBAL_DATA_1
+TRANSFORM=DISABLE_ARCHIVE_LOGGING:Y
+parallel=16
+
+nohup impdp parfile=grr_5_15tab.par & 
 
 
 
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 [/u02/wide/acfs/dba_work/dsdb/sim_dump]
 oracle@o54oma2vc11:default> ls -lrt *.dmp
 -rw-r----- 1 oracle asmdba    11476992 Jan 23 07:28 grr_5_15tab_16.dmp
