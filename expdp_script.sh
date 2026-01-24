@@ -1,3 +1,99 @@
+TABLE_NAME                                   TABLE_GB
+---------------------------------------- ------------
+PARTICIPANT_D                                 436.044
+T_FSPRG_PRTC_G_TAX_F                          298.706
+T_FSPTB_PRTC_TAX_ASGN_DTL_FS                  176.320
+PRTC_GRANT_EXT_D                              175.651
+T_FSPTA_PRTC_TAX_ASGN_DTL_F                   162.435
+GRANT_VAL_ASSUMPTION_D                        146.808
+TRANCHE_VAL_ASSUMPTION_D                      144.853
+GRANT_EXPENSE_F                               125.534
+ENDING_BALANCE_IFRS_F                          95.914
+VESTING_ACTIVITY_TRX_F                         75.666
+GRANT_TRANCHE_EXT_D                            69.096
+ENDING_BALANCE_F                               61.201
+T_FSGVD_GRNT_VEST_DIV_F                        57.040
+T_FSBGF_BLACKOUT_GRANT_HIST                    51.985
+T_FSTMF_TAX_METH_F                             49.375
+CLNT_DOC_CALLOUTS_D                            36.684
+T_FSBGF_BLACKOUT_GRANT_F                       30.328
+PRTC_GRANT_D                                   22.225
+TRANCHE_EXPENSE_F                              13.191
+GRANT_TRANCHE_D                                12.694
+RPT_DIST_TRX_CTA_F                             12.008
+CLNT_DOC_PRODUCTS_D                             9.090
+AWARD_DISTRIBUTION_D                            8.875
+T_FSTMF_TAX_METH_F_UTC                          7.864
+PERF_PERIOD_GRANT_D                             5.611
+PLAN_D                                          4.784
+CUSIP_PRICING_ADJ_D                             4.297
+GRANT_ACTIVITY_TRX_F                            4.264
+PROD_D                                          3.868
+PERF_PERIOD_VESTING_D                           2.188
+T_FSLRD_LOT_LVL_RSTC_D                          1.590
+T_FSLVF_TAX_ALLOC_F                             1.389
+PRTC_MOBILITY_D                                 1.324
+FISCAL_MONTH_D                                  1.203
+T_FSPRG_PRTC_G_TAX_F_ND                         1.067
+PARTICIPANT_GPID_D                              0.987
+CORP_GRANT_TAX_D                                0.942
+PRTC_IDENTIFIERS_D                              0.855
+GRANT_AGREE_D                                   0.545
+FILE_LOAD_INFO_D                                0.289
+PRTC_GRANT_CSTM_D                               0.278
+TERMINATION_SCHD_D                              0.203
+T_FSBFF_BLACKOUT_RULE_FILTER_F                  0.074
+PERF_GRANT_RATE_D                               0.049
+T_FSTPD_TAX_ASGT_D                              0.044
+T_FSOCF_ORD_CANCEL_F                            0.026
+GRK_TERM_SCHEDULE_D                             0.022
+PLAN_SPONSOR_D                                  0.021
+PRTC_TAX_F                                      0.009
+PRTC_GRANT_D_MV                                 0.008
+PRTC_GRANT_D_PLAN_MV                            0.005
+PRTC_EMAIL_GPID_D                               0.004
+T_FSDID_DIVIDEND_D                              0.003
+T_FSBRD_BLACKOUT_RL_D                           0.002
+PRODUCT_MAPPINGS_D                              0.001
+PRTC_PHONE_GPID_D                               0.001
+BRKR_PRTC_D                                     0.000
+FED_INTEREST_RTE_D                              0.000
+T_FSSED_SEC_D                                   0.000
+PERFORMANCE_SCHD_D                              0.000
+OVERRIDE_D                                      0.000
+DISTRIBUTION_FRQ_D                              0.000
+DISTRIBUTION_SCHD_D                             0.000
+CORP_ACTION_D                                   0.000
+PRORATION_RL_D                                  0.000
+BRKR_PLAN_CUSTODY_ACCT_D                        0.000
+OFFERING_D                                      0.000
+PS_FAS_LEDGER_D                                 0.000
+
+68 rows selected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SET LINESIZE 200
 COL TABLE_NAME FORMAT A40
 COL TABLE_GB FORMAT 999,990.999
