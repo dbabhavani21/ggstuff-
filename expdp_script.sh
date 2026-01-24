@@ -35,6 +35,32 @@ ORDER BY STATUS, TABLE_NAME;
 
 
 
+TABLE_NAME                               STATUS
+---------------------------------------- --------------------
+GRK_AWARD_DISTRIBUTION_D                 HAS COLUMN
+GRK_BRKR_PLAN_CUSTODY_ACCT_D             HAS COLUMN
+GRK_CSR_HIER_SETUP_D                     HAS COLUMN
+GRK_DIST_PAID_TRNF_REQ_D                 HAS COLUMN
+GRK_DIST_PAID_TRNS_DTL_D                 HAS COLUMN
+GRK_EST_TAX_D                            HAS COLUMN
+GRK_FILE_LOAD_INFO_D                     HAS COLUMN
+GRK_GRANT_AGREE_D                        HAS COLUMN
+GRK_GRANT_TRANCHE_D                      HAS COLUMN
+GRK_GRNT_VEST_DIV_F                      HAS COLUMN
+GRK_PERF_GRANT_PED_D                     HAS COLUMN
+GRK_PRTC_GRANT_D                         HAS COLUMN
+GRK_RETIREMENT_ELG_RULE_D                HAS COLUMN
+GRK_SHRPOOL_GRANT_F                      HAS COLUMN
+GRK_SHRPOOL_SUMMARY_FS                   HAS COLUMN
+GRK_STOCK_PRICE_D                        HAS COLUMN
+GRK_VEST_PED_SUMMARY_F                   HAS COLUMN
+
+17 rows selected.
+
+
+
+
+
 
 
 
