@@ -1,3 +1,14 @@
+col opname format a40
+col message format a100
+SET LINES 10000
+SELECT SID, SERIAL#, opname,message, SOFAR, TOTALWORK,
+ROUND(SOFAR/TOTALWORK*100,2) COMPLETE
+FROM   gV$SESSION_LONGOPS
+WHERE
+TOTALWORK != 0
+AND    SOFAR != TOTALWORK
+order by 1;
+
 SELECT session_id, status, start_time, suspend_time, error_msg
 FROM dba_resumable;
 
