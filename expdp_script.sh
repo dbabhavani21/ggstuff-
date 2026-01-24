@@ -1,3 +1,9 @@
+alter tablespace temp add tempfile '+DATA01' SIZE 31G;
+alter tablespace temp add tempfile '+DATA01' SIZE 31G;
+alter tablespace temp add tempfile '+DATA01' SIZE 31G;
+
+
+
 set lines 10000
 col tablespace_size format 99999999999
 col allocated_space format 99999999999
