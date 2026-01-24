@@ -1,3 +1,93 @@
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:WIORDA11> df -kh
+Filesystem                                                                      Size  Used Avail Use% Mounted on
+devtmpfs                                                                        274G     0  274G   0% /dev
+tmpfs                                                                           549G  6.0G  543G   2% /dev/shm
+tmpfs                                                                           274G   15M  274G   1% /run
+tmpfs                                                                           274G     0  274G   0% /sys/fs/cgroup
+/dev/mapper/VGExaDb-LVDbSys1                                                     30G  6.1G   24G  21% /
+/dev/mapper/VGExaDbDisk.pv1_VGKVM.img-LVDbHome1                                  50G  1.1G   49G   3% /home1
+/dev/mapper/VGExaDbDisk.pv1_VGKVM.img-LVAHF                                      20G  2.8G   18G  14% /u03/app/oracle/ahf
+/dev/sdb1                                                                       412M  123M  290M  30% /boot
+/dev/mapper/VGExaDb-LVDbTmp                                                      10G  107M  9.8G   2% /tmp
+/dev/mapper/VGExaDb-LVDbVar1                                                    2.0G  838M  1.1G  43% /var
+/dev/mapper/VGExaDbDisk.pv1_VGKVM.img-LVApp2                                     20G  446M   20G   3% /u02/app
+/dev/mapper/VGExaDb-LVDbKdump                                                   100G  3.4G   97G   4% /crashfiles
+/dev/mapper/VGExaDbDisk.u01.20.img-LVDBDisk                                     200G   39G  162G  20% /u01
+/dev/mapper/VGExaDbDisk.grid--klone--Linux--x86--64--230002501.50.img-LVDBDisk  100G  5.3G   95G   6% /u01/app/23.0.0.0/grid
+/dev/mapper/VGExaDbDisk.pv1_VGKVM.img-LVOraHome1                                300G   52G  249G  18% /u02/app/oracle/product
+/dev/mapper/VGExaDbDisk.pv1_VGKVM.img-LVguardium                                5.0G  895M  4.1G  18% /u02/app/guardium
+/dev/mapper/VGExaDb-LVDbVarLog                                                   18G  2.7G   16G  16% /var/log
+/dev/mapper/VGExaDb-LVDbHome                                                    4.0G  121M  3.9G   3% /home
+/dev/mapper/VGExaDbDisk.pv1_VGKVM.img-LVGGXag                                    25G  292M   25G   2% /u02/app/xag
+/dev/mapper/VGExaDbDisk.db--klone--Linux--x86--64--19000250121.50.img-LVDBDisk   50G  389M   50G   1% /u01/app/oracle/product/19.0.0.0/dbhome_1
+/dev/mapper/VGExaDb-LVDbVarLogAudit                                             924M  171M  754M  19% /var/log/audit
+oracle_clusterware                                                              128M  5.0M  124M   4% /u01/app/grid/crsdata/o54oma2vc11/shm
+tmpfs                                                                            55G     0   55G   0% /run/user/1001
+/dev/asm/ggprdt_vg-32                                                           100G  6.1G   94G   7% /u02/wide/acfs/goldengate/product
+/dev/asm/ggdata_vg-32                                                           1.0T  112G  913G  11% /u02/wide/acfs/goldengate/data
+/dev/asm/dbawork_vg-32                                                           10T  155G  9.9T   2% /u02/wide/acfs/dba_work <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+tmpfs                                                                            55G     0   55G   0% /run/user/32630
+tmpfs                                                                            55G     0   55G   0% /run/user/1000
+
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:WIORDA11> ls cpu
+ls: cannot access 'cpu': No such file or directory
+
+[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:WIORDA11> lscpu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              132
+On-line CPU(s) list: 0-131
+Thread(s) per core:  2
+Core(s) per socket:  33
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           AuthenticAMD
+CPU family:          25
+Model:               17
+Model name:          AMD EPYC 9J14 96-Core Processor
+Stepping:            1
+CPU MHz:             2596.098
+BogoMIPS:            5192.19
+Hypervisor vendor:   KVM
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            32768K
+NUMA node0 CPU(s):   0-65
+NUMA node1 CPU(s):   66-131
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves nt_good avx512_bf16 clzero xsaveerptr wbnoinvd arat avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid overflow_recov succor fsrm arch_capabilities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TABLE_NAME                                   TABLE_GB
 ---------------------------------------- ------------
 PARTICIPANT_D                                 436.044
