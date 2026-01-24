@@ -1,3 +1,45 @@
+SQL> @fra
+
+NAME                                                            Size MB    Used MB
+------------------------------------------------------------ ---------- ----------
++FRA01                                                          1536000     640336
+
+
+FILE_TYPE               PERCENT_SPACE_USED PERCENT_SPACE_RECLAIMABLE NUMBER_OF_FILES     CON_ID
+----------------------- ------------------ ------------------------- --------------- ----------
+CONTROL FILE                             0                         0               1          0
+REDO LOG                                 0                         0               0          0
+ARCHIVED LOG                         41.67                         0            1437          0
+BACKUP PIECE                           .01                         0               8          0
+IMAGE COPY                               0                         0               0          0
+FLASHBACK LOG                            0                         0               0          0
+FOREIGN ARCHIVED LOG                     0                         0               0          0
+AUXILIARY DATAFILE COPY                  0                         0               0          0
+
+8 rows selected.
+
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+db_recovery_file_dest                string      +FRA01
+db_recovery_file_dest_size           big integer 1500G
+
+FLASH_IN_GB FLASH_USED_IN_GB FLASH_RECLAIMABLE_GB PERCENT_OF_SPACE_USED
+----------- ---------------- -------------------- ---------------------
+       1500           625.33                    0                 41.68
+
+
+
+
+
+
+
+
+
+
+
+
+
 DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-6/24';
 
 oracle@vl1118428rtp2:SPSSG11> rman target /
