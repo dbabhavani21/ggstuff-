@@ -4,6 +4,20 @@ col allocated_space format 99999999999
 col free_space format 99999999999
 select TABLESPACE_NAME,TABLESPACE_SIZE/1024/1024/1024,ALLOCATED_SPACE/1024/1024/1024,FREE_SPACE/1024/1024/1024 from dba_temp_free_space;
 
+SQL> set lines 10000
+col tablespace_size format 99999999999
+col allocated_space format 99999999999
+col free_space format 99999999999
+select TABLESPACE_NAME,TABLESPACE_SIZE/1024/1024/1024,ALLOCATED_SPACE/1024/1024/1024,FREE_SPACE/1024/1024/1024 from dba_temp_free_space;SQL> SQL> SQL> SQL>
+
+TABLESPACE_NAME                TABLESPACE_SIZE/1024/1024/1024 ALLOCATED_SPACE/1024/1024/1024 FREE_SPACE/1024/1024/1024
+------------------------------ ------------------------------ ------------------------------ -------------------------
+FLASH_TEMP_FOR_REP                                         30                     .000976563                29.9990234
+FLASH_TEMP_FOR_SPS                                         30                     .000976563                29.9990234
+FLASH_TEMP_FOR_WIDE                                        30                     .000976563                29.9990234
+TEMP                                               31.9990234                     31.9990234                         0
+TEMP6                                                      30                     .000976563                29.9990234
+
 
 
 
