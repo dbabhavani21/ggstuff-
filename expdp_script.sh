@@ -1,3 +1,30 @@
+  Current log# 3 seq# 1287 mem# 0: +DATA01/SPSSG11/ONLINELOG/group_3.280.1221229833
+2026-01-24T14:50:14.218440-05:00
+ARC1 (PID:987700): Archived Log entry 2094 added for B-1221229833.T-1.S-1286 LOS:0x000000000094c5a9 NXS:0x000000000094c6a5 NAB:943495 ID 0x2719e646 LAD:1
+2026-01-24T14:50:18.000190-05:00
+Thread 1 cannot allocate new log, sequence 1288
+Checkpoint not complete
+  Current log# 3 seq# 1287 mem# 0: +DATA01/SPSSG11/ONLINELOG/group_3.280.1221229833
+2026-01-24T14:50:18.304034-05:00
+Completed checkpoint up to RBA [0x503.2.10], SCN: 9749143
+2026-01-24T14:50:18.693212-05:00
+Beginning log switch checkpoint up to RBA [0x508.2.10], SCN: 9750446
+2026-01-24T14:50:18.693302-05:00
+Thread 1 advanced to log sequence 1288 (LGWR switch),  current SCN: 9750446
+  Current log# 4 seq# 1288 mem# 0: +DATA01/SPSSG11/ONLINELOG/group_4.281.1221229833
+2026-01-24T14:50:19.475214-05:00
+ARC2 (PID:987707): Archived Log entry 2096 added for B-1221229833.T-1.S-1287 LOS:0x000000000094c6a5 NXS:0x000000000094c7ae NAB:943499 ID 0x2719e646 LAD:1
+2026-01-24T14:50:22.083804-05:00
+Completed checkpoint up to RBA [0x504.2.10], SCN: 9749401
+
+
+
+
+
+
+
+
+
 oracle@vl1118428rtp2:SPSSG11> tail -20f nohup.out
 ORA-39171: Job is experiencing a resumable wait.
 Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
