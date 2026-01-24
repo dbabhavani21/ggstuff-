@@ -1,3 +1,8 @@
+create user GRR00DBO identified by Hfhhfb23n21 default tablespace SPS_GLOBAL_DATA_1 profile default;
+grant connect,resource,dba to GRR00DBO;
+alter user GRR00DBO quota unlimited on SPS_GLOBAL_DATA_1;
+
+
 set verify off;
 set feed off;
 col program for a25
