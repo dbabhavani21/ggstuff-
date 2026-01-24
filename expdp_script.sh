@@ -1,3 +1,7 @@
+ORA-39173: Encrypted data has been stored unencrypted in dump file set
+
+
+
 userid="comdba_id/RedSox2017"
 DIRECTORY=bhavani
 DUMPFILE=spr_grr_90tab_%U.dmp
