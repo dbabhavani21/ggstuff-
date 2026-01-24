@@ -1,3 +1,7 @@
+rman target /
+DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-1/24';
+
+
 SQL> @fra
 
 NAME                                                            Size MB    Used MB
