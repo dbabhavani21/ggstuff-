@@ -1,3 +1,22 @@
+order by 1;SQL> SQL> SQL>   2    3    4    5    6    7
+
+       SID    SERIAL# OPNAME                                   MESSAGE                                                                                                   SOFAR  TOTALWORK   COMPLETE
+---------- ---------- ---------------------------------------- ---------------------------------------------------------------------------------------------------- ---------- ---------- ----------
+        70      28012 SYS_IMPORT_TABLE_01                      SYS_IMPORT_TABLE_01: IMPORT : 263342 out of 1740031 MB done                                              263342    1740031      15.13
+       293      19997 Table Scan                               Table Scan:  (stale or locked) obj# 82159: 906262 out of 4128743 Blocks done                             906262    4128743      21.95
+
+SQL> /
+
+       SID    SERIAL# OPNAME                                   MESSAGE                                                                                                   SOFAR  TOTALWORK   COMPLETE
+---------- ---------- ---------------------------------------- ---------------------------------------------------------------------------------------------------- ---------- ---------- ----------
+        70      28012 SYS_IMPORT_TABLE_01                      SYS_IMPORT_TABLE_01: IMPORT : 263342 out of 1740031 MB done                                              263342    1740031      15.13
+       293      19997 Table Scan                               Table Scan:  (stale or locked) obj# 82159: 1264220 out of 4128743 Blocks done                           1264220    4128743      30.62
+
+
+
+
+
+
 SESSION_ID STATUS     START_TIME           SUSPEND_TIME         RESUME_TIME          ERROR_MSG
 ---------- ---------- -------------------- -------------------- -------------------- ------------------------------------------------------------
        680 NORMAL
