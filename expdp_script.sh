@@ -1,3 +1,42 @@
+GROUP BY s.segment_name
+ORDER BY SUM(s.bytes) DESC;  8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26
+
+TABLE_NAME                                   TABLE_GB
+---------------------------------------- ------------
+GRK_EST_TAX_D                                  32.813
+GRK_STOCK_PRICE_D                              16.728
+GRK_GRANT_TRANCHE_D                            15.117
+GRK_AWARD_DISTRIBUTION_D                       11.767
+GRK_PRTC_GRANT_D                                5.980
+GRK_VEST_PED_SUMMARY_F                          3.508
+GRK_GRANT_AGREE_D                               1.621
+GRK_GRNT_VEST_DIV_F                             1.450
+GRK_PERF_GRANT_PED_D                            1.288
+GRK_FILE_LOAD_INFO_D                            0.766
+GRK_DIST_PAID_TRNS_DTL_D                        0.524
+
+TABLE_NAME                                   TABLE_GB
+---------------------------------------- ------------
+GRK_DIST_PAID_TRNF_REQ_D                        0.492
+GRK_BRKR_PLAN_CUSTODY_ACCT_D                    0.453
+GRK_SHRPOOL_GRANT_F                             0.449
+GRK_SHRPOOL_SUMMARY_FS                          0.418
+GRK_RETIREMENT_ELG_RULE_D                       0.005
+GRK_CSR_HIER_SETUP_D                            0.000
+
+17 rows selected.
+
+
+
+
+
+
+
+
+
+
+
+
 SET LINESIZE 200
 COL TABLE_NAME FORMAT A40
 COL TABLE_GB FORMAT 999,990.999
