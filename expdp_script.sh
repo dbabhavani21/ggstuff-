@@ -1,3 +1,6 @@
+alter system set db_recovery_file_dest_size='500G' scope=both sid='*';
+
+
 FRA:
 
 -- Utilisation (MB) du FRA
