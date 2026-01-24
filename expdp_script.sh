@@ -3,9 +3,7 @@ rman target /
 delete noprompt archivelog all;
 
 
-alter tablespace temp add tempfile '+DATA01' SIZE 31G;
-alter tablespace temp add tempfile '+DATA01' SIZE 31G;
-alter tablespace temp add tempfile '+DATA01' SIZE 31G;
+alter tablespace temp add tempfile '+DATA01' SIZE 31G; --5times 
 
 alter system set db_recovery_file_dest_size='2000G' scope=both sid='*';
 
