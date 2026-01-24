@@ -1,3 +1,11 @@
+TABLESPACE_NAME
+------------------------------
+SPR00DAT00
+SPS_GLOBAL_DATA
+
+
+
+
 SET LINESIZE 200
 SET PAGESIZE 100
 
