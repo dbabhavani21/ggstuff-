@@ -1,3 +1,49 @@
+SQL> @fra
+
+NAME                                                            Size MB    Used MB
+------------------------------------------------------------ ---------- ----------
++FRA01                                                          1536000     923994
+
+
+FILE_TYPE               PERCENT_SPACE_USED PERCENT_SPACE_RECLAIMABLE NUMBER_OF_FILES     CON_ID
+----------------------- ------------------ ------------------------- --------------- ----------
+CONTROL FILE                             0                         0               1          0
+REDO LOG                                 0                         0               0          0
+ARCHIVED LOG                         60.14                         0            2277          0
+BACKUP PIECE                           .01                         0               8          0
+IMAGE COPY                               0                         0               0          0
+FLASHBACK LOG                            0                         0               0          0
+FOREIGN ARCHIVED LOG                     0                         0               0          0
+AUXILIARY DATAFILE COPY                  0                         0               0          0
+
+8 rows selected.
+
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+db_recovery_file_dest                string      +FRA01
+db_recovery_file_dest_size           big integer 1500G
+
+FLASH_IN_GB FLASH_USED_IN_GB FLASH_RECLAIMABLE_GB PERCENT_OF_SPACE_USED
+----------- ---------------- -------------------- ---------------------
+       1500           902.34                    0                 60.15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
 
 
