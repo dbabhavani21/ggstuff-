@@ -1,4 +1,10 @@
+oradba --- username
 
+Dcd$traca1rtp --- PASSWORD
+
+directory:
+
+[/vldcdsta20rtp2/backup/SPSSG1]
 SQL> @nts
 Enter value for tablespace_name: SPS_GLOBAL_DATA
 old   4: AND FS.tablespace_name='&TABLESPACE_NAME'
