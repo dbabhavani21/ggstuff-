@@ -1,3 +1,18 @@
+SQL> @tmp
+
+TABLESPACE_NAME                   SIZE_GB ALLOCATED_GB    FREE_GB
+------------------------------ ---------- ------------ ----------
+FLASH_TEMP_FOR_REP                     30   .000976563 29.9990234
+FLASH_TEMP_FOR_SPS                     30   .000976563 29.9990234
+FLASH_TEMP_FOR_WIDE                    30   .000976563 29.9990234
+TEMP                           806.999023   256.198242 806.087891
+TEMP6                                  30   .000976563 29.9990234
+
+
+
+
+
+
 rman target /
 
 delete noprompt archivelog all;
