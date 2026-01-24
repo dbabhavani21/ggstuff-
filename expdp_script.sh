@@ -1,3 +1,107 @@
+TABLE_NAME                               STATUS
+---------------------------------------- --------------------
+AWARD_DISTRIBUTION_D                     HAS COLUMN
+BRKR_PLAN_CUSTODY_ACCT_D                 HAS COLUMN
+BRKR_PRTC_D                              HAS COLUMN
+CLNT_DOC_CALLOUTS_D                      HAS COLUMN
+CLNT_DOC_PRODUCTS_D                      HAS COLUMN
+CORP_ACTION_D                            HAS COLUMN
+CORP_GRANT_TAX_D                         HAS COLUMN
+CUSIP_PRICING_ADJ_D                      HAS COLUMN
+DATE_D                                   HAS COLUMN
+DISTRIBUTION_FRQ_D                       HAS COLUMN
+DISTRIBUTION_SCHD_D                      HAS COLUMN
+ENDING_BALANCE_F                         HAS COLUMN
+ENDING_BALANCE_IFRS_F                    HAS COLUMN
+FED_INTEREST_RTE_D                       HAS COLUMN
+FILE_LOAD_INFO_D                         HAS COLUMN
+FISCAL_MONTH_D                           HAS COLUMN
+GRANT_ACTIVITY_TRX_F                     HAS COLUMN
+GRANT_AGREE_D                            HAS COLUMN
+GRANT_EXPENSE_F                          HAS COLUMN
+GRANT_TRANCHE_D                          HAS COLUMN
+GRANT_TRANCHE_EXT_D                      HAS COLUMN
+GRANT_VAL_ASSUMPTION_D                   HAS COLUMN
+GRK_TERM_SCHEDULE_D                      HAS COLUMN
+OFFERING_D                               HAS COLUMN
+OVERRIDE_D                               HAS COLUMN
+PARTICIPANT_D                            HAS COLUMN
+PARTICIPANT_GPID_D                       HAS COLUMN
+PERFORMANCE_SCHD_D                       HAS COLUMN
+PERF_GRANT_RATE_D                        HAS COLUMN
+PERF_PERIOD_GRANT_D                      HAS COLUMN
+PERF_PERIOD_VESTING_D                    HAS COLUMN
+PLAN_D                                   HAS COLUMN
+PLAN_SPONSOR_D                           HAS COLUMN
+PRODUCT_MAPPINGS_D                       HAS COLUMN
+PROD_D                                   HAS COLUMN
+PRORATION_RL_D                           HAS COLUMN
+PRTC_EMAIL_GPID_D                        HAS COLUMN
+PRTC_GRANT_CSTM_D                        HAS COLUMN
+PRTC_GRANT_D                             HAS COLUMN
+PRTC_GRANT_D_MV                          HAS COLUMN
+PRTC_GRANT_D_PLAN_MV                     HAS COLUMN
+PRTC_GRANT_EXT_D                         HAS COLUMN
+PRTC_IDENTIFIERS_D                       HAS COLUMN
+PRTC_MOBILITY_D                          HAS COLUMN
+PRTC_PHONE_GPID_D                        HAS COLUMN
+PRTC_TAX_F                               HAS COLUMN
+PS_FAS_LEDGER_D                          HAS COLUMN
+RPT_DIST_TRX_CTA_F                       HAS COLUMN
+TERMINATION_SCHD_D                       HAS COLUMN
+TRANCHE_EXPENSE_F                        HAS COLUMN
+TRANCHE_VAL_ASSUMPTION_D                 HAS COLUMN
+T_FSBFF_BLACKOUT_RULE_FILTER_F           HAS COLUMN
+T_FSBGF_BLACKOUT_GRANT_F                 HAS COLUMN
+T_FSBGF_BLACKOUT_GRANT_HIST              HAS COLUMN
+T_FSBGF_BLACKOUT_GRANT_STG               HAS COLUMN
+T_FSBPD_TAX_BKT_RNG_D                    HAS COLUMN
+T_FSBRD_BLACKOUT_RL_D                    HAS COLUMN
+T_FSDID_DIVIDEND_D                       HAS COLUMN
+T_FSGVD_GRNT_VEST_DIV_F                  HAS COLUMN
+T_FSLRD_LOT_LVL_RSTC_D                   HAS COLUMN
+T_FSLVF_TAX_ALLOC_F                      HAS COLUMN
+T_FSOCF_ORD_CANCEL_F                     HAS COLUMN
+T_FSPRG_PRTC_G_TAX_F                     HAS COLUMN
+T_FSPRG_PRTC_G_TAX_F_ND                  HAS COLUMN
+T_FSPTA_PRTC_TAX_ASGN_DTL_F              HAS COLUMN
+T_FSPTB_PRTC_TAX_ASGN_DTL_FS             HAS COLUMN
+T_FSSED_SEC_D                            HAS COLUMN
+T_FSTMF_TAX_METH_F                       HAS COLUMN
+T_FSTMF_TAX_METH_F_UTC                   HAS COLUMN
+T_FSTPD_TAX_ASGT_D                       HAS COLUMN
+VESTING_ACTIVITY_TRX_F                   HAS COLUMN
+GRANT_EXPENSE_F_ARC                      MISSING COLUMN
+TRANCHE_EXPENSE_F_ARC                    MISSING COLUMN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SET LINESIZE 200
 SET PAGESIZE 100
 COL TABLE_NAME FORMAT A40
