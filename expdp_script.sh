@@ -1,3 +1,37 @@
+SET LINESIZE 200
+COL TABLE_NAME FORMAT A40
+COL TABLE_GB FORMAT 999,990.999
+
+SELECT s.segment_name AS table_name,
+       ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS table_gb
+FROM dba_segments s
+WHERE s.owner = 'GRR00DBO'
+  AND s.segment_type IN ('TABLE','TABLE PARTITION','TABLE SUBPARTITION')
+  AND s.segment_name IN (
+      'GRK_AWARD_DISTRIBUTION_D',
+      'GRK_BRKR_PLAN_CUSTODY_ACCT_D',
+      'GRK_CSR_HIER_SETUP_D',
+      'GRK_DIST_PAID_TRNF_REQ_D',
+      'GRK_DIST_PAID_TRNS_DTL_D',
+      'GRK_EST_TAX_D',
+      'GRK_FILE_LOAD_INFO_D',
+      'GRK_GRANT_AGREE_D',
+      'GRK_GRANT_TRANCHE_D',
+      'GRK_GRNT_VEST_DIV_F',
+      'GRK_PERF_GRANT_PED_D',
+      'GRK_PRTC_GRANT_D',
+      'GRK_RETIREMENT_ELG_RULE_D',
+      'GRK_SHRPOOL_GRANT_F',
+      'GRK_SHRPOOL_SUMMARY_FS',
+      'GRK_STOCK_PRICE_D',
+      'GRK_VEST_PED_SUMMARY_F'
+  )
+GROUP BY s.segment_name
+ORDER BY SUM(s.bytes) DESC;
+
+
+
+
 Source :
 
 SET LINESIZE 200
