@@ -23,10 +23,6 @@ SESSION_ID STATUS     START_TIME           SUSPEND_TIME         RESUME_TIME     
 
 17 rows selected.
 
-
-
-
-
 SELECT session_id,
        status,
        start_time,
@@ -35,102 +31,11 @@ SELECT session_id,
        error_msg
 FROM   dba_resumable;
 
-
-COL username FOR A15
-COL status   FOR A10
-COL error_msg FOR A60
-SELECT s.sid, s.serial#, s.username, s.status,
-       r.status AS resumable_status,
-       r.error_msg,
-       r.suspend_time
-FROM   gv$session s
-JOIN   dba_resumable r
-  ON   r.session_id = s.sid
-WHERE  r.status IN ('SUSPENDED','ACTIVE')
-ORDER  BY r.suspend_time DESC;
-/
-
-
-
-
-TABLESPACE_NAME                TABLESPACE_SIZE/1024/1024/1024 ALLOCATED_SPACE/1024/1024/1024 FREE_SPACE/1024/1024/1024
------------------------------- ------------------------------ ------------------------------ -------------------------
-FLASH_TEMP_FOR_REP                                         30                     .000976563                29.9990234
-FLASH_TEMP_FOR_SPS                                         30                     .000976563                29.9990234
-FLASH_TEMP_FOR_WIDE                                        30                     .000976563                29.9990234
-TEMP                                               124.999023                     124.999023                         0
-TEMP6                                                      30                     .000976563                29.9990234
-
-
-
-
-
-
-oracle@vl1118428rtp2:SPSSG11> tail -20f nohup.out
-ORA-39171: Job is experiencing a resumable wait.
-Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
-Resumable stmt: ALTER TABLE "SPR00DBO"."RPT_TAX_RECON_F" ADD CONSTRAINT "RPT_TAX_RECON_F_PK" PRIMARY KEY ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") USING INDEX (CREATE UNIQUE INDEX "SPR00DBO"."RPT_TAX_RECON_F_PK" ON "SPR00DBO"."RPT_TAX_RECON_F" ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "SPR00DAT00_1" )  ENABLE
-Resumable stmt status: SUSPENDED
-Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 12:54:25
-ORA-39171: Job is experiencing a resumable wait.
-Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
-Resumable stmt: ALTER TABLE "SPR00DBO"."RPT_TAX_RECON_F" ADD CONSTRAINT "RPT_TAX_RECON_F_PK" PRIMARY KEY ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") USING INDEX (CREATE UNIQUE INDEX "SPR00DBO"."RPT_TAX_RECON_F_PK" ON "SPR00DBO"."RPT_TAX_RECON_F" ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "SPR00DAT00_1" )  ENABLE
-Resumable stmt status: SUSPENDED
-Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 12:54:25
-ORA-39171: Job is experiencing a resumable wait.
-Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
-Resumable stmt: ALTER TABLE "SPR00DBO"."RPT_TAX_RECON_F" ADD CONSTRAINT "RPT_TAX_RECON_F_PK" PRIMARY KEY ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") USING INDEX (CREATE UNIQUE INDEX "SPR00DBO"."RPT_TAX_RECON_F_PK" ON "SPR00DBO"."RPT_TAX_RECON_F" ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "SPR00DAT00_1" )  ENABLE
-Resumable stmt status: SUSPENDED
-Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 12:54:25
-ORA-39171: Job is experiencing a resumable wait.
-Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
-Resumable stmt: ALTER TABLE "SPR00DBO"."RPT_TAX_RECON_F" ADD CONSTRAINT "RPT_TAX_RECON_F_PK" PRIMARY KEY ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") USING INDEX (CREATE UNIQUE INDEX "SPR00DBO"."RPT_TAX_RECON_F_PK" ON "SPR00DBO"."RPT_TAX_RECON_F" ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "SPR00DAT00_1" )  ENABLE
-Resumable stmt status: SUSPENDED
-Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 12:54:25
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
-Resumable stmt: ALTER TABLE "SPR00DBO"."RPT_TAX_RECON_F" ADD CONSTRAINT "RPT_TAX_RECON_F_PK" PRIMARY KEY ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") USING INDEX (CREATE UNIQUE INDEX "SPR00DBO"."RPT_TAX_RECON_F_PK" ON "SPR00DBO"."RPT_TAX_RECON_F" ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "SPR00DAT00_1" )  ENABLE
-Resumable stmt status: SUSPENDED
-Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 12:54:25
-ORA-39171: Job is experiencing a resumable wait.
-Resumable error: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
-Resumable stmt: ALTER TABLE "SPR00DBO"."RPT_TAX_RECON_F" ADD CONSTRAINT "RPT_TAX_RECON_F_PK" PRIMARY KEY ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") USING INDEX (CREATE UNIQUE INDEX "SPR00DBO"."RPT_TAX_RECON_F_PK" ON "SPR00DBO"."RPT_TAX_RECON_F" ("RPT_TAX_RECON_FACT_ID", "CLIENT_FIRST_DIM_ID") PCTFREE 10 INITRANS 2 MAXTRANS 255  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT) TABLESPACE "SPR00DAT00_1" )  ENABLE
-Resumable stmt status: SUSPENDED
-Resumable stmt start: 01/24/26 11:05:11 stmt suspend: 01/24/26 12:54:25
-
-
-
-
-
-
-
-
-
-
-
-AND    SOFAR != TOTALWORK
-order by SQL> 1;SQL> SQL>   2    3    4    5    6    7
-
-       SID    SERIAL# OPNAME                                   MESSAGE                                                                                                   SOFAR  TOTALWORK   COMPLETE
----------- ---------- ---------------------------------------- ---------------------------------------------------------------------------------------------------- ---------- ---------- ----------
-        70      28012 SYS_IMPORT_TABLE_01                      SYS_IMPORT_TABLE_01: IMPORT : 263342 out of 1740031 MB done                                              263342    1740031      15.13
-
+SELECT tablespace_name,
+       tablespace_size / 1024 / 1024 / 1024 as size_gb,
+       allocated_space / 1024 / 1024 / 1024 as allocated_gb,
+       free_space / 1024 / 1024 / 1024      as free_gb
+FROM   dba_temp_free_space;
 
 col opname format a40
 col message format a100
