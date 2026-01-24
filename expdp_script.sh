@@ -1,3 +1,32 @@
+target
+
+TABLE_NAME                                ROW_COUNT
+---------------------------------------- ----------
+GRR00DBO.GRK_BRKR_ERROR_F                     23611
+GRR00DBO.GRK_BRKR_MOBILITY_F                   2082
+GRR00DBO.GRK_BRKR_MSG_TRKR_D                 239422
+GRR00DBO.GRK_GRANT_ACTIVITY_F               6748540
+GRR00DBO.GRK_GRANT_ACTIVITY_HIST_F         17910228
+GRR00DBO.GRK_MBLT_AWD_DST_TRCK_F            1070878
+GRR00DBO.GRK_PRODUCT_CONTROL_FS            19055501
+GRR00DBO.GRK_PRTC_BRKR_INFO_D                279884
+GRR00DBO.GRK_TAX_METH_F                     1044015
+GRR00DBO.GRK_DIST_PAID_TRX_D                 531356
+GRR00DBO.GRK_DIST_TAX_D                      836999
+
+11 rows selected.
+
+===========================================
+
+
+source
+==========
+
+
+
+
+
+
 SET LINESIZE 200
 COL TABLE_NAME FORMAT A40
 
