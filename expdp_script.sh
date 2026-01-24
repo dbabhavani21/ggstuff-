@@ -1,3 +1,32 @@
+SESSION_ID STATUS     START_TIME           SUSPEND_TIME         RESUME_TIME          ERROR_MSG
+---------- ---------- -------------------- -------------------- -------------------- ------------------------------------------------------------
+       680 NORMAL
+        14 NORMAL
+       176 NORMAL
+       575 NORMAL
+       627 NORMAL
+       125 NORMAL
+       453 NORMAL
+       740 NORMAL
+        70 NORMAL
+       406 NORMAL
+        69 NORMAL
+
+SESSION_ID STATUS     START_TIME           SUSPEND_TIME         RESUME_TIME          ERROR_MSG
+---------- ---------- -------------------- -------------------- -------------------- ------------------------------------------------------------
+       520 NORMAL
+       293 NORMAL     01/24/26 11:05:11                         01/24/26 13:18:42
+       349 NORMAL
+       179 NORMAL
+       681 NORMAL
+       230 NORMAL
+
+17 rows selected.
+
+
+
+
+
 SELECT session_id,
        status,
        start_time,
