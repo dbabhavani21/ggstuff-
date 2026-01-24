@@ -1,3 +1,33 @@
+source
+======
+TABLE_NAME                                ROW_COUNT
+---------------------------------------- ----------
+SPR00DBO.BRKR_ERROR_F                          4211
+SPR00DBO.BRKR_MSG_TRKR_D                      60766
+SPR00DBO.DIVISION_D                           51069
+SPR00DBO.GRANT_ACTIVITY_F                  37494716
+SPR00DBO.GRANT_ACTIVITY_HIST_F             82165823
+SPR00DBO.PLAN_SPONSOR_ID_LOOKUP                1544
+SPR00DBO.PRODUCT_CONTROL_FS               160499565
+SPR00DBO.PRTC_GRANT_CSTM_ERROR            130781159
+SPR00DBO.PRTC_TRANSACTIONS_F                      0
+SPR00DBO.RPT_MBLT_TRCK_CTA_F               45913083
+SPR00DBO.RPT_TAX_RECON_F                 6075407220
+
+TABLE_NAME                                ROW_COUNT
+---------------------------------------- ----------
+SPR00DBO.SHARE_POOL_D                           966
+SPR00DBO.SPS_CYCLE_ERRORS                      2120
+SPR00DBO.TABBED_DIST_F                      2462921
+SPR00DBO.TABBED_VEST_F                      6140853
+SPR00DBO.T_FSERR_ERROR                    121773616
+
+
+
+
+
+target
+===========
 
 
 TABLE_NAME                       ROW_COUNT
