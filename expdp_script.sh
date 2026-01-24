@@ -1,3 +1,71 @@
+Connected to: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Master table "ORADBA"."SYS_IMPORT_TABLE_01" successfully loaded/unloaded
+Starting "ORADBA"."SYS_IMPORT_TABLE_01":  oradba/******** parfile=grr_5_15tab.par
+Processing object type TABLE_EXPORT/TABLE/PROCACT_INSTANCE
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+Failing sql is:
+BEGIN
+sys.dbms_logrep_imp.instantiate(object_owner=>'GRR00DBO', object_name=>'GRK_DIST_PAID_TRX_D', object_type=>'2', export_db_name=>'WIORDA1', inst_scn=>'40237851773605', ignore_scn=>'0');COMMIT; END;
+
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+Failing sql is:
+BEGIN
+sys.dbms_logrep_imp.instantiate(object_owner=>'GRR00DBO', object_name=>'GRK_BRKR_ERROR_F', object_type=>'2', export_db_name=>'WIORDA1', inst_scn=>'40237851773676', ignore_scn=>'0');COMMIT; END;
+
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+Failing sql is:
+BEGIN
+sys.dbms_logrep_imp.instantiate(object_owner=>'GRR00DBO', object_name=>'GRK_TAX_METH_F', object_type=>'2', export_db_name=>'WIORDA1', inst_scn=>'40237851773688', ignore_scn=>'0');COMMIT; END;
+
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+Failing sql is:
+BEGIN
+sys.dbms_logrep_imp.instantiate(object_owner=>'GRR00DBO', object_name=>'GRK_PRTC_BRKR_INFO_D', object_type=>'2', export_db_name=>'WIORDA1', inst_scn=>'40237851773699', ignore_scn=>'0');COMMIT; END;
+
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+Failing sql is:
+BEGIN
+sys.dbms_logrep_imp.instantiate(object_owner=>'GRR00DBO', object_name=>'GRK_BRKR_MSG_TRKR_D', object_type=>'2', export_db_name=>'WIORDA1', inst_scn=>'40237851773700', ignore_scn=>'0');COMMIT; END;
+
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+Failing sql is:
+BEGIN
+sys.dbms_logrep_imp.instantiate(object_owner=>'GRR00DBO', object_name=>'GRK_DIST_TAX_D', object_type=>'2', export_db_name=>'WIORDA1', inst_scn=>'40237851773705', ignore_scn=>'0');COMMIT; END;
+
+ORA-39083: Object type PROCACT_INSTANCE failed to create with error:
+ORA-31625: Schema GRR00DBO is needed to import this object, but is unaccessible
+ORA-01435: user does not exist
+
+"nohup.out" 12588L, 907445C
+
+
+
+
+
+
+
+
+
+
+
 AND    SOFAR != TOTALWORK
 order by SQL> 1;SQL> SQL>   2    3    4    5    6    7
 
