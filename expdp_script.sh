@@ -1,3 +1,24 @@
+oracle@vl1118428rtp2:SPSSG11> rman target /
+
+Recovery Manager: Release 19.0.0.0.0 - Production on Sat Jan 24 17:42:19 2026
+Version 19.27.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: SPSSG1 (DBID=656006471)
+
+RMAN> DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-1/24';
+DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-1/24';
+using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=523 instance=SPSSG11 device type=DISK
+specification does not match any archived log in the repository
+
+
+
+
+
+
 rman target /
 DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-1/24';
 
