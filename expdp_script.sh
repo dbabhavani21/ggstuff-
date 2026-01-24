@@ -1,3 +1,12 @@
+set lines 10000
+col tablespace_size format 99999999999
+col allocated_space format 99999999999
+col free_space format 99999999999
+select TABLESPACE_NAME,TABLESPACE_SIZE/1024/1024/1024,ALLOCATED_SPACE/1024/1024/1024,FREE_SPACE/1024/1024/1024 from dba_temp_free_space;
+
+
+
+
 FLASHBACK automatically enabled to preserve database integrity.
 Starting "COMDBA_ID"."SYS_EXPORT_TABLE_29":  comdba_id/******** parfile=grr_5_15tab.par
 Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
