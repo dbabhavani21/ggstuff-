@@ -1,3 +1,5 @@
+DELETE NOPROMPT ARCHIVELOG FROM TIME 'SYSDATE-6/24';
+
 oracle@vl1118428rtp2:SPSSG11> rman target /
 
 Recovery Manager: Release 19.0.0.0.0 - Production on Sat Jan 24 17:42:19 2026
