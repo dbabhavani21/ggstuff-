@@ -1,7 +1,10 @@
 vi 90tab.par
 
+ls -lrt *.par
 
-userid="comdba_id/RedSox2017"
+
+
+userid="oradba/Dcd$traca1rtp"
 DIRECTORY=sim_dump
 DUMPFILE=spr_grr_90tab_%U.dmp
 LOGFILE=imp_spr_grr_90tab.log
