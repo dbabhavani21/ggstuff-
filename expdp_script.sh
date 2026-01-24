@@ -1,55 +1,7 @@
-SQL> SELECT DISTINCT TABLESPACE_NAME
-FROM (
-    SELECT TABLESPACE_NAME
-  2    3    4      FROM DBA_TABLES
-    WHERE TABLESPACE_NAME IS NOT NULL
-      AND (OWNER, TABLE_NAME) IN (
-          ('GRR00DBO', 'GRK_BRKR_ERROR_F'),
-          ('GRR00DBO', 'GRK_BRKR_MOBILITY_F'),
-          ('GRR00DBO', 'GRK_BRKR_MSG_TRKR_D'),
-          ('G  5  RR00DBO', 'GRK_GRANT_ACTIVITY_F'),
-          ('GRR00DBO', 'GRK_GRANT_ACTIVITY_HIST_F'),
-          ('GRR00DBO', 'GRK_MBLT_AWD_DST_TRCK_F'),
-           6   ('GRR00DBO', 'GRK_PRODUCT_CONTROL_FS'),
-          ('GRR00DBO', 'GRK_PRTC_BRKR_INFO_D'),
-          ('GRR00DBO  7  ', 'GRK_TAX_METH_F'),
-          ('GRR00DBO', 'GRK_DIST_PAID_TRX_D'),
-          ('GRR00DBO', 'GRK_DIST_TAX_D')
-      )
-
-    UNION ALL
-
-    SELECT  TABLESPACE_NAME
-     8   FROM DBA_TAB_PARTITIONS
-    WHERE (TABLE_OWNER, TABLE_NAME) IN (
-          ('GRR00DBO', 'GRK_BRKR_ERROR_F'),
-  9            ('GRR00DBO', 'GRK_BRKR_MOBILITY_F'),
-          ('GRR00DBO', 'GRK_BRKR_MSG_TRKR_D'),
-         10   11    ('GRR00 12  DBO', 'GRK_GRANT_ACTIVITY_F'),
-          ('GRR00DBO', 'GRK_GRANT_ACTIVITY_HIST_F'),
-          13   ('GRR00DBO', 'GRK_MBLT_AWD_DST_TRCK_F'),
-          ('GRR00DBO', 'GRK_PRODUCT_CONTROL_FS'),
-          ('GRR00DBO',  14  'GRK_PRTC_BRKR_INFO_D'),
-          ('GRR00DBO', 'GRK_TAX_METH_F'),
-          ('GRR00DBO', 'GRK_DIST_PAID_TR 15  X_D'),
-          ('GRR00DBO', 'GRK_DIST_TAX_D')
-      )
- 16  )
-ORDER BY TABLESPACE_NAME; 17   18   19  SQL> SP2-0042: unknown command "UNION ALL" - rest of line ignored.
-SQL> SQL>   2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17  ;
-)
-*
-ERROR at line 16:
-ORA-00933: SQL command not properly ended
-
-
-
-
-
 SELECT DISTINCT TABLESPACE_NAME
 FROM (
-    SELECT TABLESPACE_NAME 
-    FROM DBA_TABLES 
+    SELECT TABLESPACE_NAME
+    FROM DBA_TABLES
     WHERE TABLESPACE_NAME IS NOT NULL
       AND (OWNER, TABLE_NAME) IN (
           ('GRR00DBO', 'GRK_BRKR_ERROR_F'),
@@ -64,11 +16,9 @@ FROM (
           ('GRR00DBO', 'GRK_DIST_PAID_TRX_D'),
           ('GRR00DBO', 'GRK_DIST_TAX_D')
       )
-
     UNION ALL
-
-    SELECT  TABLESPACE_NAME 
-    FROM DBA_TAB_PARTITIONS 
+    SELECT TABLESPACE_NAME
+    FROM DBA_TAB_PARTITIONS
     WHERE (TABLE_OWNER, TABLE_NAME) IN (
           ('GRR00DBO', 'GRK_BRKR_ERROR_F'),
           ('GRR00DBO', 'GRK_BRKR_MOBILITY_F'),
@@ -84,8 +34,6 @@ FROM (
       )
 )
 ORDER BY TABLESPACE_NAME;
-
-
 
 Filesystem                                                         Size  Used Avail Use% Mounted on
 devtmpfs                                                            63G     0   63G   0% /dev
