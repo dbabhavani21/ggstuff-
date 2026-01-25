@@ -1,3 +1,25 @@
+
+Processing object type TABLE_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDE
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
+Job "ORADBA"."SYS_IMPORT_TABLE_01" completed with 841 error(s) at Sun Jan 25 02:32:02 2026 elapsed 0 07:42:33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SQL> @asm
 
 NAME                                                         TOTAL_MB/1024 FREE_MB/1024
