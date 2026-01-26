@@ -37,7 +37,7 @@ FROM Target_List t
 LEFT JOIN ALL_TAB_COLUMNS c
     ON t.OwnerName = c.OWNER 
     AND t.TableName = c.TABLE_NAME 
-    AND c.COLUMN_NAME = 'INSERT_D' -- The specific column you are checking
+    AND c.COLUMN_NAME = 'INSERT_D' 
 ORDER BY Has_Insert_D_Column, t.TableName;
 
 
