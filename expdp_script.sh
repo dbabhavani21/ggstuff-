@@ -1,3 +1,53 @@
+TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
+------------------------------ ---------- ---------- ---------- ------------ ----------
+USERS                                 512          1        511        32768          0
+MDM_CLIENT_PERSON_IDX               10240         68      10172       102400          0
+COMMON_UTIL_DBO_TBS                 30720         68      30652        30720          0
+INVM_DBO_IDX                        30720          1      30719        30720          0
+MDM_DCPLAN_TBS                      10240        113      10127       102400          0
+UNDOTBS1                           186368        180     186188       186368          0
+GGADMIN_TBS                          5120        108       5012        30720          0
+AUDIT_DATA                            500          2        498        32768          0
+MDM_DCPLAN_IDX                      10240         68      10172       102400          0
+INVM_DBO_TBS                        10240         68      10172        10240          1
+PRDC_METRICS_DBO_TBS                10240         69      10171        10240          1
+
+TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
+------------------------------ ---------- ---------- ---------- ------------ ----------
+PRDC_METRICS_DBO_IDX                 5120         68       5052         5120          1
+ACCT_DBO_IDX                        30720       2644      28076        30720          9
+RID_DBO_TBS                          5120        517       4603         5120         10
+SYSTEM                              30720       3560      27160        32768         11
+PRDCREF_DBO_IDX                     30720       4116      26604        30720         13
+ACCT_DBO_TBS                        51200      13502      37698        51200         26
+BOOK_DBO_TBS                       102400      34224      68176       102400         33
+RID_DBO_IDX                          1024        461        563         1024         45
+PRDCREF_DBO_TBS                    102400      48566      53834       102400         47
+MDM_CLIENT_PERSON_TBS              204800     102513     102287       204800         50
+BOOK_DBO_IDX                        61440      31928      29512        61440         52
+
+TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
+------------------------------ ---------- ---------- ---------- ------------ ----------
+LOAN_DBO_TBS                       204800     127029      77771       204800         62
+SYSAUX                              22740      21571       1169        32768         66
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 set verify off;
 set feed off;
 col program for a25
