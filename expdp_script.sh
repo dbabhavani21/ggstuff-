@@ -2,20 +2,26 @@ INVM_DBO_TBS --Add the same tablespace size as we have in RW db.
 INVM_DBO_IDX--Add the same tablespace size as we have in RW db.
  
 
-Tablespace Assignment:
-Schema name  Default tablespace      Default index tablespace
-INVM_DBO       INVM_DBO_TBS          INVM_DBO_IDX
+WITH df AS (
+  SELECT tablespace_name, SUM(bytes) bytes
+  FROM   dba_data_files
+  WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX')
+  GROUP  BY tablespace_name
+),
+fs AS (
+  SELECT tablespace_name, SUM(bytes) bytes
+  FROM   dba_free_space
+  WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX')
+  GROUP  BY tablespace_name
+)
+SELECT df.tablespace_name,
+       ROUND(df.bytes/1024/1024/1024, 2) AS total_gb,
+       ROUND(NVL(fs.bytes,0)/1024/1024/1024, 2) AS free_gb,
+       ROUND((df.bytes - NVL(fs.bytes,0))/1024/1024/1024, 2) AS used_gb
+FROM df
+LEFT JOIN fs ON fs.tablespace_name = df.tablespace_name
+ORDER BY df.tablespace_name;
 
-user is INVM_DBO- check what is space allocated for this schema under INVM_DBO_TBS, and INVM_DBO_IDX
-
-SELECT tablespace_name,
-       owner,
-       ROUND(SUM(bytes)/1024/1024/1024, 2) AS used_gb
-FROM   dba_segments
-WHERE  owner = 'INVM_DBO'
-AND    tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX')
-GROUP  BY tablespace_name, owner
-ORDER  BY tablespace_name;
 
 
 
