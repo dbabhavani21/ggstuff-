@@ -80,6 +80,7 @@ SQL> ALTER DATABASE NOARCHIVELOG;
 SQL> ALTER DATABASE OPEN;
 SQL> ARCHIVE LOG LIST;
 
+shut immediate 
 
 srvctl start database -d <db_unique_name>
 
