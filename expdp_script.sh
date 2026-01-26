@@ -1,3 +1,44 @@
+set verify off;
+set feed off;
+col program for a25
+col username for a10
+col TO_KILL for a15
+col machine for a27
+col program for a30
+set lines 120
+select Tablespace "TABLESPACE",CurrentSize "Size(MB)",Used "Used(MB)",Free "Free(MB)",Total "MAXBYTES(MB)",usedspace "Used %"  from
+(select
+   fs.tablespace_name tablespace,
+   df.currentspace CurrentSize,
+   (df.currentspace - nvl(fs.freespace,0)) Used,
+   fs.freespace Free,
+   df.totalspace Total,
+   100-round(100 * ((fs.freespace+df.reservespace) / df.totalspace)) usedspace
+  from
+  (select
+      tablespace_name,
+      round(sum(decode(AUTOEXTENSIBLE,'YES',GREATEST(MAXBYTES,bytes),'NO',bytes)) / 1048576) TotalSpace,
+      round(sum(bytes)/ 1048576) currentspace,
+      round(sum(decode(AUTOEXTENSIBLE,'YES',greatest(maxbytes,bytes)-bytes,'NO',0))/ 1048576) reservespace
+   from
+      dba_data_files
+   group by
+      tablespace_name
+   ) df,
+   (select
+      tablespace_name,
+      round(sum(bytes) / 1048576) FreeSpace
+   from
+      dba_free_space
+   group by
+      tablespace_name
+   ) fs
+where
+   df.tablespace_name = fs.tablespace_name)
+   order by 6;
+
+
+
 CREATE TABLESPACE INVM_DBO_TBS
   DATAFILE '+PRDCROD1_DATA'
   SIZE 30G
