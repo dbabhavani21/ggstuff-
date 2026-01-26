@@ -12,6 +12,13 @@ GROUP BY DF.TABLESPACE_NAME,DF.FILE_NAME,DF.AUTOEXTENSIBLE
 order by 4;
 
 
+TABLESPACE_NAME                FILE_NAME                                                              AUT       FREE      TOTAL
+------------------------------ ---------------------------------------------------------------------- --- ---------- ----------
+INVM_DBO_TBS                   +PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067         NO  9.93365479         10
+                                                                                                          ---------- ----------
+sum                                                                                                       9.93365479         10
+
+
 
 
 
