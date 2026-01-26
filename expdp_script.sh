@@ -1,4 +1,15 @@
 desc SPR00DBO	T_FPDAC_DATE_CNTL
+SQL> desc SPR00DBO.T_FPDAC_DATE_CNTL;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRCS_NM                                            VARCHAR2(50 CHAR)
+ STRT_D                                             DATE
+ END_D                                              DATE
+ SUCS_REC_N                                         NUMBER
+ FAIL_REC_N                                         NUMBER
+
+SQL>
+
 
 
 
