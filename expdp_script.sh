@@ -1,3 +1,18 @@
+TABLE_NAME                                   TABLE_GB
+---------------------------------------- ------------
+PRTC_GRANT_EXT_D                              175.651
+GRANT_VAL_ASSUMPTION_D                        146.808
+TRANCHE_VAL_ASSUMPTION_D                      144.853
+VESTING_ACTIVITY_TRX_F                         75.666
+GRANT_TRANCHE_EXT_D                            69.096
+PRODUCT_MAPPINGS_D                              0.001
+OFFERING_D                                      0.000
+
+7 rows selected.
+
+
+
+
 SET LINESIZE 200
 COL TABLE_NAME FORMAT A40
 COL TABLE_GB FORMAT 999,990.999
