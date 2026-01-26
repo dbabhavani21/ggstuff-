@@ -79,6 +79,136 @@ LEFT JOIN lobseg ON lobseg.owner=t.owner AND lobseg.table_name=t.table_name
 ORDER  BY total_mb DESC;
 
 
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPAD_PARTICIPANT_D            376561  143472.94          0
+ 520033.94    507.846
+
+SPR00DBO T_FSPGD_PRTC_GRANT_D              24212   17598.13          0
+  41810.13      40.83
+
+SPR00DBO T_FSPVD_PRTC_VEST_D                8593   10866.25          0
+  19459.25     19.003
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPVF_PERF_VEST_F                9768     132.19          0
+   9900.19      9.668
+
+SPR00DBO T_FSPDD_PRTC_DIST_D                2468       3243          0
+      5711      5.577
+
+SPR00DBO T_FSPSF_PRODUCT_STATEMENT_F        1965    1076.38          0
+   3041.38       2.97
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPGF_PERF_GRANT_F            1170.19    1701.56          0
+   2871.75      2.804
+
+SPR00DBO T_FSPPD_PERF_PERIOD_D               110        169          0
+       279       .272
+
+SPR00DBO T_FSRCF_RSTC_CANCEL_F               209         48          0
+       257       .251
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPID_PRICE_D                     104         73          0
+       177       .173
+
+SPR00DBO T_FSPPV_PERF_PERIOD_VEST_D           63        107          0
+       170       .166
+
+SPR00DBO T_FSPPD_PERF_PERIOD_TSRU_D           53         16          0
+        69       .067
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSFXD_FRN_EXCH_D                  .06        .19          0
+       .25          0
+
+SPR00DBO T_FSCTS_CLIENT_TRUST_SWEEP_D        .06        .13          0
+       .19          0
+
+SPR00DBO T_FSWID_WIRE_INSN_D                 .13        .06          0
+       .19          0
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FPDAC_DATE_CNTL                   .06        .06          0
+       .13          0
+
+SPR00DBO T_FSPPV_END_D_GTE_PROC_D              0          0          0
+         0          0
+
+SPR00DBO T_FSPPD_START_DT_EQ_PR_DATE           0          0          0
+         0          0
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPVF_END_D_ACTIVE                  0          0          0
+         0          0
+
+SPR00DBO T_FSPGD_END_D_ACTIVE                  0          0          0
+         0          0
+
+SPR00DBO T_FSPPV_END_D_EQ_PREV_D               0          0          0
+         0          0
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPPD_END_DT_EQ_PREV_DT             0          0          0
+         0          0
+
+SPR00DBO T_FSPPV_END_D_ACTIVE                  0          0          0
+         0          0
+
+SPR00DBO T_FSPPV_START_D_EQ_PROC_D             0          0          0
+         0          0
+
+
+OWNER    TABLE_NAME                     TABLE_MB   INDEX_MB     LOB_MB
+-------- ---------------------------- ---------- ---------- ----------
+  TOTAL_MB   TOTAL_GB
+---------- ----------
+SPR00DBO T_FSPPD_END_D_GTE_PROC_D              0          0          0
+         0          0
+
+SPR00DBO T_FSPPD_END_DT_ACTIVE                 0          0          0
+         0          0
+
+SPR00DBO T_FSPAD_END_D_ACTIVE                  0          0          0
+         0          0
+
+
+27 rows selected.
+
+
+
 
 
 
