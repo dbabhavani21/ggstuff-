@@ -1,5 +1,14 @@
 srvctl stop database -d <db_unique_name>
 
+SQL> sho parameter db_unique_name;
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+db_unique_name                       string      SPSSG11 <<<<<<<<<<<<<<< target 
+SQL>
+
+
+
 SQL> STARTUP MOUNT;
 
 SQL> ALTER DATABASE NOARCHIVELOG;
