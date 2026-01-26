@@ -1,3 +1,58 @@
+TABLENAME                    HAS
+---------------------------- ---
+T_FPDAC_DATE_CNTL            NO
+T_FSCTS_CLIENT_TRUST_SWEEP_D NO
+T_FSFXD_FRN_EXCH_D           NO
+T_FSPAD_END_D_ACTIVE         NO
+T_FSPAD_PARTICIPANT_D        NO
+T_FSPDD_PRTC_DIST_D          NO
+T_FSPGD_END_D_ACTIVE         NO
+T_FSPGD_PRTC_GRANT_D         NO
+T_FSPGF_PERF_GRANT_F         NO
+T_FSPID_PRICE_D              NO
+T_FSPPD_END_DT_ACTIVE        NO
+
+TABLENAME                    HAS
+---------------------------- ---
+T_FSPPD_END_DT_EQ_PREV_DT    NO
+T_FSPPD_END_D_GTE_PROC_D     NO
+T_FSPPD_PERF_PERIOD_D        NO
+T_FSPPD_PERF_PERIOD_TSRU_D   NO
+T_FSPPD_START_DT_EQ_PR_DATE  NO
+T_FSPPV_END_D_ACTIVE         NO
+T_FSPPV_END_D_EQ_PREV_D      NO
+T_FSPPV_END_D_GTE_PROC_D     NO
+T_FSPPV_PERF_PERIOD_VEST_D   NO
+T_FSPPV_START_D_EQ_PROC_D    NO
+T_FSPSF_PRODUCT_STATEMENT_F  NO
+
+TABLENAME                    HAS
+---------------------------- ---
+T_FSPVD_PRTC_VEST_D          NO
+T_FSPVF_END_D_ACTIVE         NO
+T_FSPVF_PERF_VEST_F          NO
+T_FSRCF_RSTC_CANCEL_F        NO
+T_FSWID_WIRE_INSN_D          NO
+
+27 rows selected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 WITH Target_List (OwnerName, TableName) AS (
     SELECT 'SPR00DBO', 'T_FPDAC_DATE_CNTL' FROM DUAL UNION ALL
     SELECT 'SPR00DBO', 'T_FSCTS_CLIENT_TRUST_SWEEP_D' FROM DUAL UNION ALL
