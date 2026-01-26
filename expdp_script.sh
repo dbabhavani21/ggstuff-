@@ -9,6 +9,8 @@ FROM   dba_data_files
 WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX')
 ORDER  BY tablespace_name, file_name;
 
+PRDCROD1_DATA
+
 
 
 
