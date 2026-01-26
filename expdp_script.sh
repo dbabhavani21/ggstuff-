@@ -1,3 +1,67 @@
+VERY IMP
+=========
+SPR00DBO.T_FASE_FAS_ERROR ---- is this table can be skipped? because this is big table more than 1.2 tb
+
+APP TEAM RESPONSE : we can ignore error table , it captures errors from etl loads for fas application related jobs
+
+============================================================================================================================
+
+POC ENVIRONMENT
+ 
+TYPE
+	
+HOST
+	
+DB
+	
+CONNECT STRING
+
+SOURCE	 	 	 
+TARGET	 	 	 
+ 
+SCOPE
+ 
+ATTACH INVENTORY OF TABLES WHICH WE ARE COPYING
+SHOULD HAVE SCHEMA/TABLE_NAME/TABLE_SIZE/FILTERS_TO_COPY
+ 
+SCRIPTS
+ 
+EXP/SCP/IMP FOR EACH FILTER
+ 
+TIMELINE AND CAPACITY
+ 
+ATTACH  BELOW INFO :
+ 
+EXPORT_STEP(WHICH TABLES AND FILTER) 
+	
+EXPORT_TIME
+	
+SCP_TIME
+	
+IMPORT_TIME
+	
+EXP_DUMP_SIZE
+
+ 	 	 	 	 
+ 	 	 	 	 
+ 
+ARCHIVE SPACE GENERATED FOR WHOLE IMPORT CYCLE - XYZ TB
+ 
+SPACE USED BY WHOLE SCHEMA ON IMPORT SIDE ( WITH FILTERS ) - XYZ TB
+ 
+SPACE ALLOCATED FOR TEMP SPACE - XYZ TB
+ 
+Blockers You Have Faced as Part of Process 
+ ==========================================================================
+
+
+
+
+
+
+
+
+
 srvctl stop database -d <db_unique_name>
 
 SQL> sho parameter db_unique_name;
