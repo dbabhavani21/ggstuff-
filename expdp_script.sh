@@ -1,3 +1,26 @@
+INVM_DBO_TBS --Add the same tablespace size as we have in RW db.
+INVM_DBO_IDX--Add the same tablespace size as we have in RW db.
+ 
+
+Tablespace Assignment:
+Schema name  Default tablespace      Default index tablespace
+INVM_DBO       INVM_DBO_TBS          INVM_DBO_IDX
+
+user is INVM_DBO- check what is space allocated for this schema under INVM_DBO_TBS, and INVM_DBO_IDX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
 
 
