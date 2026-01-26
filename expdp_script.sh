@@ -1,15 +1,20 @@
-INVM_DBO_TBS --Add the same tablespace size as we have in RW db.
-INVM_DBO_IDX--Add the same tablespace size as we have in RW db.
- 
+CREATE TABLESPACE INVM_DBO_TBS
+  DATAFILE '+PRDCROD1_DATA'
+  SIZE 30G
+  AUTOEXTEND OFF
+  EXTENT MANAGEMENT LOCAL
+  SEGMENT SPACE MANAGEMENT AUTO;
 
-SELECT tablespace_name,
-       file_name,
-       REGEXP_SUBSTR(file_name, '^\+[^/]+') AS disk_group
-FROM   dba_data_files
-WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX')
-ORDER  BY tablespace_name, file_name;
+  CREATE TABLESPACE INVM_DBO_IDX
+  DATAFILE '+PRDCROD1_DATA'
+  SIZE 30G
+  AUTOEXTEND OFF
+  EXTENT MANAGEMENT LOCAL
+  SEGMENT SPACE MANAGEMENT AUTO;
 
-PRDCROD1_DATA
+  ALTER USER INVM_DBO DEFAULT TABLESPACE INVM_DBO_TBS;
+
+  
 
 
 
