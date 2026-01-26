@@ -1,3 +1,18 @@
+srvctl stop database -d <db_unique_name>
+
+SQL> STARTUP MOUNT;
+
+SQL> ALTER DATABASE NOARCHIVELOG;
+
+SQL> ALTER DATABASE OPEN;
+SQL> ARCHIVE LOG LIST;
+
+
+srvctl start database -d <db_unique_name>
+
+
+
+
 SELECT owner,
        ROUND(SUM(bytes)/1024/1024, 2) AS mb,
        ROUND(SUM(bytes)/1024/1024/1024, 2) AS gb
