@@ -1,3 +1,26 @@
+SET LINESIZE 200
+COL TABLE_NAME FORMAT A40
+COL TABLE_GB FORMAT 999,990.999
+
+SELECT s.segment_name AS table_name,
+       ROUND(SUM(s.bytes)/1024/1024/1024, 3) AS table_gb
+FROM dba_segments s
+WHERE s.owner = 'SPR00DBO'
+  AND s.segment_type IN ('TABLE','TABLE PARTITION','TABLE SUBPARTITION')
+  AND s.segment_name IN (
+      'GRANT_TRANCHE_EXT_D',
+      'GRANT_VAL_ASSUMPTION_D',
+      'OFFERING_D',
+      'PRODUCT_MAPPINGS_D',
+      'PRTC_GRANT_EXT_D',
+      'TRANCHE_VAL_ASSUMPTION_D',
+      'VESTING_ACTIVITY_TRX_F'
+  )
+GROUP BY s.segment_name
+ORDER BY SUM(s.bytes) DESC;
+
+
+
 SCP 
 cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
 
