@@ -1,3 +1,52 @@
+select /* as.sql */ 
+      s.inst_id,
+      s.sid
+      ,s.serial#,
+    s.username,s.sql_id,
+    S.STATUS
+      ,(elapsed_time/decode(nvl(executions,1),0,1))/1000000 elapsed
+      ,substr(q.sql_text,1,50) sql_text
+from   gv$session s
+      ,gv$sqlstats q
+where s.sql_id = q.sql_id
+and    s.username is not null
+and    q.sql_text not like '%as.sql%'
+order by s.status desc
+/
+
+======================
+
+set lines 180 pages 1000
+ SET RECSEPCHAR "-"
+ column pu format a8 heading 'O/S|Login|ID'
+ column su format a16 heading 'Oracle|User ID'
+ column stat format a8 heading 'Session|Status'
+ column ssid format 999999 heading 'Oracle|Session|ID'
+ column sser format 999999 heading 'Oracle|Serial|No'
+ column spid format 999999 heading 'UNIX|Process|ID'
+ column txt format a28 heading 'Current Statment' 
+ select name from v$database;
+ SELECT p.username pu,
+        s.username su,
+        s.status stat,
+        s.sid ssid,
+        s.serial# sser,
+--        lpad(p.spid,7) spid,
+        p.spid,
+        sa.sql_id,
+        sa.PLAN_HASH_VALUE,
+        substr(sa.sql_text,1,540) txt
+   FROM gv$process p, gv$session s, gv$sqlarea sa
+  WHERE p.addr=s.paddr
+    AND s.username is not null
+    AND s.sql_address=sa.address(+)
+    AND s.sql_hash_value=sa.hash_value(+)
+ and s.status='ACTIVE'
+ ORDER BY 1,2,7
+/
+
+
+
 missing filters tables
 ==========================
 
