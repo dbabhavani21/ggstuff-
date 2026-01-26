@@ -8,7 +8,14 @@ INVM_DBO       INVM_DBO_TBS          INVM_DBO_IDX
 
 user is INVM_DBO- check what is space allocated for this schema under INVM_DBO_TBS, and INVM_DBO_IDX
 
-
+SELECT tablespace_name,
+       owner,
+       ROUND(SUM(bytes)/1024/1024/1024, 2) AS used_gb
+FROM   dba_segments
+WHERE  owner = 'INVM_DBO'
+AND    tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX')
+GROUP  BY tablespace_name, owner
+ORDER  BY tablespace_name;
 
 
 
