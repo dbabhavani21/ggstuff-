@@ -17,7 +17,9 @@ TABLESPACE_NAME                FILE_NAME                                        
 INVM_DBO_TBS                   +PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067         NO  9.93365479         10
                                                                                                           ---------- ----------
 sum                                                                                                       9.93365479         10
-
+ALTER DATABASE DATAFILE
+  '+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067'
+  AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
 
 
 
