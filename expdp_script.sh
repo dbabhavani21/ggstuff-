@@ -1,4 +1,82 @@
-
+WITH t(owner, table_name) AS (
+  SELECT 'SPR00DBO','T_FPDAC_DATE_CNTL' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSCTS_CLIENT_TRUST_SWEEP_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSFXD_FRN_EXCH_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPAD_END_D_ACTIVE' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPAD_PARTICIPANT_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPDD_PRTC_DIST_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPGD_END_D_ACTIVE' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPGD_PRTC_GRANT_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPGF_PERF_GRANT_F' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPID_PRICE_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPD_END_DT_ACTIVE' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPD_END_DT_EQ_PREV_DT' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPD_END_D_GTE_PROC_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPD_PERF_PERIOD_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPD_PERF_PERIOD_TSRU_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPD_START_DT_EQ_PR_DATE' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPV_END_D_ACTIVE' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPV_END_D_EQ_PREV_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPV_END_D_GTE_PROC_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPV_PERF_PERIOD_VEST_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPPV_START_D_EQ_PROC_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPSF_PRODUCT_STATEMENT_F' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPVD_PRTC_VEST_D' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPVF_END_D_ACTIVE' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSPVF_PERF_VEST_F' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSRCF_RSTC_CANCEL_F' FROM dual UNION ALL
+  SELECT 'SPR00DBO','T_FSWID_WIRE_INSN_D' FROM dual
+),
+tabseg AS (
+  -- base table + partitions (segments: TABLE, TABLE PARTITION, TABLE SUBPARTITION)
+  SELECT t.owner, t.table_name, SUM(s.bytes) bytes
+  FROM   t
+  LEFT JOIN dba_segments s
+         ON s.owner = t.owner
+        AND s.segment_name = t.table_name
+        AND s.segment_type LIKE 'TABLE%'
+  GROUP  BY t.owner, t.table_name
+),
+idxseg AS (
+  -- all indexes on the table + partitions (INDEX, INDEX PARTITION, INDEX SUBPARTITION)
+  SELECT t.owner, t.table_name, SUM(s.bytes) bytes
+  FROM   t
+  JOIN   dba_indexes i
+         ON i.table_owner = t.owner
+        AND i.table_name  = t.table_name
+  LEFT JOIN dba_segments s
+         ON s.owner = i.owner
+        AND s.segment_name = i.index_name
+        AND s.segment_type LIKE 'INDEX%'
+  GROUP  BY t.owner, t.table_name
+),
+lobseg AS (
+  -- all LOB segments for the table (LOBSEGMENT/LOB PARTITION + LOBINDEX)
+  SELECT t.owner, t.table_name, SUM(s.bytes) bytes
+  FROM   t
+  JOIN   dba_lobs l
+         ON l.owner = t.owner
+        AND l.table_name = t.table_name
+  LEFT JOIN dba_segments s
+         ON s.owner = l.owner
+        AND (
+             s.segment_name = l.segment_name
+          OR s.segment_name = l.index_name
+        )
+  GROUP  BY t.owner, t.table_name
+)
+SELECT t.owner,
+       t.table_name,
+       ROUND(NVL(tabseg.bytes,0)/1024/1024, 2) AS table_mb,
+       ROUND(NVL(idxseg.bytes,0)/1024/1024, 2) AS index_mb,
+       ROUND(NVL(lobseg.bytes,0)/1024/1024, 2) AS lob_mb,
+       ROUND((NVL(tabseg.bytes,0)+NVL(idxseg.bytes,0)+NVL(lobseg.bytes,0))/1024/1024, 2) AS total_mb,
+       ROUND((NVL(tabseg.bytes,0)+NVL(idxseg.bytes,0)+NVL(lobseg.bytes,0))/1024/1024/1024, 3) AS total_gb
+FROM   t
+LEFT JOIN tabseg ON tabseg.owner=t.owner AND tabseg.table_name=t.table_name
+LEFT JOIN idxseg ON idxseg.owner=t.owner AND idxseg.table_name=t.table_name
+LEFT JOIN lobseg ON lobseg.owner=t.owner AND lobseg.table_name=t.table_name
+ORDER  BY total_mb DESC;
 
 
 
