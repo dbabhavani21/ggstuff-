@@ -1,3 +1,7 @@
+desc SPR00DBO	T_FPDAC_DATE_CNTL
+
+
+
 TABLENAME                    HAS
 ---------------------------- ---
 T_FPDAC_DATE_CNTL            NO
