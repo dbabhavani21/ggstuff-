@@ -31,7 +31,7 @@ TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)    
 LOAN_DBO_TBS                       204800     127029      77771       204800         62
 SYSAUX                              22740      21571       1169        32768         66
 
-
+alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
 
 
 
