@@ -1,3 +1,20 @@
+UNDEFINE TABLESPACE_NAME
+set lines 500
+COL FILE_NAME FORMAT A70
+break on report
+COMPUTE SUM OF FREE ON REPORT
+COMPUTE SUM OF TOTAL ON REPORT
+SELECT DF.TABLESPACE_NAME,DF.FILE_NAME,DF.AUTOEXTENSIBLE,SUM(FS.BYTES)/1024/1024/1024 FREE,SUM(DF.BYTES)/1024/1024/1024/COUNT(*) TOTAL
+FROM DBA_FREE_SPACE  FS,DBA_dATA_FILES DF
+where FS.FILE_ID=DF.FILE_ID
+AND FS.tablespace_name='&TABLESPACE_NAME'
+GROUP BY DF.TABLESPACE_NAME,DF.FILE_NAME,DF.AUTOEXTENSIBLE
+order by 4;
+
+
+
+
+
 TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
 ------------------------------ ---------- ---------- ---------- ------------ ----------
 USERS                                 512          1        511        32768          0
