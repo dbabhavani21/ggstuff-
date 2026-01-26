@@ -33,6 +33,14 @@ SYSAUX                              22740      21571       1169        32768    
 
 alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
 
+SQL> alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
+alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb
+                                                                   *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+
 
 
 
