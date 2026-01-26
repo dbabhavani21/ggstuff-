@@ -14,7 +14,9 @@ CREATE TABLESPACE INVM_DBO_TBS
 
   ALTER USER INVM_DBO DEFAULT TABLESPACE INVM_DBO_TBS;
 
-  
+  Tablespaces:
+INVM_DBO_TBS --Add the same tablespace size as we have in RW db.
+INVM_DBO_IDX--Add the same tablespace size as we have in RW db.
 
 
 
