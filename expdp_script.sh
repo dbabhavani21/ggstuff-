@@ -59,6 +59,14 @@ Blockers You Have Faced as Part of Process
 
 
 
+sqlplus / as sysdba
+
+sho parameter spfile;
+
+create pfile='/u02/db_simp/initspssg11_0126.ora' from spfile;
+
+exit;
+
 
 
 
