@@ -1,131 +1,143 @@
-ALTER DATABASE DATAFILE
-  '+PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765'
-  AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
+Slava dumo files
+
+[/vldcdsta20rtp2/backup/SPSSG1]
+oracle@vl1118428rtp2:SPSSG11> du -sh *
+28K     EXPDP_SPSSG11_FULL_260122-200001.LOG
+28K     EXPDP_SPSSG11_FULL_260123-200001.LOG
+12M     EXPDP_SPSSG11_FULL_260124-200001.LOG
+36K     EXPDP_SPSSG11_FULL_260125-200001.LOG
+137G    sim_dump
+2.9M    SPSSG11_FULL_260122-200001_01.DMP
+124K    SPSSG11_FULL_260122-200001_02.DMP
+28K     SPSSG11_FULL_260122-200001_03.DMP
+168K    SPSSG11_FULL_260122-200001_04.DMP
+64K     SPSSG11_FULL_260123-200001_01.DMP
+60K     SPSSG11_FULL_260123-200001_02.DMP
+2.9M    SPSSG11_FULL_260123-200001_03.DMP
+152K    SPSSG11_FULL_260123-200001_04.DMP
+523G    SPSSG11_FULL_260124-200001_01.DMP
+569G    SPSSG11_FULL_260124-200001_02.DMP
+201G    SPSSG11_FULL_260124-200001_03.DMP
+568G    SPSSG11_FULL_260124-200001_04.DMP
+68K     SPSSG11_FULL_260125-200001_01.DMP
+9.7M    SPSSG11_FULL_260125-200001_02.DMP
+156K    SPSSG11_FULL_260125-200001_03.DMP
+17M     SPSSG11_FULL_260125-200001_04.DMP
+4.0K    SPSSG11_FULL_260125-200001_05.DMP
 
 
 
-SELECT tablespace_name, bigfile
-FROM   dba_tablespaces
-WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX');
+[/vldcdsta20rtp2/backup/SPSSG1]
+oracle@vl1118428rtp2:SPSSG11> du -sh
+2.0T    .
+================================================
 
 
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11> du -sh *
+20K     90.sql
+4.0K    90tab.par
+4.0K    asa.sql
+4.0K    asm.sql
+4.0K    fra.sql
+4.0K    grr_5_15tab.par
+320K    imp_grr_5_15tab.log
+644K    imp_spr_19_35tab1.log
+6.1M    imp_spr_grr_90tab.log
+4.0K    initSPSSG11.ora
+4.0K    longops.sql
+7.6M    nohup.out
+4.0K    nts.sql
+4.0K    spr_19_35.par
+1.8M    spr_7tab_01.dmp
+7.3M    spr_7tab_02.dmp
+148K    spr_7tab_03.dmp
+380K    spr_7tab_04.dmp
+676K    spr_7tab_05.dmp
+35M     spr_7tab_06.dmp
+23M     spr_7tab_07.dmp
+852K    spr_7tab_08.dmp
+1.1M    spr_7tab_09.dmp
+192K    spr_7tab_10.dmp
+1.9M    spr_7tab_11.dmp
+764K    spr_7tab_12.dmp
+148K    spr_7tab_13.dmp
+148K    spr_7tab_14.dmp
+2.1M    spr_7tab_15.dmp
+8.1M    spr_7tab_16.dmp
+4.4M    spr_7tab_17.dmp
+100K    spr_7tab_18.dmp
+108K    spr_7tab_19.dmp
+6.8M    spr_7tab_20.dmp
+28K     spr_7tab_21.dmp
+24K     spr_7tab_22.dmp
+16K     spr_7tab_23.dmp
+20K     spr_7tab_24.dmp
+148K    spr_7tab_25.dmp
+360K    spr_7tab_26.dmp
+108K    spr_7tab_27.dmp
+564K    spr_7tab_28.dmp
+380K    spr_7tab_29.dmp
+108K    spr_7tab_30.dmp
+340K    spr_7tab_31.dmp
+84K     spr_7tab_32.dmp
+43M     spr_7tab_33.dmp
+108K    spr_7tab_34.dmp
+39M     spr_7tab_35.dmp
+41M     spr_7tab_36.dmp
+204K    spr_7tab_37.dmp
+152K    spr_7tab_38.dmp
+1.6G    spr_grr_90tab_01.dmp
+920M    spr_grr_90tab_02.dmp
+1.5G    spr_grr_90tab_03.dmp
+2.1G    spr_grr_90tab_04.dmp
+2.2G    spr_grr_90tab_05.dmp
+3.8G    spr_grr_90tab_06.dmp
+1.6G    spr_grr_90tab_07.dmp
+496M    spr_grr_90tab_08.dmp
+583M    spr_grr_90tab_09.dmp
+3.6G    spr_grr_90tab_10.dmp
+1.1G    spr_grr_90tab_11.dmp
+3.2G    spr_grr_90tab_12.dmp
+6.4G    spr_grr_90tab_13.dmp
+8.0G    spr_grr_90tab_14.dmp
+8.0G    spr_grr_90tab_15.dmp
+6.7G    spr_grr_90tab_16.dmp
+7.3G    spr_grr_90tab_17.dmp
+7.0G    spr_grr_90tab_18.dmp
+7.0G    spr_grr_90tab_19.dmp
+2.4G    spr_grr_90tab_20.dmp
+1.6G    spr_grr_90tab_21.dmp
+1.6G    spr_grr_90tab_22.dmp
+1.8G    spr_grr_90tab_23.dmp
+1.8G    spr_grr_90tab_24.dmp
+1.8G    spr_grr_90tab_25.dmp
+1.7G    spr_grr_90tab_26.dmp
+2.9G    spr_grr_90tab_27.dmp
+2.2G    spr_grr_90tab_28.dmp
+7.9G    spr_grr_90tab_29.dmp
+3.3G    spr_grr_90tab_30.dmp
+6.8G    spr_grr_90tab_31.dmp
+1.9G    spr_grr_90tab_32.dmp
+6.1G    spr_grr_90tab_33.dmp
+945M    spr_grr_90tab_34.dmp
+7.9G    spr_grr_90tab_35.dmp
+2.0G    spr_grr_90tab_36.dmp
+547M    spr_grr_90tab_37.dmp
+2.4G    spr_grr_90tab_38.dmp
+1.8G    spr_grr_90tab_39.dmp
+2.7G    spr_grr_90tab_40.dmp
+1.5G    spr_grr_90tab_41.dmp
+992M    spr_grr_90tab_42.dmp
+690M    spr_grr_90tab_43.dmp
+4.0K    tmp.sql
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11> du -sh
+137G    .
 
-alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11>
 
-ALTER DATABASE DATAFILE '+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067'
-AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
-
-
-SQL> ALTER DATABASE DATAFILE '+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067'
-AUTOEXTEND ON NEXT 1G MAXSIZE 30G;  2
-ALTER DATABASE DATAFILE '+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067'
-*
-ERROR at line 1:
-ORA-01516: nonexistent log file, data file, or temporary file
-"+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067" in the current container
-
-  ALTER USER INVM_DBO DEFAULT TABLESPACE INVM_DBO_TBS;
-
-
-
-  CREATE TABLESPACE INVM_DBO_IDX
-  DATAFILE '+PRDCROD1_DATA'
-  SIZE 30G
-  AUTOEXTEND OFF
-  EXTENT MANAGEMENT LOCAL
-  SEGMENT SPACE MANAGEMENT AUTO;
-
-
-TABLESPACE_NAME                FILE_NAME                                                              AUT       FREE      TOTAL
------------------------------- ---------------------------------------------------------------------- --- ---------- ----------
-INVM_DBO_IDX                   +PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765         NO  9.93365479         10
-                                                                                                          ---------- ----------
-sum                                                                                                       9.93365479         10
-
-SQL> ALTER DATABASE DATAFILE +PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765 AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
-ALTER DATABASE DATAFILE +PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765 AUTOEXTEND ON NEXT 1G MAXSIZE 30G
-                        *
-ERROR at line 1:
-ORA-02236: invalid file name
-
-
-
-
-
-
-
-
-
-
-
-
-
-UNDEFINE TABLESPACE_NAME
-set lines 500
-COL FILE_NAME FORMAT A70
-break on report
-COMPUTE SUM OF FREE ON REPORT
-COMPUTE SUM OF TOTAL ON REPORT
-SELECT DF.TABLESPACE_NAME,DF.FILE_NAME,DF.AUTOEXTENSIBLE,SUM(FS.BYTES)/1024/1024/1024 FREE,SUM(DF.BYTES)/1024/1024/1024/COUNT(*) TOTAL
-FROM DBA_FREE_SPACE  FS,DBA_dATA_FILES DF
-where FS.FILE_ID=DF.FILE_ID
-AND FS.tablespace_name='&TABLESPACE_NAME'
-GROUP BY DF.TABLESPACE_NAME,DF.FILE_NAME,DF.AUTOEXTENSIBLE
-order by 4;
-
-
-TABLESPACE_NAME                FILE_NAME                                                              AUT       FREE      TOTAL
------------------------------- ---------------------------------------------------------------------- --- ---------- ----------
-INVM_DBO_TBS                   +PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067         NO  9.93365479         10
-                                                                                                          ---------- ----------
-sum                                                                                                       9.93365479         10
-ALTER DATABASE DATAFILE
-  '+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067'
-  AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
-
-
-
-
-TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
------------------------------- ---------- ---------- ---------- ------------ ----------
-USERS                                 512          1        511        32768          0
-MDM_CLIENT_PERSON_IDX               10240         68      10172       102400          0
-COMMON_UTIL_DBO_TBS                 30720         68      30652        30720          0
-INVM_DBO_IDX                        30720          1      30719        30720          0
-MDM_DCPLAN_TBS                      10240        113      10127       102400          0
-UNDOTBS1                           186368        180     186188       186368          0
-GGADMIN_TBS                          5120        108       5012        30720          0
-AUDIT_DATA                            500          2        498        32768          0
-MDM_DCPLAN_IDX                      10240         68      10172       102400          0
-INVM_DBO_TBS                        10240         68      10172        10240          1
-PRDC_METRICS_DBO_TBS                10240         69      10171        10240          1
-
-TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
------------------------------- ---------- ---------- ---------- ------------ ----------
-PRDC_METRICS_DBO_IDX                 5120         68       5052         5120          1
-ACCT_DBO_IDX                        30720       2644      28076        30720          9
-RID_DBO_TBS                          5120        517       4603         5120         10
-SYSTEM                              30720       3560      27160        32768         11
-PRDCREF_DBO_IDX                     30720       4116      26604        30720         13
-ACCT_DBO_TBS                        51200      13502      37698        51200         26
-BOOK_DBO_TBS                       102400      34224      68176       102400         33
-RID_DBO_IDX                          1024        461        563         1024         45
-PRDCREF_DBO_TBS                    102400      48566      53834       102400         47
-MDM_CLIENT_PERSON_TBS              204800     102513     102287       204800         50
-BOOK_DBO_IDX                        61440      31928      29512        61440         52
-
-TABLESPACE                       Size(MB)   Used(MB)   Free(MB) MAXBYTES(MB)     Used %
------------------------------- ---------- ---------- ---------- ------------ ----------
-LOAN_DBO_TBS                       204800     127029      77771       204800         62
-SYSAUX                              22740      21571       1169        32768         66
-
-alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
-
-SQL> alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
-alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb
-                                                                   *
-ERROR at line 1:
-ORA-00933: SQL command not properly ended
 
 
 
