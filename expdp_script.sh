@@ -30,8 +30,17 @@ ORA-01516: nonexistent log file, data file, or temporary file
   SEGMENT SPACE MANAGEMENT AUTO;
 
 
+TABLESPACE_NAME                FILE_NAME                                                              AUT       FREE      TOTAL
+------------------------------ ---------------------------------------------------------------------- --- ---------- ----------
+INVM_DBO_IDX                   +PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765         NO  9.93365479         10
+                                                                                                          ---------- ----------
+sum                                                                                                       9.93365479         10
 
-
+SQL> ALTER DATABASE DATAFILE +PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765 AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
+ALTER DATABASE DATAFILE +PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765 AUTOEXTEND ON NEXT 1G MAXSIZE 30G
+                        *
+ERROR at line 1:
+ORA-02236: invalid file name
 
 
 
