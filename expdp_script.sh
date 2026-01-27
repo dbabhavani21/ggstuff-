@@ -1,3 +1,32 @@
+
+devtmpfs                                                            63G     0   63G   0% /dev
+tmpfs                                                               63G  465M   63G   1% /dev/shm
+tmpfs                                                               63G  4.1G   59G   7% /run
+tmpfs                                                               63G     0   63G   0% /sys/fs/cgroup
+/dev/mapper/vglocal-root                                            20G  4.9G   16G  25% /
+tmpfs                                                               63G  432K   63G   1% /tmp
+/dev/sda3                                                           15G  140M   15G   1% /var/crash
+/dev/mapper/vglocal-opt                                             12G  1.5G   11G  13% /opt
+/dev/sda2                                                         1014M  214M  801M  22% /boot
+/dev/mapper/vglocal-log                                             15G  945M   15G   7% /var/log
+/dev/sda1                                                         1022M  5.9M 1017M   1% /boot/efi
+/dev/mapper/appsvg_vl1118428rtp2-lv_grid_base                       50G  3.8G   47G   8% /grid/base
+/dev/mapper/appsvg_vl1118428rtp2-lv_grid_oracle_product             50G   13G   38G  25% /grid/oracle/product
+/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2                1014M   40M  975M   4% /vldcdsta20rtp2
+/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2_oracle          6.0G  293M  5.8G   5% /vldcdsta20rtp2/oracle
+/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2_oracle_dba       25G  211M   25G   1% /vldcdsta20rtp2/oracle/dba
+/dev/mapper/appsvg_vl1118428rtp2-lv_vldcdsta20rtp2_oracle_product   60G   13G   48G  21% /vldcdsta20rtp2/oracle/product
+/dev/mapper/appsvg_vl1118428rtp2-lv_support_tools_oracle            25G  1.8G   24G   8% /support_tools/oracle
+/dev/mapper/appsvg_vl1118428rtp2-lv_home_oracle                    8.0G  185M  7.9G   3% /home/oracle
+tmpfs                                                               13G     0   13G   0% /run/user/103
+/dev/mapper/appsvg_vl1118428rtp2-lv_home_oemagent                  6.0G  1.8G  4.3G  29% /home/oemagent
+tmpfs                                                               13G     0   13G   0% /run/user/142264
+/dev/asm/volume1-478                                               2.0T  2.0T     0 100% /vldcdsta20rtp2/backup
+
+
+
+
+
 v[/u02/wide/acfs/dba_work/dsdb/sim_dump]
 oracle@o54oma2vc11:WIORDA11> cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
 
