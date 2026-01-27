@@ -1,3 +1,93 @@
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11> ls -lrt *.dmp
+-rw-r-----. 1 oracle dba 1859698688 Jan 24 16:57 spr_grr_90tab_24.dmp
+-rw-r-----. 1 oracle dba 1717600256 Jan 24 16:57 spr_grr_90tab_26.dmp
+-rw-r-----. 1 oracle dba 1882660864 Jan 24 16:57 spr_grr_90tab_25.dmp
+-rw-r-----. 1 oracle dba 7250829312 Jan 24 17:01 spr_grr_90tab_31.dmp
+-rw-r-----. 1 oracle dba 6475845632 Jan 24 17:01 spr_grr_90tab_33.dmp
+-rw-r-----. 1 oracle dba 1847918592 Jan 24 17:04 spr_grr_90tab_23.dmp
+-rw-r-----. 1 oracle dba 7458492416 Jan 24 17:05 spr_grr_90tab_19.dmp
+-rw-r-----. 1 oracle dba 8553705472 Jan 24 17:05 spr_grr_90tab_15.dmp
+-rw-r-----. 1 oracle dba 8529051648 Jan 24 17:05 spr_grr_90tab_14.dmp
+-rw-r-----. 1 oracle dba 7513194496 Jan 24 17:05 spr_grr_90tab_18.dmp
+-rw-r-----. 1 oracle dba 7132319744 Jan 24 17:05 spr_grr_90tab_16.dmp
+-rw-r-----. 1 oracle dba 6849146880 Jan 24 17:05 spr_grr_90tab_13.dmp
+-rw-r-----. 1 oracle dba 7768997888 Jan 24 17:05 spr_grr_90tab_17.dmp
+-rw-r-----. 1 oracle dba  723095040 Jan 24 17:26 spr_grr_90tab_43.dmp
+-rw-r-----. 1 oracle dba 1037856768 Jan 24 17:26 spr_grr_90tab_42.dmp
+-rw-r-----. 1 oracle dba 1531711488 Jan 24 17:26 spr_grr_90tab_41.dmp
+-rw-r-----. 1 oracle dba 2868817920 Jan 24 17:26 spr_grr_90tab_40.dmp
+-rw-r-----. 1 oracle dba 1911214080 Jan 24 17:26 spr_grr_90tab_39.dmp
+-rw-r-----. 1 oracle dba 2554093568 Jan 24 17:26 spr_grr_90tab_38.dmp
+-rw-r-----. 1 oracle dba  569315328 Jan 24 17:26 spr_grr_90tab_37.dmp
+-rw-r-----. 1 oracle dba 2135044096 Jan 24 17:26 spr_grr_90tab_36.dmp
+-rw-r-----. 1 oracle dba 8381767680 Jan 24 17:26 spr_grr_90tab_35.dmp
+-rw-r-----. 1 oracle dba  988790784 Jan 24 17:26 spr_grr_90tab_34.dmp
+-rw-r-----. 1 oracle dba 2014949376 Jan 24 17:26 spr_grr_90tab_32.dmp
+-rw-r-----. 1 oracle dba 3497877504 Jan 24 17:26 spr_grr_90tab_30.dmp
+-rw-r-----. 1 oracle dba 8435224576 Jan 24 17:26 spr_grr_90tab_29.dmp
+-rw-r-----. 1 oracle dba 2307293184 Jan 24 17:26 spr_grr_90tab_28.dmp
+-rw-r-----. 1 oracle dba 3060477952 Jan 24 17:26 spr_grr_90tab_27.dmp
+-rw-r-----. 1 oracle dba 1643851776 Jan 24 17:26 spr_grr_90tab_22.dmp
+-rw-r-----. 1 oracle dba 1669783552 Jan 24 17:26 spr_grr_90tab_21.dmp
+-rw-r-----. 1 oracle dba 2490294272 Jan 24 17:26 spr_grr_90tab_20.dmp
+-rw-r-----. 1 oracle dba 3368460288 Jan 24 17:26 spr_grr_90tab_12.dmp
+-rw-r-----. 1 oracle dba 1117483008 Jan 24 17:26 spr_grr_90tab_11.dmp
+-rw-r-----. 1 oracle dba 3793723392 Jan 24 17:26 spr_grr_90tab_10.dmp
+-rw-r-----. 1 oracle dba  605458432 Jan 24 17:26 spr_grr_90tab_09.dmp
+-rw-r-----. 1 oracle dba  512401408 Jan 24 17:26 spr_grr_90tab_08.dmp
+-rw-r-----. 1 oracle dba 1663451136 Jan 24 17:26 spr_grr_90tab_07.dmp
+-rw-r-----. 1 oracle dba 3986173952 Jan 24 17:26 spr_grr_90tab_06.dmp
+-rw-r-----. 1 oracle dba 2332778496 Jan 24 17:26 spr_grr_90tab_05.dmp
+-rw-r-----. 1 oracle dba 2187849728 Jan 24 17:26 spr_grr_90tab_04.dmp
+-rw-r-----. 1 oracle dba 1608687616 Jan 24 17:26 spr_grr_90tab_03.dmp
+-rw-r-----. 1 oracle dba  956719104 Jan 24 17:26 spr_grr_90tab_02.dmp
+-rw-r-----. 1 oracle dba 1646948352 Jan 24 17:26 spr_grr_90tab_01.dmp
+-rw-r-----. 1 oracle dba   34877440 Jan 26 17:24 spr_7tab_36.dmp
+-rw-r-----. 1 oracle dba   37142528 Jan 26 17:24 spr_7tab_35.dmp
+-rw-r-----. 1 oracle dba   40914944 Jan 26 17:24 spr_7tab_33.dmp
+-rw-r-----. 1 oracle dba      16384 Jan 26 17:24 spr_7tab_24.dmp
+-rw-r-----. 1 oracle dba      16384 Jan 26 17:24 spr_7tab_23.dmp
+-rw-r-----. 1 oracle dba      16384 Jan 26 17:24 spr_7tab_22.dmp
+-rw-r-----. 1 oracle dba      20480 Jan 26 17:24 spr_7tab_21.dmp
+-rw-r-----. 1 oracle dba    6938624 Jan 26 17:25 spr_7tab_20.dmp
+-rw-r-----. 1 oracle dba     106496 Jan 26 17:26 spr_7tab_38.dmp
+-rw-r-----. 1 oracle dba     106496 Jan 26 17:26 spr_7tab_37.dmp
+-rw-r-----. 1 oracle dba      90112 Jan 26 17:26 spr_7tab_34.dmp
+-rw-r-----. 1 oracle dba      81920 Jan 26 17:26 spr_7tab_32.dmp
+-rw-r-----. 1 oracle dba     282624 Jan 26 17:26 spr_7tab_31.dmp
+-rw-r-----. 1 oracle dba      77824 Jan 26 17:26 spr_7tab_30.dmp
+-rw-r-----. 1 oracle dba     385024 Jan 26 17:26 spr_7tab_29.dmp
+-rw-r-----. 1 oracle dba     561152 Jan 26 17:26 spr_7tab_28.dmp
+-rw-r-----. 1 oracle dba      86016 Jan 26 17:26 spr_7tab_27.dmp
+-rw-r-----. 1 oracle dba     327680 Jan 26 17:26 spr_7tab_26.dmp
+-rw-r-----. 1 oracle dba     135168 Jan 26 17:26 spr_7tab_25.dmp
+-rw-r-----. 1 oracle dba      81920 Jan 26 17:26 spr_7tab_19.dmp
+-rw-r-----. 1 oracle dba      90112 Jan 26 17:26 spr_7tab_18.dmp
+-rw-r-----. 1 oracle dba    4419584 Jan 26 17:26 spr_7tab_17.dmp
+-rw-r-----. 1 oracle dba    7176192 Jan 26 17:26 spr_7tab_16.dmp
+-rw-r-----. 1 oracle dba    1974272 Jan 26 17:26 spr_7tab_15.dmp
+-rw-r-----. 1 oracle dba     122880 Jan 26 17:26 spr_7tab_14.dmp
+-rw-r-----. 1 oracle dba     102400 Jan 26 17:26 spr_7tab_13.dmp
+-rw-r-----. 1 oracle dba     782336 Jan 26 17:26 spr_7tab_12.dmp
+-rw-r-----. 1 oracle dba    1691648 Jan 26 17:26 spr_7tab_11.dmp
+-rw-r-----. 1 oracle dba     155648 Jan 26 17:26 spr_7tab_10.dmp
+-rw-r-----. 1 oracle dba     901120 Jan 26 17:26 spr_7tab_09.dmp
+-rw-r-----. 1 oracle dba     696320 Jan 26 17:26 spr_7tab_08.dmp
+-rw-r-----. 1 oracle dba   21700608 Jan 26 17:26 spr_7tab_07.dmp
+-rw-r-----. 1 oracle dba   30453760 Jan 26 17:26 spr_7tab_06.dmp
+-rw-r-----. 1 oracle dba     651264 Jan 26 17:26 spr_7tab_05.dmp
+-rw-r-----. 1 oracle dba     331776 Jan 26 17:26 spr_7tab_04.dmp
+-rw-r-----. 1 oracle dba      86016 Jan 26 17:26 spr_7tab_03.dmp
+-rw-r-----. 1 oracle dba    6967296 Jan 26 17:26 spr_7tab_02.dmp
+-rw-r-----. 1 oracle dba    1564672 Jan 26 17:26 spr_7tab_01.dmp
+
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11> pwd
+/vldcdsta20rtp2/backup/SPSSG1/sim_dump
+
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11>
 
 devtmpfs                                                            63G     0   63G   0% /dev
 tmpfs                                                               63G  465M   63G   1% /dev/shm
