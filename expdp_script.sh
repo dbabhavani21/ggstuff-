@@ -1,3 +1,12 @@
+oracle@vl1118428rtp2:SPSSG11> du -sh *
+140K    log
+du: cannot read directory 'lost+found': Permission denied
+64K     lost+found
+256K    shl
+1.9T    SPSSG1
+
+
+
 cd /vldcdsta20rtp2/backup
 
 du -sh *
