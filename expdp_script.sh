@@ -4,6 +4,8 @@ du: cannot read directory 'lost+found': Permission denied
 64K     lost+found
 256K    shl
 1.9T    SPSSG1
+cd SPSSG1
+du -sh *
 
 
 
