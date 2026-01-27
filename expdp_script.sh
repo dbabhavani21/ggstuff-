@@ -1,3 +1,9 @@
+SELECT tablespace_name, bigfile
+FROM   dba_tablespaces
+WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX');
+
+
+
 alter tablespace INVM_DBO_TBS add datafile '+PRDCROD1_DATA' size 20gb;
 
 ALTER DATABASE DATAFILE '+PRDCROD1_DATA/PRDCROD1_A/DATAFILE/invm_dbo_tbs.304.1223219067'
