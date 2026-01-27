@@ -1,3 +1,9 @@
+ALTER DATABASE DATAFILE
+  '+PRDCROQ1_DATA/PRDCROQ1_A/DATAFILE/invm_dbo_idx.311.1223295765'
+  AUTOEXTEND ON NEXT 1G MAXSIZE 30G;
+
+
+
 SELECT tablespace_name, bigfile
 FROM   dba_tablespaces
 WHERE  tablespace_name IN ('INVM_DBO_TBS','INVM_DBO_IDX');
