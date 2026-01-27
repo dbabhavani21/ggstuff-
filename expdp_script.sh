@@ -1,3 +1,33 @@
+oracle@vl1118428rtp2:SPSSG11> ls -lrt
+total 1949065672
+-rw-r-----. 1 oracle dba       155648 Jan 22 20:00 SPSSG11_FULL_260122-200001_04.DMP
+-rw-r-----. 1 oracle dba        20480 Jan 22 20:00 SPSSG11_FULL_260122-200001_03.DMP
+-rw-r-----. 1 oracle dba        73728 Jan 22 20:00 SPSSG11_FULL_260122-200001_02.DMP
+-rw-r-----. 1 oracle dba      2691072 Jan 22 20:00 SPSSG11_FULL_260122-200001_01.DMP
+-rw-r--r--. 1 oracle dba        16218 Jan 22 20:00 EXPDP_SPSSG11_FULL_260122-200001.LOG
+-rw-r-----. 1 oracle dba       147456 Jan 23 20:00 SPSSG11_FULL_260123-200001_04.DMP
+-rw-r-----. 1 oracle dba      2695168 Jan 23 20:00 SPSSG11_FULL_260123-200001_03.DMP
+-rw-r-----. 1 oracle dba        45056 Jan 23 20:00 SPSSG11_FULL_260123-200001_02.DMP
+-rw-r-----. 1 oracle dba        61440 Jan 23 20:00 SPSSG11_FULL_260123-200001_01.DMP
+-rw-r--r--. 1 oracle dba        16568 Jan 23 20:00 EXPDP_SPSSG11_FULL_260123-200001.LOG
+-rw-r-----. 1 oracle dba 610245509120 Jan 24 21:02 SPSSG11_FULL_260124-200001_02.DMP
+-rw-r-----. 1 oracle dba 215774543872 Jan 24 21:02 SPSSG11_FULL_260124-200001_03.DMP
+-rw-r-----. 1 oracle dba 608899420160 Jan 24 21:02 SPSSG11_FULL_260124-200001_04.DMP
+-rw-r-----. 1 oracle dba 560881025024 Jan 24 21:02 SPSSG11_FULL_260124-200001_01.DMP
+-rw-r--r--. 1 oracle dba     10595775 Jan 24 21:02 EXPDP_SPSSG11_FULL_260124-200001.LOG
+-rw-r-----. 1 oracle dba        36864 Jan 25 20:00 SPSSG11_FULL_260125-200001_01.DMP
+-rw-r-----. 1 oracle dba        86016 Jan 25 20:00 SPSSG11_FULL_260125-200001_03.DMP
+-rw-r-----. 1 oracle dba     10067968 Jan 25 20:01 SPSSG11_FULL_260125-200001_02.DMP
+-rw-r--r--. 1 oracle dba        36864 Jan 25 20:01 EXPDP_SPSSG11_FULL_260125-200001.LOG
+-rw-r-----. 1 oracle dba     17412096 Jan 25 20:01 SPSSG11_FULL_260125-200001_04.DMP
+-rw-r-----. 1 oracle dba         4096 Jan 25 20:01 SPSSG11_FULL_260125-200001_05.DMP
+drwxr-sr-x. 2 oracle dba        20480 Jan 26 19:51 sim_dump
+
+
+
+
+
+
 oracle@vl1118428rtp2:SPSSG11> du -sh *
 28K     EXPDP_SPSSG11_FULL_260122-200001.LOG
 28K     EXPDP_SPSSG11_FULL_260123-200001.LOG
