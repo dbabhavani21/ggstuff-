@@ -1,3 +1,37 @@
+v[/u02/wide/acfs/dba_work/dsdb/sim_dump]
+oracle@o54oma2vc11:WIORDA11> cd /u02/wide/acfs/dba_work/dsdb/sim_dump && tar -cf - *.dmp | ssh oracle@10.210.16.136 "ssh oracle@10.195.104.68 'cd /vldcdsta20rtp2/backup/SPSSG1/sim_dump && tar -xf -'"
+
+Unauthorized access to or use of this system is prohibited.
+All access and use may be monitored and recorded.
+
+Password:
+
+Unauthorized access to or use of this system is prohibited.
+All access and use may be monitored and recorded.
+
+tar: spr_grr_90tab_43.dmp: Cannot write: No space left on device
+tar: Exiting with failure status due to previous errors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Slava dumo files
 
 [/vldcdsta20rtp2/backup/SPSSG1]
