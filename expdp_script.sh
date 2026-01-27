@@ -1,3 +1,10 @@
+cd /vldcdsta20rtp2/backup
+
+du -sh *
+
+
+
+
 oracle@vl1118428rtp2:SPSSG11> rm -rf *.dmp
 
 [/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
