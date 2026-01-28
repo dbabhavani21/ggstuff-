@@ -1,3 +1,8 @@
+SELECT owner, object_name, object_type 
+FROM dba_objects 
+WHERE object_name = 'EXP_MIGRATION_FILTERED';
+
+
 
 SQL> sho parameter streams_pool_size;
 
