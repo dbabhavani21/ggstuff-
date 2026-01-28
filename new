@@ -1,3 +1,20 @@
+SQL> create or replace directory sim_dump as '/u02/wide/acfs/dba_work/exp_dumps/sim_dumps';
+
+Directory created.
+
+SQL> grant read,write on directory sim_dump to public;
+
+Grant succeeded.
+
+
+/u02/wide/acfs/dba_work/exp_dumps/sim_dumps
+
+
+
+
+
+
+
 OWNER      TABLE_NAME                               COLUMN_STATUS
 ---------- ---------------------------------------- ---------------
 GRR00DBO   GRK_AWARD_DISTRIBUTION_D                 PRESENT
