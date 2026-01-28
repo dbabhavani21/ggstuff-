@@ -1,3 +1,112 @@
+SET LINESIZE 200
+SET PAGESIZE 100
+COL OWNER FORMAT A10
+COL TABLE_NAME FORMAT A40
+COL COLUMN_STATUS FORMAT A15
+
+SELECT t.owner, 
+       t.table_name,
+       CASE 
+           WHEN c.column_name IS NOT NULL THEN 'PRESENT'
+           ELSE '>>> MISSING <<<'
+       END AS column_status
+FROM dba_tables t
+LEFT JOIN dba_tab_columns c 
+    ON t.owner = c.owner 
+    AND t.table_name = c.table_name 
+    AND c.column_name = 'BEGIN_VERSION_DATE'
+WHERE 
+(
+    t.owner = 'GRR00DBO' AND t.table_name IN (
+        'GRK_AWARD_DISTRIBUTION_D',
+        'GRK_BRKR_PLAN_CUSTODY_ACCT_D',
+        'GRK_CSR_HIER_SETUP_D',
+        'GRK_DIST_PAID_TRNF_REQ_D',
+        'GRK_DIST_PAID_TRNS_DTL_D',
+        'GRK_EST_TAX_D',
+        'GRK_FILE_LOAD_INFO_D',
+        'GRK_GRANT_AGREE_D',
+        'GRK_GRANT_TRANCHE_D',
+        'GRK_GRNT_VEST_DIV_F',
+        'GRK_PERF_GRANT_PED_D',
+        'GRK_PRTC_GRANT_D',
+        'GRK_RETIREMENT_ELG_RULE_D',
+        'GRK_SHRPOOL_GRANT_F',
+        'GRK_SHRPOOL_SUMMARY_FS',
+        'GRK_STOCK_PRICE_D',
+        'GRK_VEST_PED_SUMMARY_F'
+    )
+)
+OR 
+(
+    t.owner = 'SPR00DBO' AND t.table_name IN (
+        'AWARD_DISTRIBUTION_D',
+        'BRKR_PLAN_CUSTODY_ACCT_D',
+        'BRKR_PRTC_D',
+        'CLNT_DOC_CALLOUTS_D',
+        'CLNT_DOC_PRODUCTS_D',
+        'CORP_ACTION_D',
+        'CORP_GRANT_TAX_D',
+        'CUSIP_PRICING_ADJ_D',
+        'DATE_D',
+        'DISTRIBUTION_FRQ_D',
+        'DISTRIBUTION_SCHD_D',
+        'ENDING_BALANCE_F',
+        'ENDING_BALANCE_IFRS_F',
+        'FED_INTEREST_RTE_D',
+        'FILE_LOAD_INFO_D',
+        'FISCAL_MONTH_D',
+        'GRANT_ACTIVITY_TRX_F',
+        'GRANT_AGREE_D',
+        'GRANT_EXPENSE_F',
+        'GRANT_TRANCHE_D',
+        'GRANT_TRANCHE_EXT_D',
+        'GRANT_VAL_ASSUMPTION_D',
+        'OFFERING_D',
+        'OVERRIDE_D',
+        'PARTICIPANT_D',
+        'PERFORMANCE_SCHD_D',
+        'PERF_GRANT_RATE_D',
+        'PERF_PERIOD_GRANT_D',
+        'PERF_PERIOD_VESTING_D',
+        'PLAN_D',
+        'PLAN_SPONSOR_D',
+        'PRODUCT_MAPPINGS_D',
+        'PROD_D',
+        'PRORATION_RL_D',
+        'PRTC_GRANT_CSTM_D',
+        'PRTC_GRANT_D',
+        'PRTC_GRANT_D_MV',
+        'PRTC_GRANT_D_PLAN_MV',
+        'PRTC_GRANT_EXT_D',
+        'PRTC_MOBILITY_D',
+        'PS_FAS_LEDGER_D',
+        'RPT_DIST_TRX_CTA_F',
+        'TERMINATION_SCHD_D',
+        'TRANCHE_EXPENSE_F',
+        'TRANCHE_VAL_ASSUMPTION_D',
+        'T_FSBFF_BLACKOUT_RULE_FILTER_F',
+        'T_FSBGF_BLACKOUT_GRANT_F',
+        'T_FSBPD_TAX_BKT_RNG_D',
+        'T_FSBRD_BLACKOUT_RL_D',
+        'T_FSDID_DIVIDEND_D',
+        'T_FSGVD_GRNT_VEST_DIV_F',
+        'T_FSLRD_LOT_LVL_RSTC_D',
+        'T_FSLVF_TAX_ALLOC_F',
+        'T_FSOCF_ORD_CANCEL_F',
+        'T_FSPRG_PRTC_G_TAX_F',
+        'T_FSPTA_PRTC_TAX_ASGN_DTL_F',
+        'T_FSPTB_PRTC_TAX_ASGN_DTL_FS',
+        'T_FSSED_SEC_D',
+        'T_FSTMF_TAX_METH_F',
+        'T_FSTPD_TAX_ASGT_D',
+        'VESTING_ACTIVITY_TRX_F'
+    )
+)
+ORDER BY column_status DESC, owner, table_name;
+
+
+
 
 OWNER           TABLE_NAME                                   TABLE_GB
 --------------- ---------------------------------------- ------------
