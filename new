@@ -1,3 +1,16 @@
+col opname format a40
+col message format a100
+SET LINES 10000
+SELECT SID, SERIAL#, opname,message, SOFAR, TOTALWORK,
+ROUND(SOFAR/TOTALWORK*100,2) COMPLETE
+FROM   gV$SESSION_LONGOPS
+WHERE
+TOTALWORK != 0
+AND    SOFAR != TOTALWORK
+order by 1;
+
+
+
 SQL> create or replace directory sim_dump as '/u02/wide/acfs/dba_work/exp_dumps/sim_dumps';
 
 Directory created.
