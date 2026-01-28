@@ -1,3 +1,19 @@
+-- shows the full alert log file path
+select value as alert_log
+from v$diag_info
+where name = 'Alert Log';
+Also useful:
+
+sql
+Copy code
+-- shows ADR base / home
+select name, value
+from v$diag_info
+where name in ('ADR Base','Diag Trace','Diag Alert','Default Trace File');
+
+
+
+
 JOB_NAME=EXP_MIGRATION_V2
 
 
