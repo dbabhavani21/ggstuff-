@@ -1,3 +1,7 @@
+set numwidth 49
+select current_scn from v$database; 
+
+
 SQL> sho parameter undo;
 
 NAME                                 TYPE        VALUE
