@@ -1,3 +1,256 @@
+
+SQL> sho parameter streams_pool_size;
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+streams_pool_size                    big integer 5G
+SQL> sho parameter sga;
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+allow_group_access_to_sga            boolean     FALSE
+lock_sga                             boolean     FALSE
+pre_page_sga                         boolean     TRUE
+sga_max_size                         big integer 56G
+sga_min_size                         big integer 0
+sga_target                           big integer 56G
+unified_audit_sga_queue_size         integer     1048576
+SQL> sho parameter memory;
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+hi_shared_memory_address             integer     0
+inmemory_adg_enabled                 boolean     TRUE
+inmemory_automatic_level             string      OFF
+inmemory_clause_default              string
+inmemory_expressions_usage           string      ENABLE
+inmemory_force                       string      DEFAULT
+inmemory_max_populate_servers        integer     0
+inmemory_optimized_arithmetic        string      DISABLE
+inmemory_prefer_xmem_memcompress     string
+inmemory_prefer_xmem_priority        string
+inmemory_query                       string      ENABLE
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+inmemory_size                        big integer 0
+inmemory_trickle_repopulate_servers_ integer     1
+percent
+inmemory_virtual_columns             string      MANUAL
+inmemory_xmem_size                   big integer 0
+memory_max_target                    big integer 0
+memory_target                        big integer 0
+optimizer_inmemory_aware             boolean     TRUE
+shared_memory_address                integer     0
+SQL> SELECT
+    component mem_component
+  , ROUND(current_size/1048576) cur_mb
+  , ROUND(min_size/1048576)     min_mb
+  , ROUND(max_size/1048576)     max_mb
+  , ROUND(user_specified_size/1048576)    spec_mb
+  , oper_count
+  , last_oper_type last_optype
+  , last_oper_mode last_opmode
+  , last_op  2  er_time last_optime
+  , granule_size/1048576        gran_mb
+FROM
+    v$sga_dynamic_components
+/  3    4    5    6    7    8    9   10   11   12   13   14
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+shared pool                                                           15360
+     10240      15360      10240         40 GROW          IMMEDIATE 28-DEC-25
+       128
+
+large pool                                                             2560
+      2560       2560       2560          0 STATIC
+       128
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+
+java pool                                                               896
+       896        896        384          0 STATIC
+       128
+
+streams pool                                                           8576
+      5120       8576       5120         27 GROW          IMMEDIATE 28-JAN-26
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+       128
+
+unified pga pool                                                          0
+         0          0          0          0 STATIC
+       128
+
+memoptimize buffer cache                                                  0
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+         0          0          0          0 STATIC
+       128
+
+DEFAULT buffer cache                                                  29440
+     29440      38144       3072         68 SHRINK        IMMEDIATE 28-JAN-26
+       128
+
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+KEEP buffer cache                                                         0
+         0          0          0          0 STATIC
+       128
+
+RECYCLE buffer cache                                                      0
+         0          0          0          0 STATIC
+       128
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+
+DEFAULT 2K buffer cache                                                   0
+         0          0          0          0 STATIC
+       128
+
+DEFAULT 4K buffer cache                                                   0
+         0          0          0          0 STATIC
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+       128
+
+DEFAULT 8K buffer cache                                                   0
+         0          0          0          0 STATIC
+       128
+
+DEFAULT 16K buffer cache                                                  0
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+         0          0          0          0 STATIC
+       128
+
+DEFAULT 32K buffer cache                                                  0
+         0          0          0          0 STATIC
+       128
+
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+Shared IO Pool                                                          128
+         0        128          0          1 GROW          IMMEDIATE 12-DEC-25
+       128
+
+Data Transfer Cache                                                       0
+         0          0          0          0 STATIC
+       128
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+
+In-Memory Area                                                            0
+         0          0          0          0 STATIC
+       128
+
+In Memory RW Extension Area                                               0
+         0          0          0          0 STATIC
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+       128
+
+In Memory RO Extension Area                                               0
+         0          0          0          0 STATIC
+       128
+
+ASM Buffer Cache                                                          0
+
+MEM_COMPONENT                                                        CUR_MB
+---------------------------------------------------------------- ----------
+    MIN_MB     MAX_MB    SPEC_MB OPER_COUNT LAST_OPTYPE   LAST_OPMO LAST_OPTI
+---------- ---------- ---------- ---------- ------------- --------- ---------
+   GRAN_MB
+----------
+         0          0       3072          0 STATIC
+       128
+
+
+20 rows selected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sho parameter sga;
 
 sho parameter memory;
