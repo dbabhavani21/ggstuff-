@@ -1,3 +1,24 @@
+sho parameter sga;
+
+sho parameter memory;
+
+SELECT
+    component mem_component
+  , ROUND(current_size/1048576) cur_mb
+  , ROUND(min_size/1048576)     min_mb
+  , ROUND(max_size/1048576)     max_mb
+  , ROUND(user_specified_size/1048576)    spec_mb
+  , oper_count
+  , last_oper_type last_optype
+  , last_oper_mode last_opmode
+  , last_oper_time last_optime
+  , granule_size/1048576        gran_mb
+FROM
+    v$sga_dynamic_components
+/
+
+
+
 GoldenGate Apply Server AS08 for OGG$R_FAS_02 with pid=448 OS id=197956 stopped
 2026-01-28T14:41:23.692990-05:00
 
