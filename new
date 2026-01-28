@@ -1,3 +1,53 @@
+oracle@o54oma2vc21:WIORDY11> tail -50f nohup.out
+
+Export: Release 19.0.0.0.0 - Production on Wed Jan 28 14:18:42 2026
+Version 19.25.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+
+UDE-31623: operation generated ORACLE error 31623
+ORA-31623: a job is not attached to this session via the specified handle
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 4769
+ORA-06512: at "SYS.KUPV$FT_INT", line 2327
+ORA-06512: at "SYS.DBMS_SYS_ERROR", line 79
+ORA-06512: at "SYS.KUPV$FT_INT", line 2242
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 2277
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 4510
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 6152
+ORA-06512: at line 1
+
+
+Export: Release 19.0.0.0.0 - Production on Wed Jan 28 14:29:22 2026
+Version 19.25.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+
+UDE-31623: operation generated ORACLE error 31623
+ORA-31623: a job is not attached to this session via the specified handle
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 4769
+ORA-06512: at "SYS.KUPV$FT_INT", line 2327
+ORA-06512: at "SYS.DBMS_SYS_ERROR", line 79
+ORA-06512: at "SYS.KUPV$FT_INT", line 2242
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 2277
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 4510
+ORA-06512: at "SYS.DBMS_DATAPUMP", line 6152
+ORA-06512: at line 1
+
+^C[1] +  Done(1)                 nohup expdp parfile=final.par &
+
+
+
+
+
+
+
+
+
+
 SELECT owner_name, job_name, state 
 FROM dba_datapump_jobs 
 WHERE state != 'NOT RUNNING';
