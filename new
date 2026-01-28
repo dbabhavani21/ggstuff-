@@ -1,3 +1,20 @@
+SELECT owner_name, job_name, state 
+FROM dba_datapump_jobs 
+WHERE state != 'NOT RUNNING';
+
+-- Find Data Pump sessions
+SELECT s.sid, s.serial#, s.username, s.program
+FROM v$session s
+WHERE s.program LIKE '%DATAPUMP%'
+OR s.module LIKE '%Data Pump%';
+
+
+
+
+
+
+
+
 oracle@o54oma2vc21:WIORDY11> tail -50f nohup.out
 
 Export: Release 19.0.0.0.0 - Production on Wed Jan 28 14:18:42 2026
