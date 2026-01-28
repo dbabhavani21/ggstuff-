@@ -1,3 +1,809 @@
+NAME
+---------
+WIORDY1
+
+SQL>   2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17
+
+O/S                                 Oracle  Oracle UNIX
+Login    Oracle           Session  Session  Serial Process
+ID       User ID          Status        ID      No ID                       SQL_ID        PLAN_HASH_VALUE Current Statment
+-------- ---------------- -------- ------- ------- ------------------------ ------------- --------------- ----------------------------
+grid     COMDBA_ID        ACTIVE      2750   40878 176965                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      2019   50298 147756                   afcz9s4uazbpk               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .transceive_int(:2, :3, :4,
+                                                                                                          :5, :6); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      3058   49274 199425                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      2496   29600 257802                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      2080   26690 59180                    b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      2916   44908 27754                    b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      2132   11945 161469                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      2999   63642 188736                   b9q40hsq58164      3718624651 SELECT flags, NVL(target_xml
+                                                                                                          _clob,xml_clob) FROM "COMDBA
+                                                                                                          _ID"."SYS_EXPORT_TABLE_28" W
+                                                                                                          HERE  process_order = :1 AND
+                                                                                                           duplicate = 0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     COMDBA_ID        ACTIVE      1967   11790 59159
+grid     COMDBA_ID        ACTIVE      1967   11790 115176
+grid     DBSNMP           ACTIVE      1906   62969 83822                    g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE      1851   25828 83745                    g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE      1851   25828 175161                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE       451   11099 339798                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE      1906   62969 70377                    g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE      1851   25828 108720                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE       451   11099 78724                    g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     DBSNMP           ACTIVE       450   58905 131949                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     GGADMIN          ACTIVE      1234   16684 159322
+grid     GGADMIN          ACTIVE      2270   23987 383313
+grid     GGADMIN          ACTIVE      2159   42373 376697
+grid     GGADMIN          ACTIVE      2159   42373 1931
+grid     GGADMIN          ACTIVE       981     383 174411
+grid     GGADMIN          ACTIVE      1373   60544 286529
+grid     SYS              ACTIVE       983   47175 174411                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     SYS              ACTIVE       984   64979 174411                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     SYS              ACTIVE      2355   20173 297003                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+grid     SYS              ACTIVE      2494   37395 24583
+grid     SYS              ACTIVE      2634   24215 69987
+oracle   COMDBA_ID        ACTIVE      1409   30442 315565                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1409   30442 340594                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1409   30442 124829                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2750   40878 340588                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2750   40878 173568                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2750   40878 365619                   7u5pwprkmvd9g       725995198 SELECT /*+all_rows*/ SYS_XML
+                                                                                                          GEN(VALUE(KU$), XMLFORMAT.cr
+                                                                                                          eateFormat2('STRMTABLE_T', '
+                                                                                                          7')), 0  FROM SYS.KU$_STRMTA
+                                                                                                          BLE_VIEW KU$  WHERE  KU$.OWN
+                                                                                                          ER_NAME=:SCHEMA1 AND   KU$.N
+                                                                                                          AME=:NAME2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2749   28834 128746                   7wn3wubg7gjds               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .get_status(:2, :3); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2749   28834 340069                   7wn3wubg7gjds               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .get_status(:2, :3); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2749   28834 124804                   7wn3wubg7gjds               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .get_status(:2, :3); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1212   33754 347296                   8rgw5q94paqsg               0 BEGIN sys.kupc$que_int.send(
+                                                                                                          :1, :2, :3); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1212   33754 340183                   8rgw5q94paqsg               0 BEGIN sys.kupc$que_int.send(
+                                                                                                          :1, :2, :3); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1212   33754 181831                   8rgw5q94paqsg               0 BEGIN sys.kupc$que_int.send(
+                                                                                                          :1, :2, :3); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1014   60280 260418                   8xc1hn41y4fdd      3828691343 SELECT flags, NVL(target_xml
+                                                                                                          _clob, xml_clob) FROM "COMDB
+                                                                                                          A_ID"."SYS_EXPORT_TABLE_28"
+                                                                                                          WHERE  process_order > 0 AND
+                                                                                                           duplicate = 0 AND object_sc
+                                                                                                          hema = :1 AND object_name =
+                                                                                                          :2 AND object_type = :3 AND
+                                                                                                          processing_status = :4 AND p
+                                                                                                          artition_name IS NULL AND su
+                                                                                                          bpartition_name IS NULL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1014   60280 123551                   8xc1hn41y4fdd      3828691343 SELECT flags, NVL(target_xml
+                                                                                                          _clob, xml_clob) FROM "COMDB
+                                                                                                          A_ID"."SYS_EXPORT_TABLE_28"
+                                                                                                          WHERE  process_order > 0 AND
+                                                                                                           duplicate = 0 AND object_sc
+                                                                                                          hema = :1 AND object_name =
+                                                                                                          :2 AND object_type = :3 AND
+                                                                                                          processing_status = :4 AND p
+                                                                                                          artition_name IS NULL AND su
+                                                                                                          bpartition_name IS NULL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1014   60280 340586                   8xc1hn41y4fdd      3828691343 SELECT flags, NVL(target_xml
+                                                                                                          _clob, xml_clob) FROM "COMDB
+                                                                                                          A_ID"."SYS_EXPORT_TABLE_28"
+                                                                                                          WHERE  process_order > 0 AND
+                                                                                                           duplicate = 0 AND object_sc
+                                                                                                          hema = :1 AND object_name =
+                                                                                                          :2 AND object_type = :3 AND
+                                                                                                          processing_status = :4 AND p
+                                                                                                          artition_name IS NULL AND su
+                                                                                                          bpartition_name IS NULL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1014   60280 124793                   8xc1hn41y4fdd      3828691343 SELECT flags, NVL(target_xml
+                                                                                                          _clob, xml_clob) FROM "COMDB
+                                                                                                          A_ID"."SYS_EXPORT_TABLE_28"
+                                                                                                          WHERE  process_order > 0 AND
+                                                                                                           duplicate = 0 AND object_sc
+                                                                                                          hema = :1 AND object_name =
+                                                                                                          :2 AND object_type = :3 AND
+                                                                                                          processing_status = :4 AND p
+                                                                                                          artition_name IS NULL AND su
+                                                                                                          bpartition_name IS NULL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1685   22012 340623                   8xc1hn41y4fdd      3828691343 SELECT flags, NVL(target_xml
+                                                                                                          _clob, xml_clob) FROM "COMDB
+                                                                                                          A_ID"."SYS_EXPORT_TABLE_28"
+                                                                                                          WHERE  process_order > 0 AND
+                                                                                                           duplicate = 0 AND object_sc
+                                                                                                          hema = :1 AND object_name =
+                                                                                                          :2 AND object_type = :3 AND
+                                                                                                          processing_status = :4 AND p
+                                                                                                          artition_name IS NULL AND su
+                                                                                                          bpartition_name IS NULL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2019   50298 182234                   afcz9s4uazbpk               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .transceive_int(:2, :3, :4,
+                                                                                                          :5, :6); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       116   37080 340606                   afcz9s4uazbpk               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .transceive_int(:2, :3, :4,
+                                                                                                          :5, :6); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       116   37080 12178                    afcz9s4uazbpk               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .transceive_int(:2, :3, :4,
+                                                                                                          :5, :6); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2019   50298 340600                   afcz9s4uazbpk               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .transceive_int(:2, :3, :4,
+                                                                                                          :5, :6); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2019   50298 121846                   afcz9s4uazbpk               0 BEGIN :1 := sys.kupc$que_int
+                                                                                                          .transceive_int(:2, :3, :4,
+                                                                                                          :5, :6); END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2025   21335 340579                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2132   11945 340583                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2916   44908 340592                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1992   43259 340596                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2080   26690 340604                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       199   47125 340425                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       258   47924 340403                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       455   54910 340573                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       618   61774 340577                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       844   14970 340581                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1181   61632 340590                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1461   49656 340598                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1515   42964 340602                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2496   29600 340608                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      3058   49274 340616                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       509   13671 340614                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2243   17232 340636                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       731   43605 340621                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2469   16997 340640                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2025   21335 121551                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2916   44908 293573                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1992   43259 170121                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       199   47125 124566                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       258   47924 124570                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       455   54910 124738                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       618   61774 124750                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       844   14970 124780                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1181   61632 124806                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1461   49656 124835                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1515   42964 124839                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2496   29600 298731                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2025   21335 389401                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1992   43259 137720                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2080   26690 114360                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       199   47125 68565                    b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       258   47924 344309                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       455   54910 75553                    b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       618   61774 373900                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       844   14970 122060                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1181   61632 239662                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1461   49656 82587                    b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       509   13671 253574                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2025   21335 308064                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2132   11945 173516                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2916   44908 173585                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1992   43259 173667                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2080   26690 181646                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       455   54910 103635                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       618   61774 308385                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1181   61632 314658                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      1461   49656 267623                   b25v42vpr96nk               0  BEGIN    SYS.KUPW$WORKER.MA
+                                                                                                          IN('SYS_EXPORT_TABLE_28', 'C
+                                                                                                          OMDBA_ID', 0, 0);  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       842    4756 340638                   b9q40hsq58164      3718624651 SELECT flags, NVL(target_xml
+                                                                                                          _clob,xml_clob) FROM "COMDBA
+                                                                                                          _ID"."SYS_EXPORT_TABLE_28" W
+                                                                                                          HERE  process_order = :1 AND
+                                                                                                           duplicate = 0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE      2999   63642 340612                   b9q40hsq58164      3718624651 SELECT flags, NVL(target_xml
+                                                                                                          _clob,xml_clob) FROM "COMDBA
+                                                                                                          _ID"."SYS_EXPORT_TABLE_28" W
+                                                                                                          HERE  process_order = :1 AND
+                                                                                                           duplicate = 0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   COMDBA_ID        ACTIVE       226    4451 340571
+oracle   COMDBA_ID        ACTIVE      1967   11790 178528
+oracle   COMDBA_ID        ACTIVE       451   31759 340610
+oracle   COMDBA_ID        ACTIVE       789   37325 340631
+oracle   COMDBA_ID        ACTIVE       986   14769 301099
+oracle   COMDBA_ID        ACTIVE      1967   11790 340575
+oracle   COMDBA_ID        ACTIVE       226    4451 124721
+oracle   COMDBA_ID        ACTIVE       986   14769 344323
+oracle   COMDBA_ID        ACTIVE       226    4451 75040
+oracle   COMDBA_ID        ACTIVE       451   31759 253570
+oracle   COMDBA_ID        ACTIVE       986   14769 340569
+oracle   COMDBA_ID        ACTIVE       986   14769 124648
+oracle   DBSNMP           ACTIVE       450   58905 83309                    g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   DBSNMP           ACTIVE       451   11099 108694                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   DBSNMP           ACTIVE      1906   62969 121834                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   DBSNMP           ACTIVE       451   11099 181591                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   DBSNMP           ACTIVE       450   58905 173522                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   DBSNMP           ACTIVE      1906   62969 322074                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   DBSNMP           ACTIVE       450   58905 199428                   g0bggfqrddc4w               0 BEGIN dbms_lock.sleep(60); E
+                                                                                                          ND;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   GGADMIN          ACTIVE       981     383 109784
+oracle   GGADMIN          ACTIVE      2606   45970 235939
+oracle   GGADMIN          ACTIVE       506   54324 389424
+oracle   GGADMIN          ACTIVE      1710   28029 159257
+oracle   GGADMIN          ACTIVE      2159   42373 159259
+oracle   GGADMIN          ACTIVE      2270   23987 159261
+oracle   GGADMIN          ACTIVE      2382   41639 159267
+oracle   GGADMIN          ACTIVE      2438   40243 159269
+oracle   GGADMIN          ACTIVE      2606   45970 164414
+oracle   GGADMIN          ACTIVE      1429   35160 275656
+oracle   GGADMIN          ACTIVE      1373   60544 121509
+oracle   GGADMIN          ACTIVE       506   54324 192149
+oracle   GGADMIN          ACTIVE      1234   16684 124495
+oracle   GGADMIN          ACTIVE      1710   28029 124544
+oracle   GGADMIN          ACTIVE      2159   42373 124605
+oracle   GGADMIN          ACTIVE      2270   23987 124616
+oracle   GGADMIN          ACTIVE      2382   41639 124628
+oracle   GGADMIN          ACTIVE      2438   40243 124638
+oracle   GGADMIN          ACTIVE      2606   45970 124650
+oracle   GGADMIN          ACTIVE       981     383 331530
+oracle   GGADMIN          ACTIVE       506   54324 373886
+oracle   GGADMIN          ACTIVE      1234   16684 218233
+oracle   GGADMIN          ACTIVE      1710   28029 389421
+oracle   GGADMIN          ACTIVE      2438   40243 115309
+oracle   GGADMIN          ACTIVE      2606   45970 116041
+oracle   GGADMIN          ACTIVE       981     383 172721
+oracle   GGADMIN          ACTIVE      1373   60544 113558
+oracle   GGADMIN          ACTIVE      1234   16684 182036
+oracle   GGADMIN          ACTIVE      1710   28029 103637
+oracle   GGADMIN          ACTIVE      1373   60544 347672
+oracle   SYS              ACTIVE      1042   41044 172790                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1042   41044 78613                    agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE       983   47175 172721                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE       984   64979 109784                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      2355   20173 124767                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      2355   20173 103944                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1179    2325 121691                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE       983   47175 109784                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1179    2325 239656                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1042   41044 121280                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1042   41044 331602                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE       984   64979 331530                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE       983   47175 331530                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1179    2325 83462                    agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
+                                                                                                          ORDER BY 1,2,7
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+oracle   SYS              ACTIVE      1179    2325 283445                   agfyfgy0xxw4w      2835191053  SELECT p.username pu,
+                                                                                                             s.username su,         s.
+                                                                                                          status stat,         s.sid s
+                                                                                                          sid,         s.serial# sser,
+                                                                                                                   p.spid,         sa.
+                                                                                                          sql_id,         sa.PLAN_HASH
+                                                                                                          _VALUE,         substr(sa.sq
+                                                                                                          l_text,1,540) txt    FROM gv
+                                                                                                          $process p, gv$session s, gv
+                                                                                                          $sqlarea sa   WHERE p.addr=s
+                                                                                                          .paddr     AND s.username is
+                                                                                                           not null     AND s.sql_addr
+                                                                                                          ess=sa.address(+)     AND s.
+                                                                                                          sql_hash_value=sa.hash_value
+                                                                                                          (+)  and s.status='ACTIVE'
 
 
 
