@@ -1,3 +1,25 @@
+target 
+==========
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11> id
+uid=103(oracle) gid=101(dba) groups=101(dba) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+[/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
+oracle@vl1118428rtp2:SPSSG11>
+
+===============================
+sopurce : 
+oracle@o54oma2vc21:default> id
+uid=1001(oracle) gid=1001(oinstall) groups=1001(oinstall),1002(dba),1003(racoper),1004(asmdba)
+
+[/u02/wide/acfs/dba_work/exp_dumps/sim_dumps]
+oracle@o54oma2vc21:default>
+
+[/u02/wide/acfs/dba_work/exp_dumps/sim_dumps]
+
+
+
+
 source server ip address : 10.235.162.71
 
 sourec server dump file location : /u02/wide/acfs/dba_work/exp_dumps/sim_dumps
