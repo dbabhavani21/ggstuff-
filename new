@@ -1,3 +1,47 @@
+GoldenGate Apply Server AS08 for OGG$R_FAS_02 with pid=448 OS id=197956 stopped
+2026-01-28T14:41:23.692990-05:00
+
+GoldenGate Apply Server AS0A for OGG$R_FAS_02 with pid=449 OS id=143776 stopped
+2026-01-28T14:42:00.737927-05:00
+
+GoldenGate Apply Server for OGG$R_FAS_02 started AS09 with pid=139 OS id=265514
+2026-01-28T14:42:00.745543-05:00
+Setting statement cache size for apply OGG$R_FAS_02 to 230. Current open_cursors value is 500.
+2026-01-28T14:43:01.322990-05:00
+Warning! Over 90 percent of streams_pool is utilized.
+2026-01-28T14:52:17.625084-05:00
+
+GoldenGate Apply Server AS09 for OGG$R_FAS_02 with pid=139 OS id=265514 stopped
+2026-01-28T14:52:54.689923-05:00
+
+GoldenGate Apply Server for OGG$R_FAS_02 started AS08 with pid=328 OS id=345221
+2026-01-28T14:52:54.698513-05:00
+Setting statement cache size for apply OGG$R_FAS_02 to 230. Current open_cursors value is 500.
+2026-01-28T14:53:46.053089-05:00
+Thread 1 advanced to log sequence 5027 (LGWR switch),  current SCN: 40253215215771
+  Current log# 103 seq# 5027 mem# 0: +D2_OM54/WIORDY1_O54OMA2/ONLINELOG/group_103.328.1200670979
+2026-01-28T14:53:46.696939-05:00
+ARC3 (PID:78800): Archived Log entry 18604 added for B-1200670974.T-1.S-5026 LOS:0x0000249c2e50f333 NXS:0x0000249c2e98102e NAB:1155378 ID 0x9df42925 LAD:1
+2026-01-28T14:55:49.528396-05:00
+
+GoldenGate Apply Server for OGG$R_FAS_02 started AS0A with pid=448 OS id=367673
+2026-01-28T14:57:01.061474-05:00
+Thread 1 advanced to log sequence 5028 (LGWR switch),  current SCN: 40253218152439
+  Current log# 104 seq# 5028 mem# 0: +D2_OM54/WIORDY1_O54OMA2/ONLINELOG/group_104.334.1200670979
+2026-01-28T14:57:01.217006-05:00
+ARC0 (PID:78786): Archived Log entry 18609 added for B-1200670974.T-1.S-5027 LOS:0x0000249c2e98102e NXS:0x0000249c2ec4df38 NAB:206688 ID 0x9df42925 LAD:1
+
+
+
+
+
+
+
+
+
+
+
+
 -- shows the full alert log file path
 select value as alert_log
 from v$diag_info
