@@ -1,3 +1,32 @@
+
+oracle   SYS              ACTIVE      1961   44899 114555
+oracle   SYS              ACTIVE      1961   37393 114555
+oracle   SYS              ACTIVE      1961   59375 114555
+oracle   SYS              ACTIVE      1961   31183 114555
+oracle   SYS              ACTIVE      2634   24215 170105
+oracle   SYS              ACTIVE      2494   37395 124642
+oracle   SYS              ACTIVE      1961   44899 329728
+oracle   SYS              ACTIVE      1961   37393 329728
+oracle   SYS              ACTIVE      1961   59375 329728
+oracle   SYS              ACTIVE      1961   31183 329728
+oracle   SYS              ACTIVE      2634   24215 337442
+oracle   SYS              ACTIVE      2494   37395 24885
+oracle   SYS              ACTIVE      1961   44899 166026
+oracle   SYS              ACTIVE      1961   37393 166026
+oracle   SYS              ACTIVE      1961   59375 166026
+oracle   SYS              ACTIVE      1961   31183 166026
+oracle   SYS              ACTIVE      1961   44899 72241
+oracle   SYS              ACTIVE      1961   37393 72241
+oracle   SYS              ACTIVE      1961   59375 72241
+oracle   SYS              ACTIVE      1961   31183 72241
+oracle   SYS              ACTIVE      2634   24215 159213
+oracle   SYS              ACTIVE      2494   37395 164405
+
+196 rows selected.
+
+
+
+
 set lines 180 pages 1000
  SET RECSEPCHAR "-"
  column pu format a8 heading 'O/S|Login|ID'
