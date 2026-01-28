@@ -1,3 +1,29 @@
+SQL> @alltab
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+SP2-0042: unknown command "UNION ALL" - rest of line ignored.
+)
+*
+ERROR at line 6:
+ORA-00933: SQL command not properly ended
+
+
+
+
+
 SET LINESIZE 200
 SET PAGESIZE 1000
 COL OWNER FORMAT A10
