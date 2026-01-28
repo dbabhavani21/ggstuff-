@@ -1,9 +1,30 @@
-order by 1;SQL> SQL> SQL>   2    3    4    5    6    7
-
-       SID    SERIAL# OPNAME                                   MESSAGE                                                                                                   SOFAR  TOTALWORK   COMPLETE
----------- ---------- ---------------------------------------- ---------------------------------------------------------------------------------------------------- ---------- ---------- ----------
-      1212      33754 SYS_EXPORT_TABLE_28                      SYS_EXPORT_TABLE_28: EXPORT : 177699 out of 855186 MB done                                               177699     855186      20.78
-
+set lines 180 pages 1000
+ SET RECSEPCHAR "-"
+ column pu format a8 heading 'O/S|Login|ID'
+ column su format a16 heading 'Oracle|User ID'
+ column stat format a8 heading 'Session|Status'
+ column ssid format 999999 heading 'Oracle|Session|ID'
+ column sser format 999999 heading 'Oracle|Serial|No'
+ column spid format 999999 heading 'UNIX|Process|ID'
+ column txt format a28 heading 'Current Statment' 
+ select name from v$database;
+ SELECT p.username pu,
+        s.username su,
+        s.status stat,
+        s.sid ssid,
+        s.serial# sser,
+        p.spid,
+        sa.sql_id,
+        sa.PLAN_HASH_VALUE,
+        substr(sa.sql_text,1,540) txt
+   FROM gv$process p, gv$session s, gv$sqlarea sa
+  WHERE p.addr=s.paddr
+    AND s.username is not null
+    AND s.sql_address=sa.address(+)
+    AND s.sql_hash_value=sa.hash_value(+)
+	and s.status='ACTIVE'
+ ORDER BY 1,2,7
+/
 
 
 
