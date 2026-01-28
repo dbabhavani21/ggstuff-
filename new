@@ -1,3 +1,178 @@
+OWNER           TABLE_NAME                                   TABLE_GB
+--------------- ---------------------------------------- ------------
+SPR00DBO        GRANT_EXPENSE_F                               855.266
+SPR00DBO        ENDING_BALANCE_F                              735.106
+SPR00DBO        T_FSGVD_GRNT_VEST_DIV_F                       678.263
+SPR00DBO        T_FSPAD_PARTICIPANT_D                         622.585
+SPR00DBO        TRANCHE_EXPENSE_F                             566.335
+SPR00DBO        T_FSPCL_PRODUCT_CONTROL_FS                    478.207
+GRR00DBO        GRK_EST_TAX_D                                 346.505
+SPR00DBO        PARTICIPANT_D                                 330.124
+SPR00DBO        PRODUCT_CONTROL_FS                            294.688
+SPR00DBO        VESTING_ACTIVITY_TRX_F                        266.302
+SPR00DBO        T_FSPTA_PRTC_TAX_ASGN_DTL_F                   257.799
+SPR00DBO        T_FSPGF_PERF_GRANT_F                          189.488
+SPR00DBO        PRTC_GRANT_EXT_D                              179.757
+SPR00DBO        T_FSPTB_PRTC_TAX_ASGN_DTL_FS                  166.688
+SPR00DBO        GRANT_TRANCHE_EXT_D                           150.934
+SPR00DBO        GRANT_VAL_ASSUMPTION_D                        150.250
+SPR00DBO        TRANCHE_VAL_ASSUMPTION_D                      150.186
+SPR00DBO        T_FSPGD_PRTC_GRANT_D                          104.955
+SPR00DBO        T_FSPVF_PERF_VEST_F                           104.555
+SPR00DBO        ENDING_BALANCE_IFRS_F                         101.017
+SPR00DBO        PERF_PERIOD_VESTING_D                          98.761
+SPR00DBO        GRANT_TRANCHE_D                                98.681
+SPR00DBO        T_FSGTF_GRANT_TRX_OF                           92.016
+SPR00DBO        RPT_DIST_TRX_CTA_F                             88.589
+SPR00DBO        T_FSTMF_TAX_METH_F                             79.214
+SPR00DBO        T_FSPVD_PRTC_VEST_D                            73.929
+SPR00DBO        T_FASE_FAS_ERROR                               70.978
+SPR00DBO        GRANT_ACTIVITY_F                               70.888
+SPR00DBO        T_FSBGF_BLACKOUT_GRANT_F                       70.354
+SPR00DBO        T_FSECF_ENROLL_CTRB_F                          69.483
+SPR00DBO        PRTC_GRANT_D                                   50.394
+SPR00DBO        T_FSERR_ERROR                                  50.250
+SPR00DBO        AWARD_DISTRIBUTION_D                           47.996
+SPR00DBO        T_FSPPD_PERF_PERIOD_D                          47.113
+SPR00DBO        PERF_PERIOD_GRANT_D                            40.047
+SPR00DBO        T_FSPUR_PUR_TRX_F                              39.790
+SPR00DBO        GRANT_ACTIVITY_TRX_F                           38.158
+SPR00DBO        T_FSCWT_CTRB_WD_TRX_F                          36.452
+SPR00DBO        T_FSLVF_TAX_ALLOC_F                            36.199
+SPR00DBO        T_FSSGF_SHRPOOL_GRANT_F                        33.543
+SPR00DBO        T_FSPRG_PRTC_G_TAX_F                           31.950
+SPR00DBO        CUSIP_PRICING_ADJ_D                            22.848
+SPR00DBO        T_FSPRP_PRTC_RSTC_PAYMENT_OF                   22.822
+SPR00DBO        TABBED_VEST_F                                  22.800
+SPR00DBO        CLNT_DOC_CALLOUTS_D                            22.207
+SPR00DBO        T_FSPDD_PRTC_DIST_D                            15.507
+SPR00DBO        T_FSPPV_PERF_PERIOD_VEST_D                     14.605
+SPR00DBO        T_FSPEF_PRTC_EXERCISE_OF                       13.744
+GRR00DBO        GRK_GRNT_VEST_DIV_F                            11.273
+SPR00DBO        GRANT_ACTIVITY_HIST_F                          10.079
+SPR00DBO        T_FSETF_ENROLL_TRX_F                            9.644
+SPR00DBO        PRTC_MOBILITY_D                                 9.037
+SPR00DBO        CLNT_DOC_PRODUCTS_D                             8.033
+SPR00DBO        T_FSPSF_PRODUCT_STATEMENT_F                     7.371
+GRR00DBO        GRK_PRTC_GRANT_D                                6.882
+SPR00DBO        GRANT_AGREE_D                                   5.666
+SPR00DBO        PROD_D                                          5.610
+GRR00DBO        GRK_PRODUCT_CONTROL_FS                          5.360
+SPR00DBO        TABBED_DIST_F                                   5.320
+SPR00DBO        PLAN_D                                          5.242
+SPR00DBO        PRTC_GRANT_CSTM_D                               5.108
+SPR00DBO        FISCAL_MONTH_D                                  5.063
+GRR00DBO        GRK_GRANT_TRANCHE_D                             4.313
+GRR00DBO        GRK_AWARD_DISTRIBUTION_D                        3.145
+GRR00DBO        GRK_GRANT_ACTIVITY_F                            3.068
+SPR00DBO        CORP_GRANT_TAX_D                                2.960
+SPR00DBO        T_FSCGD_CA_GRANT_D                              2.897
+GRR00DBO        GRK_DIST_PAID_TRX_D                             2.493
+GRR00DBO        GRK_PRTC_BRKR_INFO_D                            2.191
+SPR00DBO        T_FSTDF_TRNF_DEP_F                              2.184
+GRR00DBO        GRK_BRKR_MSG_TRKR_D                             1.990
+GRR00DBO        GRK_GRANT_ACTIVITY_HIST_F                       1.913
+SPR00DBO        T_FSTRF_TERMINATION_RECAP_F                     1.909
+GRR00DBO        GRK_TAX_METH_F                                  1.804
+SPR00DBO        T_FSDAD_DATE_D                                  1.798
+SPR00DBO        PERF_GRANT_RATE_D                               1.755
+GRR00DBO        GRK_DIST_TAX_D                                  1.696
+SPR00DBO        T_FSVSD_VESTING_SCHD_D                          1.591
+SPR00DBO        T_FSBFF_BLACKOUT_RULE_FILTER_F                  1.569
+GRR00DBO        GRK_VEST_PED_SUMMARY_F                          1.567
+GRR00DBO        GRK_GRANT_AGREE_D                               1.390
+GRR00DBO        GRK_DIST_PAID_TRNS_DTL_D                        1.379
+SPR00DBO        T_FSPCF_PRODUCT_CA_STATEMENT_F                  1.263
+GRR00DBO        GRK_DIST_PAID_TRNF_REQ_D                        1.255
+SPR00DBO        T_FSGAD_GRANT_AGREE_D                           1.252
+GRR00DBO        GRK_BRKR_ERROR_F                                1.221
+SPR00DBO        T_FSAOF_APPROVED_OPTIONS_F                      1.195
+GRR00DBO        GRK_FILE_LOAD_INFO_D                            1.120
+GRR00DBO        GRK_STOCK_PRICE_D                               1.060
+GRR00DBO        GRK_PERF_GRANT_PED_D                            0.993
+SPR00DBO        FILE_LOAD_INFO_D                                0.913
+GRR00DBO        GRK_BRKR_PLAN_CUSTODY_ACCT_D                    0.891
+GRR00DBO        GRK_MBLT_AWD_DST_TRCK_F                         0.852
+GRR00DBO        GRK_BRKR_MOBILITY_F                             0.765
+GRR00DBO        GRK_SHRPOOL_SUMMARY_FS                          0.731
+GRR00DBO        GRK_SHRPOOL_GRANT_F                             0.716
+SPR00DBO        T_FSOCF_ORD_CANCEL_F                            0.666
+
+OWNER           TABLE_NAME                                   TABLE_GB
+--------------- ---------------------------------------- ------------
+SPR00DBO        T_FSPVF_END_D_ACTIVE                            0.641
+SPR00DBO        T_FSSSF_SHRPOOL_SUMMARY_FS                      0.544
+SPR00DBO        T_FSPPF_PRODUCT_PRIOR_CURR_FS                   0.526
+SPR00DBO        T_FSTSD_TERMINATION_SCHD_D                      0.498
+SPR00DBO        T_FSCST_CASH_SWEEP_TRX_F                        0.428
+SPR00DBO        TERMINATION_SCHD_D                              0.404
+SPR00DBO        PRTC_GRANT_D_MV                                 0.397
+SPR00DBO        T_FSLRD_LOT_LVL_RSTC_D                          0.377
+SPR00DBO        T_FSITM_IN_THE_MONEY_FS                         0.357
+SPR00DBO        PRTC_GRANT_D_PLAN_MV                            0.254
+SPR00DBO        PLAN_SPONSOR_D                                  0.253
+SPR00DBO        T_FSCSK_CASH_SWEEP_JOURNAL_F                    0.180
+SPR00DBO        T_FSPID_PRICE_D                                 0.177
+SPR00DBO        T_FSTPD_TAX_ASGT_D                              0.174
+SPR00DBO        T_FSPPD_END_D_GTE_PROC_D                        0.109
+SPR00DBO        T_FSBRD_BLACKOUT_RL_D                           0.097
+SPR00DBO        BRKR_MSG_TRKR_D                                 0.070
+SPR00DBO        T_FSPRD_PROD_D                                  0.048
+SPR00DBO        OFFERING_D                                      0.021
+SPR00DBO        T_FSDID_DIVIDEND_D                              0.018
+SPR00DBO        T_FSCTF_CASH_TRANSFER_F                         0.010
+SPR00DBO        T_FSDVD_DIVISION_D                              0.009
+SPR00DBO        PRODUCT_MAPPINGS_D                              0.007
+SPR00DBO        CORP_ACTION_D                                   0.005
+SPR00DBO        DISTRIBUTION_SCHD_D                             0.004
+SPR00DBO        OVERRIDE_D                                      0.004
+SPR00DBO        T_FSCPD_CLIENT_PLAN_D                           0.003
+SPR00DBO        DISTRIBUTION_FRQ_D                              0.003
+SPR00DBO        DIVISION_D                                      0.003
+GRR00DBO        GRK_CSR_HIER_SETUP_D                            0.003
+SPR00DBO        T_FSCAD_CORP_ACTION_D                           0.001
+SPR00DBO        PERFORMANCE_SCHD_D                              0.001
+SPR00DBO        FED_INTEREST_RTE_D                              0.001
+SPR00DBO        T_FSCLD_CLIENT_D                                0.001
+SPR00DBO        T_FSSPD_SHARE_POOL_D                            0.000
+SPR00DBO        PS_FAS_LEDGER_D                                 0.000
+SPR00DBO        T_FSBPD_TAX_BKT_RNG_D                           0.000
+SPR00DBO        T_FSFXD_FRN_EXCH_D                              0.000
+SPR00DBO        SHARE_POOL_D                                    0.000
+SPR00DBO        BRKR_PRTC_D                                     0.000
+SPR00DBO        T_FSSED_SEC_D                                   0.000
+SPR00DBO        BRKR_ERROR_F                                    0.000
+SPR00DBO        SPS_LOAD_ERRORS                                 0.000
+SPR00DBO        T_FPDAC_DATE_CNTL                               0.000
+SPR00DBO        PRORATION_RL_D                                  0.000
+SPR00DBO        T_FSWID_WIRE_INSN_D                             0.000
+SPR00DBO        BRKR_PLAN_CUSTODY_ACCT_D                        0.000
+GRR00DBO        GRK_RETIREMENT_ELG_RULE_D                       0.000
+SPR00DBO        T_FSCTS_CLIENT_TRUST_SWEEP_D                    0.000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SET LINESIZE 200
 SET PAGESIZE 100
 COL OWNER FORMAT A15
