@@ -1,17 +1,4 @@
-[1] -  Done(12)                nohup rsync -avh --progress /u02/wide/acfs/dba_work/exp_dumps/sim_dumps/*.dmp oracle@10.195.104.68:/vldc                                                                                                                                         dsta20rtp2/backup/SPSSG1/sim_dump/ > /tmp/rsync_transfer.log 2>&1 &
-
-[/u02/wide/acfs/dba_work/exp_dumps/sim_dumps]
-oracle@o54oma2vc21:default> cat /tmp/rsync_transfer.log
-nohup: ignoring input
-
-Unauthorized access to or use of this system is prohibited.
-All access and use may be monitored and recorded.
-
-ksh: rsync: not found
-rsync: connection unexpectedly closed (0 bytes received so far) [sender]
-rsync error: error in rsync protocol data stream (code 12) at io.c(226) [sender=3.1.3]
-[2] +  Done(12)                nohup rsync -avh --progress /u02/wide/acfs/dba_work/exp_dumps/sim_dumps/*.dmp oracle@10.195.104.68:/vldcdsta20rtp2/backup/SPSSG1/sim_dump/ > /tmp/rsync_transfer.log 2>&1 &
-
+nohup scp -r -p /u02/wide/acfs/dba_work/exp_dumps/sim_dumps/ oracle@10.195.104.68:/vldcdsta20rtp2/backup/SPSSG1/sim_dump/ > /tmp/scp_transfer.log 2>&1 &
 
 
 
