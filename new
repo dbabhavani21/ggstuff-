@@ -10,6 +10,25 @@ Grant succeeded.
 /u02/wide/acfs/dba_work/exp_dumps/sim_dumps
 
 
+vi spr_large_tabs.par
+
+userid="comdba_id/RedSox2017"
+DIRECTORY=sim_dump
+DUMPFILE=spr_large_tabs_%U.dmp
+LOGFILE=spr_large_tabs.log
+TABLES=SPR00DBO.GRANT_EXPENSE_F,SPR00DBO.ENDING_BALANCE_F,SPR00DBO.T_FSGVD_GRNT_VEST_DIV_F,SPR00DBO.TRANCHE_EXPENSE_F
+QUERY="WHERE BEGIN_VERSION_DATE > ADD_MONTHS(TRUNC(SYSDATE,'MM'),-24)"
+COMPRESSION=ALL
+metrics=y
+EXCLUDE=STATISTICS
+CLUSTER=N
+PARALLEL=32
+
+chmod +x spr_large_tabs.par
+
+nohup expdp parfile=spr_large_tabs.par & 
+
+
 
 
 
