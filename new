@@ -1,3 +1,7 @@
+JOB_NAME=EXP_MIGRATION_V2
+
+
+
 oracle@o54oma2vc21:WIORDY11> tail -50f nohup.out
 
 Export: Release 19.0.0.0.0 - Production on Wed Jan 28 14:18:42 2026
