@@ -1,3 +1,9 @@
+COPY:
+
+nohup rsync -avh --progress /u02/wide/acfs/dba_work/exp_dumps/sim_dumps/*.dmp oracle@10.195.104.68:/vldcdsta20rtp2/backup/SPSSG1/sim_dump/ > /tmp/rsync_transfer.log 2>&1 &
+
+
+
 target 
 ==========
 [/vldcdsta20rtp2/backup/SPSSG1/sim_dump]
