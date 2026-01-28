@@ -1,3 +1,16 @@
+[/u02/wide/acfs/dba_work/exp_dumps/sim_dumps]
+oracle@o54oma2vc21:default> nohup expdp parfile=spr_2ndset.par &
+[2]     132523
+
+[/u02/wide/acfs/dba_work/exp_dumps/sim_dumps]
+oracle@o54oma2vc21:default> nohup: ignoring input and appending output to 'nohup.out'
+nohup: failed to run command 'expdp': No such file or directory
+
+[2] +  Done(127)               nohup expdp parfile=spr_2ndset.par &
+
+
+
+
 vi spr_2ndset.par
 
 
