@@ -1,3 +1,102 @@
+SQL> sho parameter undo;
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+temp_undo_enabled                    boolean     FALSE
+undo_management                      string      AUTO
+undo_retention                       integer     172800
+undo_tablespace                      string      UNDOTBS1
+SQL>
+
+
+
+SQL> SELECT tablespace_name, status, contents, retention
+FROM dba_tablespaces
+WHERE contents = 'UNDO';  2    3
+
+TABLESPACE_NAME                STATUS    CONTENTS              RETENTION
+------------------------------ --------- --------------------- -----------
+UNDOTBS1                       ONLINE    UNDO                  NOGUARANTEE
+UNDOTBS2                       ONLINE    UNDO                  NOGUARANTEE
+UNDOTBS3                       ONLINE    UNDO                  NOGUARANTEE
+UNDOTBS4                       ONLINE    UNDO                  NOGUARANTEE
+
+
+
+SQL> SELECT name, value
+FROM v$parameter
+WHERE name LIKE 'undo%';  2    3
+
+NAME
+--------------------------------------------------------------------------------
+VALUE
+--------------------------------------------------------------------------------
+undo_management
+AUTO
+
+undo_tablespace
+UNDOTBS1
+
+undo_retention
+172800
+
+
+
+
+SELECT
+    tablespace_name,
+  2    3      ROUND(SUM(bytes)/1024/1024/1024, 2) AS total_gb,
+    ROUND(SUM(CASE WHEN status = 'ACTIVE' THEN bytes ELSE 0 END)/1024/1024/1024, 2) AS active_gb,
+    ROUND(SUM(CASE WHEN status = 'UNEXPIRED' THEN bytes ELSE 0 END)/1024/1024/1024, 2) AS unexpired_  4  gb,
+    ROUND(SUM(CASE WHEN status = 'EXPIRED' THEN bytes ELSE 0 END)/1024/1024/1024, 2) AS expired_gb
+FROM dba_undo_extents
+GROUP BY tablespace_name;  5    6    7    8
+
+TABLESPACE_NAME                  TOTAL_GB  ACTIVE_GB UNEXPIRED_GB EXPIRED_GB
+------------------------------ ---------- ---------- ------------ ----------
+UNDOTBS2                           137.32      85.34        48.46       3.52
+UNDOTBS1                           289.89        .01       221.19      68.69
+UNDOTBS3                           497.59          0       203.93     293.66
+UNDOTBS4                           503.98          0        91.79     412.19
+-===================================================================================
+
+
+SQL> SELECT
+    ROUND((SUM(undoblks * 8192) / 1024 / 1024) /
+          ((MAX(end_time) - MIN(begin_time)) * 86400), 2) AS undo_mb_per_sec
+FROM v$undostat
+WHERE begin_time > SYSDATE - 1;    2    3    4    5
+
+UNDO_MB_PER_SEC
+---------------
+            .84
+==============================================
+
+SQL> SELECT
+  2      ROUND(MAX(maxquerylen)/3600, 2) AS longest_query_hours,
+    ROUND(MAX(undoblks * 8192)/1024/1024/1024, 2) AS max_undo_used_gb,
+    ROUND(AVG(undoblks * 8192)/1024/1024/1024, 2) AS avg_undo_used_gb,
+    ROUND(SUM(undoblks * 8192)/1024/1024/1024,  3   2) AS total_undo_gb
+FROM v$undostat
+WHERE begin_time > SYSDATE - 7;   4    5    6    7
+
+LONGEST_QUERY_HOURS MAX_UNDO_USED_GB AVG_UNDO_USED_GB TOTAL_UNDO_GB
+------------------- ---------------- ---------------- -------------
+               4.05            35.79              .45        259.16
+
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
 sho parameter undo
 
 -- Current undo tablespace and retention
