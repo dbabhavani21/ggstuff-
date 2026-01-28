@@ -1,3 +1,9 @@
+expdp parfile=final.par estimate_only=y parallel=1 metrics=n
+
+
+
+
+
 oracle@o54oma2vc21:WIORDY11> expdp parfile=final.par estimate_only=y
 
 Export: Release 19.0.0.0.0 - Production on Wed Jan 28 14:03:09 2026
