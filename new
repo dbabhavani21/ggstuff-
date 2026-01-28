@@ -1,3 +1,14 @@
+order by 1;SQL> SQL> SQL>   2    3    4    5    6    7
+
+       SID    SERIAL# OPNAME                                   MESSAGE                                                                                                   SOFAR  TOTALWORK   COMPLETE
+---------- ---------- ---------------------------------------- ---------------------------------------------------------------------------------------------------- ---------- ---------- ----------
+      1212      33754 SYS_EXPORT_TABLE_28                      SYS_EXPORT_TABLE_28: EXPORT : 177699 out of 855186 MB done                                               177699     855186      20.78
+
+
+
+
+
+
 col opname format a40
 col message format a100
 SET LINES 10000
