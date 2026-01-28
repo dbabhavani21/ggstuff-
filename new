@@ -1,4 +1,4 @@
-
+ALTER SYSTEM SET streams_pool_size=12G SCOPE=BOTH;
 
 
 SELECT owner, object_name, object_type 
