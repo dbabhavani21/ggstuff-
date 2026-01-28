@@ -1,3 +1,17 @@
+-- shows the full alert log file path
+select value as alert_log
+from v$diag_info
+where name = 'Alert Log';
+Also useful:
+
+sql
+Copy code
+-- shows ADR base / home
+select name, value
+from v$diag_info
+where name in ('ADR Base','Diag Trace','Diag Alert','Default Trace File');
+
+
 oracle@vl1118428rtp2:SPSSG11> ls -lrt
 total 1949065672
 -rw-r-----. 1 oracle dba       155648 Jan 22 20:00 SPSSG11_FULL_260122-200001_04.DMP
