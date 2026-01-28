@@ -1,3 +1,13 @@
+select current_scn from v$database; SQL>
+
+                                      CURRENT_SCN
+-------------------------------------------------
+                                   40253176022215
+
+
+
+
+
 set numwidth 49
 select current_scn from v$database; 
 
