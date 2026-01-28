@@ -1,3 +1,21 @@
+source server ip address : 10.235.162.71
+
+sourec server dump file location : /u02/wide/acfs/dba_work/exp_dumps/sim_dumps
+=======================
+
+target server ip : 10.195.104.68
+targrt  server dump file location : /vldcdsta20rtp2/backup/SPSSG1/sim_dump
+
+
+
+
+
+
+
+
+
+
+
 NAME
 ---------
 WIORDY1
