@@ -1,3 +1,56 @@
+sho parameter undo
+
+-- Current undo tablespace and retention
+SELECT tablespace_name, status, contents, retention
+FROM dba_tablespaces 
+WHERE contents = 'UNDO';
+
+-- Undo parameters
+SELECT name, value 
+FROM v$parameter 
+WHERE name LIKE 'undo%';
+
+-- Total undo size and free space
+SELECT 
+    tablespace_name,
+    ROUND(SUM(bytes)/1024/1024/1024, 2) AS total_gb,
+    ROUND(SUM(CASE WHEN status = 'ACTIVE' THEN bytes ELSE 0 END)/1024/1024/1024, 2) AS active_gb,
+    ROUND(SUM(CASE WHEN status = 'UNEXPIRED' THEN bytes ELSE 0 END)/1024/1024/1024, 2) AS unexpired_gb,
+    ROUND(SUM(CASE WHEN status = 'EXPIRED' THEN bytes ELSE 0 END)/1024/1024/1024, 2) AS expired_gb
+FROM dba_undo_extents
+GROUP BY tablespace_name;
+
+-- Undo generation rate (MB per second)
+SELECT 
+    ROUND((SUM(undoblks * 8192) / 1024 / 1024) / 
+          ((MAX(end_time) - MIN(begin_time)) * 86400), 2) AS undo_mb_per_sec
+FROM v$undostat
+WHERE begin_time > SYSDATE - 1;  -- Last 24 hours
+
+-- For 10-15 hour export window
+-- Required undo = undo_mb_per_sec * seconds_in_window
+-- Example: 5 MB/sec * (15 hours * 3600) = 270 GB
+
+
+-- Calculate recommended size based on your export duration
+SELECT 
+    ROUND(MAX(maxquerylen)/3600, 2) AS longest_query_hours,
+    ROUND(MAX(undoblks * 8192)/1024/1024/1024, 2) AS max_undo_used_gb,
+    ROUND(AVG(undoblks * 8192)/1024/1024/1024, 2) AS avg_undo_used_gb,
+    ROUND(SUM(undoblks * 8192)/1024/1024/1024, 2) AS total_undo_gb
+FROM v$undostat
+WHERE begin_time > SYSDATE - 7;  -- Last week's activity
+```
+
+## **5. Quick Formula**
+
+**For a 10-15 hour export with SCN:**
+```
+Required Undo = (Undo Rate MB/sec) × (Export Time in seconds) × 1.5 (safety margin)
+
+
+
+
 OWNER           TABLE_NAME                                   TABLE_GB
 --------------- ---------------------------------------- ------------
 SPR00DBO        GRANT_EXPENSE_F                               855.266
